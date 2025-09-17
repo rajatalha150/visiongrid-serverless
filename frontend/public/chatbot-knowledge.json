@@ -1,0 +1,238 @@
+{
+  "company": {
+    "name": "VisionGrid",
+    "description": "VisionGrid is a leading security solutions provider specializing in camera installation, networking solutions, home security, business security, and audio/video systems.",
+    "experience": "5+ years",
+    "installations": "100+",
+    "support": "24/7 technical support",
+    "location": "Local metropolitan area",
+    "certifications": ["Licensed security installer", "Network certified technicians", "Insured and bonded"],
+    "mission": "To protect what matters most to you with cutting-edge technology and exceptional service"
+  },
+  "keywords": {
+    "greetings": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
+    "services": ["service", "services", "what do you do", "offerings", "solutions", "install", "installation"],
+    "pricing": ["price", "cost", "pricing", "how much", "expensive", "cheap", "budget", "quote", "estimate"],
+    "camera": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording"],
+    "network": ["network", "networking", "wifi", "internet", "connection", "router", "cable"],
+    "security": ["security", "alarm", "protection", "safe", "secure", "monitoring"],
+    "appointment": ["appointment", "consultation", "schedule", "meet", "visit", "call", "book"],
+    "warranty": ["warranty", "guarantee", "support", "maintenance", "repair", "fix"],
+    "location": ["area", "location", "where", "service area", "coverage", "travel"],
+    "time": ["how long", "duration", "time", "hours", "days", "when", "schedule"],
+    "payment": ["payment", "financing", "finance", "pay", "money", "credit", "loan"]
+  },
+  "services": {
+    "camera_installation": {
+      "name": "Camera Installation",
+      "description": "Professional security camera setup with optimal positioning and configuration",
+      "pricing": {
+        "basic_package": "$299-599",
+        "premium_package": "$799-1299",
+        "enterprise_package": "Custom quote"
+      },
+      "features": [
+        "Indoor & outdoor cameras",
+        "HD & 4K resolution options",
+        "Night vision capabilities",
+        "Remote viewing setup",
+        "Motion detection",
+        "Cloud storage options"
+      ],
+      "keywords": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording"]
+    },
+    "networking_solutions": {
+      "name": "Networking Solutions",
+      "description": "Complete network infrastructure for seamless connectivity and performance",
+      "pricing": {
+        "home_network": "$199-399",
+        "business_network": "$499-999",
+        "enterprise_network": "Custom quote"
+      },
+      "features": [
+        "Network design & setup",
+        "Wi-Fi optimization",
+        "Cable management",
+        "Performance monitoring",
+        "Security configuration"
+      ],
+      "keywords": ["network", "networking", "wifi", "internet", "connection", "router", "cable"]
+    },
+    "home_security": {
+      "name": "Home Security",
+      "description": "Comprehensive residential security systems for peace of mind",
+      "pricing": {
+        "starter_package": "$399-699",
+        "complete_package": "$799-1199",
+        "smart_home_package": "$999-1599"
+      },
+      "features": [
+        "Motion detection",
+        "Smart home integration",
+        "Mobile alerts",
+        "Professional monitoring",
+        "Backup power systems"
+      ],
+      "keywords": ["home security", "residential", "house", "family", "personal"]
+    },
+    "business_security": {
+      "name": "Business Security",
+      "description": "Enterprise-grade security solutions for commercial properties",
+      "pricing": {
+        "small_business": "$699-1299",
+        "medium_business": "$1299-2499",
+        "enterprise": "Custom quote"
+      },
+      "features": [
+        "Multi-location monitoring",
+        "Access control systems",
+        "Advanced analytics",
+        "Compliance support",
+        "Integration capabilities"
+      ],
+      "keywords": ["business security", "commercial", "office", "enterprise", "company"]
+    },
+    "audio_video_systems": {
+      "name": "Audio & Video Systems",
+      "description": "Professional audio and video installations for entertainment and communication",
+      "pricing": {
+        "home_entertainment": "$499-999",
+        "conference_room": "$799-1599",
+        "projection_system": "$1299-2499"
+      },
+      "features": [
+        "High-quality speakers",
+        "Conference room systems",
+        "Projection systems",
+        "Professional calibration",
+        "Smart home integration"
+      ],
+      "keywords": ["audio", "video", "sound", "speakers", "conference", "projection", "entertainment"]
+    }
+  },
+  "appointments": {
+    "consultation": {
+      "type": "Free Consultation",
+      "duration": "30-60 minutes",
+      "description": "Free assessment of your security needs and property evaluation",
+      "availability": "Monday-Friday 9AM-6PM, Saturday 10AM-4PM"
+    },
+    "installation": {
+      "scheduling": "Flexible scheduling available",
+      "duration": "2-8 hours depending on project size",
+      "preparation": "Site survey completed before installation day"
+    }
+  },
+  "contact": {
+    "phone": "Contact us through our website form",
+    "email": "Use our contact form for inquiries",
+    "response_time": "We respond within 24 hours",
+    "emergency_support": "24/7 support available for existing customers"
+  },
+  "warranty": {
+    "equipment": "2-3 years manufacturer warranty on all equipment",
+    "installation": "1 year warranty on installation workmanship",
+    "support": "Lifetime technical support for all customers"
+  },
+  "process": [
+    {
+      "step": 1,
+      "title": "Consultation",
+      "description": "Free assessment of your security needs and property evaluation"
+    },
+    {
+      "step": 2,
+      "title": "Design",
+      "description": "Custom security system design and detailed installation plan"
+    },
+    {
+      "step": 3,
+      "title": "Installation",
+      "description": "Professional installation by certified technicians"
+    },
+    {
+      "step": 4,
+      "title": "Support",
+      "description": "Ongoing maintenance and 24/7 technical support"
+    }
+  ],
+  "faq": [
+    {
+      "keywords": ["how long", "installation time", "duration"],
+      "question": "How long does installation take?",
+      "answer": "Installation typically takes 2-8 hours depending on the complexity of your system. We'll provide a time estimate during your consultation."
+    },
+    {
+      "keywords": ["financing", "payment plans", "finance options"],
+      "question": "Do you offer financing options?",
+      "answer": "Yes, we offer flexible payment plans and financing options. Contact us to discuss what works best for your budget."
+    },
+    {
+      "keywords": ["service area", "location", "where do you serve"],
+      "question": "What areas do you serve?",
+      "answer": "We serve the local metropolitan area. Contact us to confirm service availability in your specific location."
+    },
+    {
+      "keywords": ["integration", "existing systems", "smart home"],
+      "question": "Can you integrate with existing systems?",
+      "answer": "Yes, we can often integrate new security systems with your existing smart home or business systems. We'll assess compatibility during consultation."
+    },
+    {
+      "keywords": ["licensed", "insured", "certified", "qualified"],
+      "question": "Are you licensed and insured?",
+      "answer": "Yes, we are fully licensed security installers, insured and bonded. Our technicians are network certified and undergo continuous training."
+    },
+    {
+      "keywords": ["emergency", "24/7", "after hours", "weekend"],
+      "question": "Do you provide emergency support?",
+      "answer": "We offer 24/7 technical support for existing customers. For emergencies, our support team is available around the clock."
+    },
+    {
+      "keywords": ["free estimate", "quote", "consultation cost"],
+      "question": "Is the consultation free?",
+      "answer": "Yes! We provide completely free consultations and estimates. No obligation, no hidden fees."
+    },
+    {
+      "keywords": ["maintenance", "ongoing support", "service plan"],
+      "question": "Do you offer maintenance services?",
+      "answer": "Yes, we provide ongoing maintenance services and support plans to keep your security system running optimally."
+    },
+    {
+      "keywords": ["mobile app", "remote access", "phone control"],
+      "question": "Can I control my system from my phone?",
+      "answer": "Absolutely! All our systems include mobile app access for remote monitoring and control from anywhere."
+    },
+    {
+      "keywords": ["upgrade", "expand", "add cameras", "more coverage"],
+      "question": "Can I expand my system later?",
+      "answer": "Yes, our systems are designed to be scalable. You can easily add more cameras or components as your needs grow."
+    }
+  ],
+  "responses": {
+    "greeting": "Hello! I'm VisionGrid's virtual assistant. I can help you with information about our security services, pricing, appointments, and more. What would you like to know?",
+    "default": "I'd be happy to help you with information about VisionGrid's security services! I can assist with service details, pricing, scheduling consultations, installation process, warranty information, and technical questions. What specific information are you looking for?",
+    "contact_redirect": "For detailed quotes or to speak with a specialist, please use our contact form or schedule a free consultation. We respond within 24 hours!",
+    "thank_you": "You're welcome! Is there anything else about our security services I can help you with today?"
+  },
+  "locations": {
+    "service_areas": ["Metropolitan area", "Surrounding suburbs", "Commercial districts"],
+    "travel_policy": "Free consultation within 25 miles, travel fees may apply for distant locations",
+    "response_time": "Same-day response for consultations, 24-48 hour installation scheduling"
+  },
+  "certifications": {
+    "licenses": ["State security installer license", "Low voltage contractor license"],
+    "insurance": "$2M liability insurance, bonded technicians",
+    "training": "Ongoing manufacturer training, industry certifications"
+  },
+  "equipment_brands": {
+    "cameras": ["Hikvision", "Dahua", "Axis", "Bosch", "Hanwha"],
+    "networking": ["Ubiquiti", "Cisco", "Netgear", "TP-Link"],
+    "security_systems": ["Honeywell", "DSC", "Qolsys", "2GIG"],
+    "audio_video": ["Sonos", "Bose", "Yamaha", "Epson"]
+  },
+  "special_offers": {
+    "current_promotions": "Ask about our current seasonal promotions and package deals!",
+    "referral_program": "Refer a friend and both receive a discount on services",
+    "maintenance_plans": "Annual maintenance plans available with priority support"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ],
+  "functions": {
+    "api/contact.ts": {
+      "runtime": "@vercel/node@18.x"
+    },
+    "api/admin.ts": {
+      "runtime": "@vercel/node@18.x"
+    },
+    "api/chatbot.ts": {
+      "runtime": "@vercel/node@18.x"
+    }
+  },
+  "outputDirectory": "frontend/dist"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "email": "john.smith@email.com",
+    "phone": "(555) 123-4567",
+    "company": "ABC Security Corp",
+    "message": "I'm interested in a comprehensive security system for my office building. We need cameras, access control, and monitoring. Please contact me to discuss options and pricing.",
+    "service": "business-security",
+    "created_at": "2024-01-15T10:30:00.000Z",
+    "status": "new"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "email": "sarah.j@homemail.com",
+    "phone": "(555) 987-6543",
+    "company": null,
+    "message": "Looking for home security cameras with night vision. Want to monitor front door and backyard. What packages do you offer?",
+    "service": "camera-installation",
+    "created_at": "2024-01-14T14:22:00.000Z",
+    "status": "contacted"
+  },
+  {
+    "id": 3,
+    "name": "Mike Davis",
+    "email": "mike.davis@techstart.com",
+    "phone": null,
+    "company": "TechStart Solutions",
+    "message": "Need networking setup for new office space. 50 employees, multiple conference rooms. Looking for reliable Wi-Fi and wired connections.",
+    "service": "networking-solutions",
+    "created_at": "2024-01-13T09:15:00.000Z",
+    "status": "closed"
+  }
+]

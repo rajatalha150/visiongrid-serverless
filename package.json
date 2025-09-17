@@ -1,0 +1,14 @@
+{
+  "name": "visiongrid-serverless",
+  "version": "1.0.0",
+  "description": "VisionGrid serverless website",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
