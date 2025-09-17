@@ -1,238 +1,281 @@
 {
   "company": {
     "name": "VisionGrid",
-    "description": "VisionGrid is a leading security solutions provider specializing in camera installation, networking solutions, home security, business security, and audio/video systems.",
-    "experience": "5+ years",
-    "installations": "100+",
-    "support": "24/7 technical support",
+    "description": "VisionGrid is a pioneering AI-powered security solutions provider, specializing in intelligent camera systems, smart networking, AI home protection, enterprise security analytics, and automated AV systems.",
+    "experience": "5+ years in AI security innovation",
+    "installations": "100+ AI-enhanced installations",
+    "support": "24/7 AI-assisted technical support",
     "location": "Local metropolitan area",
-    "certifications": ["Licensed security installer", "Network certified technicians", "Insured and bonded"],
-    "mission": "To protect what matters most to you with cutting-edge technology and exceptional service"
+    "certifications": ["AI Security Systems Certified", "Licensed security installer", "Network certified technicians", "Insured and bonded"],
+    "mission": "To revolutionize security through artificial intelligence, protecting what matters most with predictive, intelligent, and automated solutions"
   },
   "keywords": {
     "greetings": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
     "services": ["service", "services", "what do you do", "offerings", "solutions", "install", "installation"],
     "pricing": ["price", "cost", "pricing", "how much", "expensive", "cheap", "budget", "quote", "estimate"],
-    "camera": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording"],
-    "network": ["network", "networking", "wifi", "internet", "connection", "router", "cable"],
-    "security": ["security", "alarm", "protection", "safe", "secure", "monitoring"],
+    "camera": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording", "ai detection", "smart camera"],
+    "network": ["network", "networking", "wifi", "internet", "connection", "router", "cable", "smart network"],
+    "security": ["security", "alarm", "protection", "safe", "secure", "monitoring", "ai security"],
     "appointment": ["appointment", "consultation", "schedule", "meet", "visit", "call", "book"],
     "warranty": ["warranty", "guarantee", "support", "maintenance", "repair", "fix"],
     "location": ["area", "location", "where", "service area", "coverage", "travel"],
     "time": ["how long", "duration", "time", "hours", "days", "when", "schedule"],
-    "payment": ["payment", "financing", "finance", "pay", "money", "credit", "loan"]
+    "payment": ["payment", "financing", "finance", "pay", "money", "credit", "loan"],
+    "ai": ["ai", "artificial intelligence", "smart", "intelligent", "machine learning", "automation"]
   },
   "services": {
     "camera_installation": {
-      "name": "Camera Installation",
-      "description": "Professional security camera setup with optimal positioning and configuration",
+      "name": "AI-Powered Camera Systems",
+      "description": "Next-generation security cameras with artificial intelligence for smart detection and automated threat recognition",
       "pricing": {
-        "basic_package": "$299-599",
-        "premium_package": "$799-1299",
+        "basic_package": "$399-699",
+        "premium_package": "$899-1499",
         "enterprise_package": "Custom quote"
       },
       "features": [
-        "Indoor & outdoor cameras",
-        "HD & 4K resolution options",
-        "Night vision capabilities",
-        "Remote viewing setup",
-        "Motion detection",
-        "Cloud storage options"
+        "AI person & vehicle detection",
+        "Facial recognition technology",
+        "Smart motion tracking",
+        "Behavioral analytics",
+        "Real-time threat alerts",
+        "4K AI-enhanced night vision",
+        "Cloud AI processing",
+        "License plate recognition"
       ],
-      "keywords": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording"]
+      "keywords": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording", "ai", "artificial intelligence", "smart detection"]
     },
     "networking_solutions": {
-      "name": "Networking Solutions",
-      "description": "Complete network infrastructure for seamless connectivity and performance",
+      "name": "Smart Network Infrastructure",
+      "description": "AI-optimized network systems with intelligent traffic management and predictive maintenance",
       "pricing": {
-        "home_network": "$199-399",
-        "business_network": "$499-999",
+        "home_network": "$299-499",
+        "business_network": "$699-1199",
         "enterprise_network": "Custom quote"
       },
       "features": [
-        "Network design & setup",
-        "Wi-Fi optimization",
-        "Cable management",
-        "Performance monitoring",
-        "Security configuration"
+        "AI-powered network optimization",
+        "Intelligent bandwidth allocation",
+        "Predictive maintenance alerts",
+        "Smart device prioritization",
+        "Automated security protocols",
+        "Machine learning traffic analysis",
+        "Self-healing network topology"
       ],
-      "keywords": ["network", "networking", "wifi", "internet", "connection", "router", "cable"]
+      "keywords": ["network", "networking", "wifi", "internet", "connection", "router", "cable", "smart network", "ai optimization"]
     },
     "home_security": {
-      "name": "Home Security",
-      "description": "Comprehensive residential security systems for peace of mind",
+      "name": "AI Home Protection",
+      "description": "Intelligent home security with AI-driven threat detection and automated response systems",
       "pricing": {
-        "starter_package": "$399-699",
-        "complete_package": "$799-1199",
-        "smart_home_package": "$999-1599"
+        "starter_package": "$499-799",
+        "complete_package": "$999-1399",
+        "smart_home_package": "$1299-1899"
       },
       "features": [
-        "Motion detection",
-        "Smart home integration",
-        "Mobile alerts",
-        "Professional monitoring",
-        "Backup power systems"
+        "AI behavioral pattern learning",
+        "Smart intruder detection",
+        "Voice recognition alerts",
+        "Predictive security analysis",
+        "Automated emergency response",
+        "AI-powered false alarm reduction",
+        "Intelligent scene recognition",
+        "Smart doorbell with AI identification"
       ],
-      "keywords": ["home security", "residential", "house", "family", "personal"]
+      "keywords": ["home security", "residential", "house", "family", "personal", "smart home", "ai security"]
     },
     "business_security": {
-      "name": "Business Security",
-      "description": "Enterprise-grade security solutions for commercial properties",
+      "name": "Enterprise AI Security",
+      "description": "Advanced AI-driven security solutions with predictive analytics and automated threat response",
       "pricing": {
-        "small_business": "$699-1299",
-        "medium_business": "$1299-2499",
+        "small_business": "$899-1599",
+        "medium_business": "$1699-3299",
         "enterprise": "Custom quote"
       },
       "features": [
-        "Multi-location monitoring",
-        "Access control systems",
-        "Advanced analytics",
-        "Compliance support",
-        "Integration capabilities"
+        "AI-powered threat prediction",
+        "Behavioral analytics dashboard",
+        "Automated incident response",
+        "Smart access control with biometrics",
+        "Real-time risk assessment",
+        "Machine learning anomaly detection",
+        "Intelligent video analytics",
+        "AI-driven compliance monitoring"
       ],
-      "keywords": ["business security", "commercial", "office", "enterprise", "company"]
+      "keywords": ["business security", "commercial", "office", "enterprise", "company", "ai analytics", "smart security"]
     },
     "audio_video_systems": {
-      "name": "Audio & Video Systems",
-      "description": "Professional audio and video installations for entertainment and communication",
+      "name": "Smart AV & Communication Systems",
+      "description": "AI-enhanced audio/video systems with intelligent sound optimization and automated meeting management",
       "pricing": {
-        "home_entertainment": "$499-999",
-        "conference_room": "$799-1599",
-        "projection_system": "$1299-2499"
+        "home_entertainment": "$699-1299",
+        "conference_room": "$999-1999",
+        "projection_system": "$1599-3299"
       },
       "features": [
-        "High-quality speakers",
-        "Conference room systems",
-        "Projection systems",
-        "Professional calibration",
-        "Smart home integration"
+        "AI-powered sound optimization",
+        "Smart meeting room automation",
+        "Voice-activated controls",
+        "Intelligent noise cancellation",
+        "Automated camera tracking",
+        "AI transcription services",
+        "Smart lighting integration",
+        "Predictive maintenance alerts"
       ],
-      "keywords": ["audio", "video", "sound", "speakers", "conference", "projection", "entertainment"]
+      "keywords": ["audio", "video", "sound", "speakers", "conference", "projection", "entertainment", "smart av", "ai audio"]
     }
   },
   "appointments": {
     "consultation": {
-      "type": "Free Consultation",
+      "type": "Free AI Security Assessment",
       "duration": "30-60 minutes",
-      "description": "Free assessment of your security needs and property evaluation",
+      "description": "Comprehensive evaluation of your security needs with AI solution recommendations",
       "availability": "Monday-Friday 9AM-6PM, Saturday 10AM-4PM"
     },
     "installation": {
-      "scheduling": "Flexible scheduling available",
-      "duration": "2-8 hours depending on project size",
-      "preparation": "Site survey completed before installation day"
+      "scheduling": "Flexible scheduling with AI system configuration",
+      "duration": "2-8 hours depending on AI complexity",
+      "preparation": "AI system design and site survey completed before installation"
     }
   },
   "contact": {
     "phone": "Contact us through our website form",
     "email": "Use our contact form for inquiries",
-    "response_time": "We respond within 24 hours",
-    "emergency_support": "24/7 support available for existing customers"
+    "response_time": "We respond within 24 hours with AI-powered solutions",
+    "emergency_support": "24/7 AI-assisted support available for existing customers"
   },
   "warranty": {
-    "equipment": "2-3 years manufacturer warranty on all equipment",
-    "installation": "1 year warranty on installation workmanship",
-    "support": "Lifetime technical support for all customers"
+    "equipment": "2-3 years manufacturer warranty on all AI equipment",
+    "installation": "1 year warranty on AI system installation and configuration",
+    "support": "Lifetime technical support with AI system updates"
   },
   "process": [
     {
       "step": 1,
-      "title": "Consultation",
-      "description": "Free assessment of your security needs and property evaluation"
+      "title": "AI Security Assessment",
+      "description": "Comprehensive evaluation using AI analysis tools to identify optimal security solutions"
     },
     {
       "step": 2,
-      "title": "Design",
-      "description": "Custom security system design and detailed installation plan"
+      "title": "Smart System Design",
+      "description": "Custom AI-powered security system design with intelligent automation features"
     },
     {
       "step": 3,
-      "title": "Installation",
-      "description": "Professional installation by certified technicians"
+      "title": "AI Installation & Training",
+      "description": "Professional installation with AI system training and behavioral learning setup"
     },
     {
       "step": 4,
-      "title": "Support",
-      "description": "Ongoing maintenance and 24/7 technical support"
+      "title": "Continuous AI Support",
+      "description": "Ongoing AI system optimization and predictive maintenance support"
     }
   ],
   "faq": [
     {
       "keywords": ["how long", "installation time", "duration"],
-      "question": "How long does installation take?",
-      "answer": "Installation typically takes 2-8 hours depending on the complexity of your system. We'll provide a time estimate during your consultation."
+      "question": "How long does AI system installation take?",
+      "answer": "AI system installation typically takes 3-10 hours depending on the complexity and AI features being configured. We include system training and behavioral learning setup in our installation process."
     },
     {
       "keywords": ["financing", "payment plans", "finance options"],
-      "question": "Do you offer financing options?",
-      "answer": "Yes, we offer flexible payment plans and financing options. Contact us to discuss what works best for your budget."
+      "question": "Do you offer financing for AI security systems?",
+      "answer": "Yes, we offer flexible payment plans and financing options for all AI security solutions. Contact us to discuss what works best for your budget and AI upgrade needs."
     },
     {
       "keywords": ["service area", "location", "where do you serve"],
-      "question": "What areas do you serve?",
-      "answer": "We serve the local metropolitan area. Contact us to confirm service availability in your specific location."
+      "question": "What areas do you serve for AI installations?",
+      "answer": "We serve the local metropolitan area with specialized AI security installations. Contact us to confirm service availability and AI system compatibility in your specific location."
     },
     {
       "keywords": ["integration", "existing systems", "smart home"],
-      "question": "Can you integrate with existing systems?",
-      "answer": "Yes, we can often integrate new security systems with your existing smart home or business systems. We'll assess compatibility during consultation."
+      "question": "Can you integrate AI with existing systems?",
+      "answer": "Yes, we specialize in integrating AI capabilities with existing security systems, smart home platforms, and business infrastructure. Our AI modules can enhance most modern security setups."
     },
     {
       "keywords": ["licensed", "insured", "certified", "qualified"],
-      "question": "Are you licensed and insured?",
-      "answer": "Yes, we are fully licensed security installers, insured and bonded. Our technicians are network certified and undergo continuous training."
+      "question": "Are you certified for AI security installations?",
+      "answer": "Yes, we are AI Security Systems Certified, fully licensed security installers, insured and bonded. Our technicians receive continuous training on the latest AI security technologies."
     },
     {
       "keywords": ["emergency", "24/7", "after hours", "weekend"],
-      "question": "Do you provide emergency support?",
-      "answer": "We offer 24/7 technical support for existing customers. For emergencies, our support team is available around the clock."
+      "question": "Do you provide AI system support after hours?",
+      "answer": "We offer 24/7 AI-assisted technical support for existing customers. Our AI monitoring systems can detect issues and provide automated responses even when our technicians are offline."
     },
     {
       "keywords": ["free estimate", "quote", "consultation cost"],
-      "question": "Is the consultation free?",
-      "answer": "Yes! We provide completely free consultations and estimates. No obligation, no hidden fees."
+      "question": "Is the AI security assessment free?",
+      "answer": "Yes! We provide completely free AI security assessments and consultations. Our AI analysis tools help us provide accurate recommendations with no obligation or hidden fees."
     },
     {
       "keywords": ["maintenance", "ongoing support", "service plan"],
-      "question": "Do you offer maintenance services?",
-      "answer": "Yes, we provide ongoing maintenance services and support plans to keep your security system running optimally."
+      "question": "How do you maintain AI security systems?",
+      "answer": "Our AI systems include predictive maintenance that alerts us to potential issues before they occur. We offer AI-powered maintenance plans with automatic updates and continuous optimization."
     },
     {
       "keywords": ["mobile app", "remote access", "phone control"],
-      "question": "Can I control my system from my phone?",
-      "answer": "Absolutely! All our systems include mobile app access for remote monitoring and control from anywhere."
+      "question": "Can I control AI features from my phone?",
+      "answer": "Absolutely! Our AI security systems include advanced mobile apps with AI-powered notifications, smart controls, behavioral insights, and real-time threat analysis accessible from anywhere."
     },
     {
       "keywords": ["upgrade", "expand", "add cameras", "more coverage"],
-      "question": "Can I expand my system later?",
-      "answer": "Yes, our systems are designed to be scalable. You can easily add more cameras or components as your needs grow."
+      "question": "Can I expand my AI system later?",
+      "answer": "Yes, our AI-powered systems are designed to be scalable. You can easily add more smart cameras, AI modules, or upgrade existing components to newer AI features as technology advances."
+    },
+    {
+      "keywords": ["ai features", "artificial intelligence", "smart detection", "machine learning"],
+      "question": "What AI features do your systems include?",
+      "answer": "Our systems include advanced AI features like facial recognition, behavioral analytics, predictive threat detection, smart motion tracking, automated responses, and machine learning that improves accuracy over time."
+    },
+    {
+      "keywords": ["false alarms", "accuracy", "smart alerts"],
+      "question": "How does AI reduce false alarms?",
+      "answer": "Our AI systems learn to distinguish between real threats and harmless activities like pets, weather, or routine movements, reducing false alarms by up to 95% compared to traditional motion sensors."
     }
   ],
   "responses": {
-    "greeting": "Hello! I'm VisionGrid's virtual assistant. I can help you with information about our security services, pricing, appointments, and more. What would you like to know?",
-    "default": "I'd be happy to help you with information about VisionGrid's security services! I can assist with service details, pricing, scheduling consultations, installation process, warranty information, and technical questions. What specific information are you looking for?",
-    "contact_redirect": "For detailed quotes or to speak with a specialist, please use our contact form or schedule a free consultation. We respond within 24 hours!",
-    "thank_you": "You're welcome! Is there anything else about our security services I can help you with today?"
+    "greeting": "Hello! I'm VisionGrid's AI-powered virtual assistant. I can help you with information about our intelligent security services, AI features, pricing, and consultations. What would you like to know about our AI security solutions?",
+    "default": "I'd be happy to help you with information about VisionGrid's AI-powered security services! I can assist with AI features, smart system details, pricing, scheduling consultations, installation process, and technical questions about our intelligent solutions. What specific AI security information are you looking for?",
+    "contact_redirect": "For detailed AI system quotes or to speak with our AI security specialists, please use our contact form or schedule a free AI assessment. We respond within 24 hours with intelligent recommendations!",
+    "thank_you": "You're welcome! Is there anything else about our AI-powered security services I can help you with today?"
   },
   "locations": {
     "service_areas": ["Metropolitan area", "Surrounding suburbs", "Commercial districts"],
-    "travel_policy": "Free consultation within 25 miles, travel fees may apply for distant locations",
-    "response_time": "Same-day response for consultations, 24-48 hour installation scheduling"
+    "travel_policy": "Free AI consultation within 25 miles, travel fees may apply for distant AI installations",
+    "response_time": "Same-day response for AI consultations, 24-48 hour smart system installation scheduling"
   },
   "certifications": {
-    "licenses": ["State security installer license", "Low voltage contractor license"],
-    "insurance": "$2M liability insurance, bonded technicians",
-    "training": "Ongoing manufacturer training, industry certifications"
+    "licenses": ["AI Security Systems Certified", "State security installer license", "Low voltage contractor license"],
+    "insurance": "$2M liability insurance, bonded AI technicians",
+    "training": "Ongoing AI manufacturer training, machine learning certifications"
   },
   "equipment_brands": {
-    "cameras": ["Hikvision", "Dahua", "Axis", "Bosch", "Hanwha"],
-    "networking": ["Ubiquiti", "Cisco", "Netgear", "TP-Link"],
-    "security_systems": ["Honeywell", "DSC", "Qolsys", "2GIG"],
-    "audio_video": ["Sonos", "Bose", "Yamaha", "Epson"]
+    "ai_cameras": ["Hikvision AI Series", "Dahua WizMind", "Axis ARTPEC", "Bosch Video Analytics", "Hanwha Wisenet AI"],
+    "smart_networking": ["Ubiquiti UniFi AI", "Cisco Meraki", "Netgear Orbi Pro", "TP-Link Omada SDN"],
+    "ai_security_systems": ["Honeywell Pro-Watch", "DSC PowerSeries Neo", "Qolsys IQ Panel", "2GIG Edge"],
+    "smart_av": ["Sonos Pro", "Bose Professional", "Yamaha ADECIA", "Epson Interactive"]
   },
   "special_offers": {
-    "current_promotions": "Ask about our current seasonal promotions and package deals!",
-    "referral_program": "Refer a friend and both receive a discount on services",
-    "maintenance_plans": "Annual maintenance plans available with priority support"
+    "current_promotions": "Ask about our AI upgrade promotions and smart security package deals!",
+    "referral_program": "Refer a friend and both receive a discount on AI security services",
+    "maintenance_plans": "AI-powered predictive maintenance plans with priority support",
+    "ai_upgrade": "Upgrade existing systems to AI-powered solutions with 20% discount"
+  },
+  "ai_features": {
+    "computer_vision": {
+      "description": "Advanced computer vision algorithms for real-time object and behavior recognition",
+      "applications": ["Person detection", "Vehicle identification", "Facial recognition", "License plate reading", "Behavioral analysis"]
+    },
+    "machine_learning": {
+      "description": "Continuous learning systems that adapt to your environment and improve over time",
+      "applications": ["Pattern recognition", "Anomaly detection", "Predictive analytics", "False alarm reduction", "Automated responses"]
+    },
+    "edge_computing": {
+      "description": "Local AI processing for faster response times and enhanced privacy",
+      "applications": ["Real-time analysis", "Reduced latency", "Offline capabilities", "Bandwidth optimization", "Privacy protection"]
+    },
+    "cloud_ai": {
+      "description": "Cloud-based AI services for advanced analytics and system management",
+      "applications": ["Deep learning analysis", "Multi-site correlation", "Predictive maintenance", "Remote diagnostics", "Continuous updates"]
+    }
   }
 }

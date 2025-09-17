@@ -9,12 +9,12 @@
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title animate-fade-in-up">
-          Secure Your Space with 
-          <span class="highlight gradient-text">VisionGrid</span>
+          Secure Your Future with 
+          <span class="highlight gradient-text">AI-Powered VisionGrid</span>
         </h1>
         <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.2s">
-          Expert camera and networking solutions for homes and businesses. 
-          Professional installations, ongoing support, and customized security systems.
+          Revolutionary AI security solutions that learn, adapt, and protect intelligently. 
+          Smart installations, predictive analytics, and automated threat detection.
         </p>
         <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.4s">
           <RouterLink to="/contact" class="btn btn-primary btn-lg shadow-glow">
@@ -45,7 +45,9 @@
 import { RouterLink } from 'vue-router'
 
 const features = [
-  { id: 3, icon: '📞', label: '24/7 Support' }
+  { id: 1, icon: '🤖', label: 'AI Detection' },
+  { id: 2, icon: '🧠', label: 'Smart Learning' },
+  { id: 3, icon: '📞', label: '24/7 AI Support' }
 ]
 
 const getParticleStyle = () => ({

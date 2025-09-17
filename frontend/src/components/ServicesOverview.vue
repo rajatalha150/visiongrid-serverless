@@ -52,66 +52,66 @@ const services = [
   {
     id: 1,
     slug: 'camera-installation',
-    icon: '📹',
-    title: 'Camera Installation',
-    description: 'Professional security camera setup with optimal positioning and configuration.',
+    icon: '🤖',
+    title: 'AI-Powered Camera Systems',
+    description: 'Next-generation security cameras with artificial intelligence for smart detection and automated threat recognition.',
     features: [
-      'Indoor & outdoor cameras',
-      'HD & 4K resolution options',
-      'Night vision capabilities',
-      'Remote viewing setup'
+      'AI person & vehicle detection',
+      'Facial recognition technology',
+      'Smart motion tracking',
+      'Real-time threat alerts'
     ]
   },
   {
     id: 2,
     slug: 'networking-solutions',
-    icon: '🌐',
-    title: 'Networking Solutions',
-    description: 'Complete network infrastructure for seamless connectivity and performance.',
+    icon: '🧠',
+    title: 'Smart Network Infrastructure',
+    description: 'AI-optimized network systems with intelligent traffic management and predictive maintenance.',
     features: [
-      'Network design & setup',
-      'Wi-Fi optimization',
-      'Cable management',
-      'Performance monitoring'
+      'AI-powered network optimization',
+      'Intelligent bandwidth allocation',
+      'Predictive maintenance alerts',
+      'Machine learning traffic analysis'
     ]
   },
   {
     id: 3,
     slug: 'home-security',
-    icon: '🏠',
-    title: 'Home Security',
-    description: 'Comprehensive residential security systems for peace of mind.',
+    icon: '🏡',
+    title: 'AI Home Protection',
+    description: 'Intelligent home security with AI-driven threat detection and automated response systems.',
     features: [
-      'Motion detection',
-      'Smart home integration',
-      'Mobile alerts',
-      'Cloud storage options'
+      'AI behavioral pattern learning',
+      'Smart intruder detection',
+      'Voice recognition alerts',
+      'AI-powered false alarm reduction'
     ]
   },
   {
     id: 4,
     slug: 'business-security',
     icon: '🏢',
-    title: 'Business Security',
-    description: 'Enterprise-grade security solutions for commercial properties.',
+    title: 'Enterprise AI Security',
+    description: 'Advanced AI-driven security solutions with predictive analytics and automated threat response.',
     features: [
-      'Multi-location monitoring',
-      'Access control systems',
-      'Advanced analytics',
-      'Compliance support'
+      'AI-powered threat prediction',
+      'Behavioral analytics dashboard',
+      'Automated incident response',
+      'Machine learning anomaly detection'
     ]
   },
   {
     id: 5,
     slug: 'audio-video-systems',
-    icon: '🎵',
-    title: 'Audio & Video Systems',
-    description: 'Professional audio and video installations for flawless entertainment and communication.',
+    icon: '🎙️',
+    title: 'Smart AV & Communication',
+    description: 'AI-enhanced audio/video systems with intelligent sound optimization and automated meeting management.',
     features: [
-      'High-quality speakers',
-      'Conference room systems',
-      'Projection systems',
-      'Complete setup service'
+      'AI-powered sound optimization',
+      'Smart meeting room automation',
+      'Voice-activated controls',
+      'Automated camera tracking'
     ]
   }
 ]

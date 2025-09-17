@@ -5,27 +5,27 @@
         <div class="about-text">
           <h2 class="section-title text-left">About VisionGrid</h2>
           <p class="about-description">
-            Founded with a mission to revolutionize security solutions, VisionGrid combines 
-            cutting-edge technology with exceptional service to protect what matters most to you.
+            Founded with a mission to revolutionize security through artificial intelligence, VisionGrid combines 
+            cutting-edge AI technology with exceptional service to protect what matters most to you.
           </p>
           <p class="about-description">
-            Our team of certified technicians brings years of experience in security systems, 
-            networking, and customer service. We focus on delivering customized solutions 
-            that meet your specific needs and budget.
+            Our team of AI-certified technicians brings years of experience in intelligent security systems, 
+            machine learning, and smart automation. We focus on delivering AI-powered solutions 
+            that learn, adapt, and evolve with your security needs.
           </p>
           
           <div class="about-stats">
             <div class="stat-item">
               <div class="stat-number">100+</div>
-              <div class="stat-label">Installations</div>
+              <div class="stat-label">AI Installations</div>
             </div>
             <div class="stat-item">
               <div class="stat-number">5+</div>
-              <div class="stat-label">Years Experience</div>
+              <div class="stat-label">Years AI Innovation</div>
             </div>
             <div class="stat-item">
               <div class="stat-number">24/7</div>
-              <div class="stat-label">Support</div>
+              <div class="stat-label">AI Support</div>
             </div>
           </div>
           
@@ -58,27 +58,27 @@ import { RouterLink } from 'vue-router'
 const features = [
   {
     id: 1,
-    icon: '⭐',
-    title: 'Expert Installation',
-    description: 'Certified technicians with years of experience in security systems.'
+    icon: '🤖',
+    title: 'AI-Certified Installation',
+    description: 'Certified AI technicians with years of experience in intelligent security systems.'
   },
   {
     id: 2,
-    icon: '🎯',
-    title: 'Customized Solutions',
-    description: 'Tailored security systems designed to meet your specific requirements.'
+    icon: '🧠',
+    title: 'Smart AI Solutions',
+    description: 'AI-powered security systems that learn and adapt to your specific environment.'
   },
   {
     id: 3,
-    icon: '🛠️',
-    title: 'Ongoing Support',
-    description: '24/7 technical support and maintenance services for peace of mind.'
+    icon: '🔄',
+    title: 'Predictive Support',
+    description: '24/7 AI-assisted support with predictive maintenance and automated responses.'
   },
   {
     id: 4,
-    icon: '💯',
-    title: 'Quality Guarantee',
-    description: 'Premium equipment and workmanship backed by comprehensive warranties.'
+    icon: '🎆',
+    title: 'AI Innovation Guarantee',
+    description: 'Cutting-edge AI equipment with continuous updates and learning capabilities.'
   }
 ]
 </script>
