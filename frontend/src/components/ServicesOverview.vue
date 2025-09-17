@@ -52,66 +52,66 @@ const services = [
   {
     id: 1,
     slug: 'camera-installation',
-    icon: '🤖',
-    title: 'AI-Powered Camera Systems',
-    description: 'Next-generation security cameras with artificial intelligence for smart detection and automated threat recognition.',
+    icon: '📹',
+    title: 'Security Camera Systems',
+    description: 'Advanced surveillance cameras with smart detection capabilities and high-definition recording for comprehensive security coverage.',
     features: [
-      'AI person & vehicle detection',
-      'Facial recognition technology',
-      'Smart motion tracking',
-      'Real-time threat alerts'
+      'Smart person & vehicle detection',
+      'High-definition recording',
+      'Motion tracking technology',
+      'Real-time alerts'
     ]
   },
   {
     id: 2,
     slug: 'networking-solutions',
-    icon: '🧠',
-    title: 'Smart Network Infrastructure',
-    description: 'AI-optimized network systems with intelligent traffic management and predictive maintenance.',
+    icon: '🔒',
+    title: 'Network Infrastructure',
+    description: 'Secure networking solutions with intelligent monitoring and automated alerts for reliable connectivity.',
     features: [
-      'AI-powered network optimization',
-      'Intelligent bandwidth allocation',
-      'Predictive maintenance alerts',
-      'Machine learning traffic analysis'
+      'Network optimization',
+      'Intelligent bandwidth management',
+      'Maintenance alerts',
+      'Traffic analysis'
     ]
   },
   {
     id: 3,
     slug: 'home-security',
-    icon: '🏡',
-    title: 'AI Home Protection',
-    description: 'Intelligent home security with AI-driven threat detection and automated response systems.',
+    icon: '🏠',
+    title: 'Home Security Solutions',
+    description: 'Complete residential protection with smart automation and intelligent alerts for peace of mind.',
     features: [
-      'AI behavioral pattern learning',
-      'Smart intruder detection',
-      'Voice recognition alerts',
-      'AI-powered false alarm reduction'
+      'Smart pattern recognition',
+      'Intruder detection',
+      'Mobile alerts',
+      'False alarm reduction'
     ]
   },
   {
     id: 4,
     slug: 'business-security',
     icon: '🏢',
-    title: 'Enterprise AI Security',
-    description: 'Advanced AI-driven security solutions with predictive analytics and automated threat response.',
+    title: 'Enterprise Security',
+    description: 'Scalable business security solutions with advanced analytics and intelligent monitoring for optimal protection.',
     features: [
-      'AI-powered threat prediction',
-      'Behavioral analytics dashboard',
-      'Automated incident response',
-      'Machine learning anomaly detection'
+      'Threat prediction',
+      'Analytics dashboard',
+      'Automated responses',
+      'Anomaly detection'
     ]
   },
   {
     id: 5,
     slug: 'audio-video-systems',
-    icon: '🎙️',
-    title: 'Smart AV & Communication',
-    description: 'AI-enhanced audio/video systems with intelligent sound optimization and automated meeting management.',
+    icon: '📡',
+    title: 'AV & Communication',
+    description: 'Professional audio/video systems with smart automation and seamless integration for modern workspaces.',
     features: [
-      'AI-powered sound optimization',
-      'Smart meeting room automation',
-      'Voice-activated controls',
-      'Automated camera tracking'
+      'Sound optimization',
+      'Meeting room automation',
+      'Voice controls',
+      'Camera tracking'
     ]
   }
 ]

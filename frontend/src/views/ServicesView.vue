@@ -106,12 +106,12 @@ const services = [
     id: 1,
     slug: 'camera-installation',
     icon: '📹',
-    title: 'Camera Installation',
-    description: 'Professional security camera installation with optimal positioning and configuration for maximum coverage and effectiveness.',
+    title: 'Security Camera Systems',
+    description: 'Professional security camera installation with smart detection capabilities and optimal positioning for maximum coverage and effectiveness.',
     features: [
       'Indoor and outdoor camera options',
       'HD, 4K, and night vision capabilities',
-      'Motion detection and smart alerts',
+      'Smart motion detection and alerts',
       'Remote viewing via mobile apps',
       'Cloud and local storage solutions'
     ],
@@ -126,9 +126,9 @@ const services = [
   {
     id: 2,
     slug: 'networking-solutions',
-    icon: '🌐',
-    title: 'Networking Solutions',
-    description: 'Complete network infrastructure design and implementation for reliable connectivity and optimal performance across your property.',
+    icon: '🔒',
+    title: 'Network Infrastructure',
+    description: 'Complete network infrastructure design with intelligent monitoring and implementation for reliable connectivity and optimal performance.',
     features: [
       'Network design and planning',
       'Wi-Fi optimization and coverage',
@@ -148,8 +148,8 @@ const services = [
     id: 3,
     slug: 'home-security',
     icon: '🏠',
-    title: 'Home Security',
-    description: 'Comprehensive residential security systems designed to protect your family and property with modern technology and smart integration.',
+    title: 'Home Security Solutions',
+    description: 'Comprehensive residential security systems with smart automation designed to protect your family and property with modern technology.',
     features: [
       'Motion sensors and door/window contacts',
       'Smart home integration',
@@ -170,8 +170,8 @@ const services = [
     slug: 'business-security',
     imageExt: 'png',
     icon: '🏢',
-    title: 'Business Security',
-    description: 'Enterprise-grade security solutions tailored for commercial properties with advanced features and compliance support.',
+    title: 'Enterprise Security',
+    description: 'Enterprise-grade security solutions with intelligent analytics tailored for commercial properties with advanced features and compliance support.',
     features: [
       'Multi-location monitoring',
       'Access control systems',
@@ -190,9 +190,9 @@ const services = [
   {
     id: 5,
     slug: 'audio-video-systems',
-    icon: '🎵',
-    title: 'Audio & Video Systems',
-    description: 'We take care of the design, installation, and setup so you can enjoy flawless performance from day one.',
+    icon: '📡',
+    title: 'AV & Communication Systems',
+    description: 'Professional audio/video systems with smart automation. We take care of the design, installation, and setup so you can enjoy flawless performance from day one.',
     features: [
       'High-quality speakers for home entertainment',
       'Conference room audio & video systems',
