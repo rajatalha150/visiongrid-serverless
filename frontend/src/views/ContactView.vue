@@ -2,8 +2,8 @@
   <div class="contact-page">
     <div class="page-hero">
       <div class="container">
-        <h1 class="page-title">Contact Us</h1>
-        <p class="page-subtitle">Get in touch for a free consultation</p>
+        <h1 class="page-title">Contact VisionGrid</h1>
+        <p class="page-subtitle">Initiate a consultation for your enterprise infrastructure</p>
       </div>
     </div>
     
@@ -11,42 +11,43 @@
       <div class="container">
         <div class="contact-content grid grid-2">
           <div class="contact-info">
-            <h2>Get In Touch</h2>
+            <h2>Connect With Our Engineers</h2>
             <p class="contact-description">
-              Ready to secure your property? Our team is here to help you find the 
-              perfect security solution. Contact us today for a free consultation and quote.
+              Ready to upgrade your operational security? Our certified specialists are available 
+              to architect a solution tailored to your specific infrastructure requirements. 
+              Request a technical consultation today.
             </p>
             
             <div class="contact-methods">
               <div class="contact-method">
-                <div class="method-icon">📞</div>
+                <div class="method-icon" v-html="icons.phone"></div>
                 <div class="method-info">
-                  <h4>Phone</h4>
+                  <h4>Technical Support & Sales</h4>
                   <p><a href="tel:862-235-4618">(862) 235-4618</a></p>
                 </div>
               </div>
               
               <div class="contact-method">
-                <div class="method-icon">📧</div>
+                <div class="method-icon" v-html="icons.email"></div>
                 <div class="method-info">
-                  <h4>Email</h4>
+                  <h4>General Inquiries</h4>
                   <p><a href="mailto:info@visiongrid.net">info@visiongrid.net</a></p>
                 </div>
               </div>
               
               <div class="contact-method">
-                <div class="method-icon">🕒</div>
+                <div class="method-icon" v-html="icons.clock"></div>
                 <div class="method-info">
-                  <h4>Business Hours</h4>
-                  <p>Monday - Friday: 8AM - 6PM<br>Weekend: By appointment</p>
+                  <h4>Operational Hours</h4>
+                  <p>Mon - Fri: 08:00 - 18:00 EST<br>Weekend: By Appointment Only</p>
                 </div>
               </div>
               
               <div class="contact-method">
-                <div class="method-icon">⚡</div>
+                <div class="method-icon" v-html="icons.zap"></div>
                 <div class="method-info">
-                  <h4>Response Time</h4>
-                  <p>Within 24 hours<br>Emergency: Same day</p>
+                  <h4>SLA Response Time</h4>
+                  <p>Standard: < 24 Hours<br>Critical: Same Day Dispatch</p>
                 </div>
               </div>
             </div>
@@ -61,7 +62,7 @@
     
     <section class="section bg-light">
       <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="section-title">Technical FAQ</h2>
         <div class="faq-grid grid grid-2">
           <div class="faq-item" v-for="faq in faqs" :key="faq.id">
             <h4>{{ faq.question }}</h4>
@@ -76,43 +77,50 @@
 <script setup lang="ts">
 import ContactForm from '@/components/ContactForm.vue'
 
+const icons = {
+  phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`,
+  email: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`,
+  clock: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
+  zap: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`
+}
+
 const faqs = [
   {
     id: 1,
-    question: 'How long does installation take?',
-    answer: 'Most installations are completed within 4-8 hours depending on the system complexity and property size.'
+    question: 'What is the typical deployment timeline?',
+    answer: 'Standard commercial deployments are executed within 4-8 hours. Complex enterprise integration timelines are established during the initial site architecture review.'
   },
   {
     id: 2,
-    question: 'Do you offer warranties?',
-    answer: 'Yes, we provide comprehensive warranties on all equipment and installation work, typically 2-5 years depending on the product.'
+    question: 'Are hardware warranties included?',
+    answer: 'Yes, we provide comprehensive enterprise-grade warranties on all hardware and installation labor, typically ranging from 2-5 years based on the component tier.'
   },
   {
     id: 3,
-    question: 'Can I monitor my system remotely?',
-    answer: 'Absolutely! All our systems include mobile app access for remote monitoring and control from anywhere.'
+    question: 'Is remote fleet management supported?',
+    answer: 'Absolutely. All our ecosystems are engineered with secure, encrypted remote access for real-time fleet monitoring and management via our dedicated mobile and web portals.'
   },
   {
     id: 4,
-    question: 'What if I need support after installation?',
-    answer: 'We provide 24/7 technical support and maintenance services to ensure your system operates at peak performance.'
+    question: 'Do you offer post-deployment support SLAs?',
+    answer: 'We offer tiered support SLAs including 24/7 critical response and predictive maintenance packages to ensure 99.9% system uptime.'
   },
   {
     id: 5,
-    question: 'Do you work with existing systems?',
-    answer: 'Yes, we can upgrade and integrate with many existing security systems to enhance their capabilities.'
+    question: 'Can you integrate with legacy infrastructure?',
+    answer: 'Our engineering team specializes in hybrid environments, capable of retrofitting and integrating modern intelligent sensors with existing analog or IP-based legacy systems.'
   },
   {
     id: 6,
-    question: 'What areas do you serve?',
-    answer: 'We serve residential and commercial customers throughout the metropolitan area. Contact us to confirm service in your location.'
+    question: 'What is your service territory?',
+    answer: 'We provide comprehensive coverage for residential and commercial clients throughout the greater metropolitan region. Please contact our dispatch team for specific site eligibility.'
   }
 ]
 </script>
 
 <style scoped>
 .page-hero {
-  background: linear-gradient(135deg, var(--color-dark) 0%, #2c3e50 100%);
+  background: var(--gradient-hero);
   color: var(--color-white);
   padding: 120px 0 80px;
   text-align: center;
@@ -123,11 +131,13 @@ const faqs = [
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--color-text);
 }
 
 .page-subtitle {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-gray-dark);
+  font-weight: 500;
 }
 
 .contact-content {
@@ -146,7 +156,7 @@ const faqs = [
 
 .contact-info h2 {
   font-size: 2rem; /* Reduced from 2.5rem */
-  color: var(--color-dark);
+  color: var(--color-text);
   margin-bottom: 0.5rem; /* Reduced from 1rem */
 }
 
@@ -178,11 +188,15 @@ const faqs = [
   margin-bottom: 0;
   margin-top: 0.1rem;
   margin-right: 0.75rem; /* Reduced from 1rem */
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .method-info h4 {
   font-size: 1.1rem; /* Reduced from 1.2rem */
-  color: var(--color-dark);
+  color: var(--color-text);
   margin-bottom: 0.25rem; /* Reduced from 0.5rem */
   font-weight: 700;
 }
@@ -214,7 +228,15 @@ const faqs = [
 }
 
 .bg-light {
-  background-color: var(--color-gray-light);
+  background-color: var(--bg-secondary);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  font-weight: 700;
 }
 
 .faq-grid {
@@ -223,16 +245,24 @@ const faqs = [
 }
 
 .faq-item {
-  background: var(--color-white);
+  background: var(--bg-card);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .faq-item h4 {
-  color: var(--color-dark);
+  color: var(--color-text);
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .faq-item p {

@@ -11,6 +11,7 @@
           <RouterLink to="/" class="navbar-link" @click="closeMenu">Home</RouterLink>
           <RouterLink to="/about" class="navbar-link" @click="closeMenu">About</RouterLink>
           <RouterLink to="/services" class="navbar-link" @click="closeMenu">Services</RouterLink>
+          <a href="https://downloads.visiongrid.net" class="navbar-link" target="_blank" rel="noopener noreferrer" @click="closeMenu">Applications</a>
           <RouterLink to="/contact" class="navbar-link" @click="closeMenu">Contact</RouterLink>
         </div>
         

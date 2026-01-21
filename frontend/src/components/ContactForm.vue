@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="submitForm" class="contact-form glass-effect">
     <div class="form-header">
-      <h3 class="form-title gradient-text">Send us a message</h3>
-      <p class="form-subtitle">We'll get back to you within 24 hours</p>
+      <h3 class="form-title gradient-text">Start Your Project</h3>
+      <p class="form-subtitle">Our engineering team will review your requirements within 24 hours</p>
     </div>
     
     <div class="form-row">
       <div class="form-group">
         <label for="name" class="form-label">
-          <span class="label-text">Full Name</span>
+          <span class="label-text">Full Name / Point of Contact</span>
           <span class="required-indicator">*</span>
         </label>
         <div class="input-wrapper">
@@ -17,20 +17,20 @@
             v-model="form.name"
             type="text"
             required
-            placeholder="Full name"
+            placeholder="John Doe"
             class="form-input"
             :class="{ 'error': errors.name }"
             @blur="validateField('name')"
             @input="clearError('name')"
           />
-          <div class="input-icon">👤</div>
+          <div class="input-icon" v-html="icons.user"></div>
         </div>
         <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
       </div>
       
       <div class="form-group">
         <label for="email" class="form-label">
-          <span class="label-text">Email Address</span>
+          <span class="label-text">Business Email</span>
           <span class="required-indicator">*</span>
         </label>
         <div class="input-wrapper">
@@ -39,13 +39,13 @@
             v-model="form.email"
             type="email"
             required
-            placeholder="Email address"
+            placeholder="name@company.com"
             class="form-input"
             :class="{ 'error': errors.email }"
             @blur="validateField('email')"
             @input="clearError('email')"
           />
-          <div class="input-icon">📧</div>
+          <div class="input-icon" v-html="icons.email"></div>
         </div>
         <div v-if="errors.email" class="error-message">{{ errors.email }}</div>
       </div>
@@ -54,49 +54,49 @@
     <div class="form-row three-col">
       <div class="form-group">
         <label for="phone" class="form-label">
-          <span class="label-text">Phone</span>
+          <span class="label-text">Direct Phone</span>
         </label>
         <div class="input-wrapper">
           <input
             id="phone"
             v-model="form.phone"
             type="tel"
-            placeholder="Phone number"
+            placeholder="(555) 123-4567"
             class="form-input"
           />
-          <div class="input-icon">📞</div>
+          <div class="input-icon" v-html="icons.phone"></div>
         </div>
       </div>
       
       <div class="form-group">
         <label for="company" class="form-label">
-          <span class="label-text">Company</span>
+          <span class="label-text">Organization</span>
         </label>
         <div class="input-wrapper">
           <input
             id="company"
             v-model="form.company"
             type="text"
-            placeholder="Company name"
+            placeholder="Company Name"
             class="form-input"
           />
-          <div class="input-icon">🏢</div>
+          <div class="input-icon" v-html="icons.building"></div>
         </div>
       </div>
 
       <div class="form-group">
         <label for="service" class="form-label">
-          <span class="label-text">Service</span>
+          <span class="label-text">Required Service</span>
         </label>
         <div class="select-wrapper">
           <select id="service" v-model="form.service" class="form-select">
-            <option value="">Select service</option>
-            <option value="camera-installation">Camera Install</option>
-            <option value="networking-solutions">Networking</option>
-            <option value="home-security">Home Security</option>
-            <option value="business-security">Biz Security</option>
-            <option value="consultation">Consultation</option>
-            <option value="other">Other</option>
+            <option value="">Select infrastructure type</option>
+            <option value="camera-installation">Smart Surveillance</option>
+            <option value="networking-solutions">Enterprise Networking</option>
+            <option value="home-security">Residential Ecosystem</option>
+            <option value="business-security">Commercial Access Control</option>
+            <option value="consultation">Technical Consultation</option>
+            <option value="other">Other Inquiry</option>
           </select>
           <div class="select-arrow">▼</div>
         </div>
@@ -105,7 +105,7 @@
     
     <div class="form-group">
       <label for="message" class="form-label">
-        <span class="label-text">Message</span>
+        <span class="label-text">Project Details</span>
         <span class="required-indicator">*</span>
       </label>
       <div class="textarea-wrapper">
@@ -114,7 +114,7 @@
           v-model="form.message"
           rows="5"
           required
-          placeholder="Tell us about your security needs and how we can help..."
+          placeholder="Please describe your site requirements, estimated square footage, and any specific compliance needs..."
           class="form-textarea"
           :class="{ 'error': errors.message }"
           @blur="validateField('message')"
@@ -129,10 +129,10 @@
       <button type="submit" class="btn btn-primary btn-lg loading-shimmer" :disabled="isSubmitting">
         <span v-if="isSubmitting" class="btn-loading">
           <span class="loading-spinner"></span>
-          Sending...
+          Processing...
         </span>
         <span v-else class="btn-content">
-          <span>Send Message</span>
+          <span>Submit Inquiry</span>
           <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
           </svg>
@@ -150,6 +150,13 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
 import { getApiUrl, logApiUrl, testApiConnection } from '@/utils/api'
+
+const icons = {
+  user: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`,
+  email: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`,
+  phone: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`,
+  building: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22.01"></line><line x1="15" y1="22" x2="15" y2="22.01"></line><line x1="12" y1="22" x2="12" y2="22.01"></line><rect x="9" y="8" width="2" height="2"></rect><rect x="9" y="12" width="2" height="2"></rect><rect x="9" y="16" width="2" height="2"></rect><rect x="13" y="8" width="2" height="2"></rect><rect x="13" y="12" width="2" height="2"></rect><rect x="13" y="16" width="2" height="2"></rect></svg>`
+}
 
 // Log API URL for debugging
 logApiUrl()
@@ -333,13 +340,13 @@ const submitForm = async () => {
   align-items: center;
   gap: 0.5rem;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-dark);
+  color: var(--color-text); /* Changed from var(--color-dark) */
   margin-bottom: 0.25rem; /* Reduced from var(--spacing-sm) */
   font-size: 0.9rem; /* Slightly smaller */
 }
 
 .label-text {
-  color: var(--color-dark);
+  color: var(--color-text); /* Changed from var(--color-dark) */
 }
 
 .required-indicator {
@@ -364,12 +371,13 @@ const submitForm = async () => {
 .form-textarea {
   width: 100%;
   padding: 10px 40px 10px 12px; /* Reduced padding */
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--border-color); /* Changed from #e9ecef to theme var */
   border-radius: var(--radius-lg);
   font-size: 0.95rem; /* Slightly smaller font */
   font-family: inherit;
   transition: var(--transition-bounce);
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-card); /* Changed from rgba(255, 255, 255, 0.8) to theme var */
+  color: var(--color-text); /* Ensure text is visible in dark mode */
   backdrop-filter: blur(10px);
 }
 
@@ -395,7 +403,11 @@ const submitForm = async () => {
   transform: translateY(-50%);
   font-size: 1.2rem;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.8;
+  color: var(--color-primary); /* Ensure icon uses primary color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .select-wrapper {
