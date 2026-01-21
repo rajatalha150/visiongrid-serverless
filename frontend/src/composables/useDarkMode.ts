@@ -85,9 +85,10 @@ export function useDarkMode() {
     // Listen for system preference changes
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     
-    const handleSystemChange = () => {
+    const handleSystemChange = (e: MediaQueryListEvent) => {
+      // If we are in 'system' mode, update the theme based on the new system preference
       if (themeMode.value === 'system') {
-        updateTheme()
+        applyTheme(e.matches)
       }
     }
     
@@ -102,14 +103,10 @@ export function useDarkMode() {
     // Initial theme application
     updateTheme()
     
-    // Cleanup function
-    return () => {
-      if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener('change', handleSystemChange)
-      } else {
-        mediaQuery.removeListener(handleSystemChange)
-      }
-    }
+    // Cleanup function not strictly necessary for singleton-like composable usage in App.vue,
+    // but good practice if used in components that unmount.
+    // Since we call this onMounted, it's safer to not return cleanup here directly
+    // or handle it in the component that calls it.
   }
   
   // Watch for theme mode changes

@@ -16,17 +16,35 @@
         
         <div class="navbar-actions">
           <button 
-            class="theme-toggle" 
+            class="theme-toggle badge-style" 
             @click="toggleDarkMode"
             :aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
             :title="`Switch to ${isDark ? 'light' : 'dark'} mode`"
           >
-            <svg v-if="!isDark" class="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21.53 15.93C20.08 17.38 18.05 18.15 15.97 17.97C11.94 17.61 8.68 14.35 8.32 10.32C8.14 8.24 8.91 6.21 10.36 4.76C10.75 4.37 10.65 3.74 10.18 3.47C6.07 1.32 1.07 3.36 1.07 8.5C1.07 14.85 6.22 20 12.57 20C17.71 20 19.75 14.79 17.6 10.68C17.33 10.21 16.7 10.11 16.31 10.5C15.45 11.36 14.36 11.93 13.18 12.05C12 12.17 10.8 11.83 9.85 11.13C8.9 10.43 8.24 9.42 8.04 8.27C7.84 7.12 8.12 5.94 8.82 4.99L21.53 15.93Z" fill="currentColor"/>
-            </svg>
-            <svg v-else class="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7ZM2 13H4C4.55 13 5 12.55 5 12C5 11.45 4.55 11 4 11H2C1.45 11 1 11.45 1 12C1 12.55 1.45 13 2 13ZM20 13H22C22.55 13 23 12.55 23 12C23 11.45 22.55 11 22 11H20C19.45 11 19 11.45 19 12C19 12.55 19.45 13 20 13ZM11 2V4C11 4.55 11.45 5 12 5C12.55 5 13 4.55 13 4V2C13 1.45 12.55 1 12 1C11.45 1 11 1.45 11 2ZM11 20V22C11 22.55 11.45 23 12 23C12.55 23 13 22.55 13 22V20C13 19.45 12.55 19 12 19C11.45 19 11 19.45 11 20ZM5.99 4.58C5.6 4.19 4.96 4.19 4.58 4.58C4.19 4.96 4.19 5.61 4.58 5.99L5.64 7.05C6.03 7.44 6.67 7.44 7.05 7.05C7.44 6.67 7.44 6.03 7.05 5.64L5.99 4.58ZM18.36 16.95C17.97 16.56 17.33 16.56 16.95 16.95C16.56 17.33 16.56 17.97 16.95 18.36L18.01 19.42C18.39 19.8 19.04 19.8 19.42 19.42C19.8 19.04 19.8 18.39 19.42 18.01L18.36 16.95ZM19.42 5.99C19.8 5.61 19.8 4.96 19.42 4.58C19.04 4.19 18.39 4.19 18.01 4.58L16.95 5.64C16.56 6.03 16.56 6.67 16.95 7.05C17.33 7.44 17.97 7.44 18.36 7.05L19.42 5.99ZM7.05 16.95C7.44 17.33 7.44 17.97 7.05 18.36L5.99 19.42C5.61 19.8 4.96 19.8 4.58 19.42C4.19 19.04 4.19 18.39 4.58 18.01L5.64 16.95C6.03 16.56 6.67 16.56 7.05 16.95Z" fill="currentColor"/>
-            </svg>
+            <div class="toggle-content">
+              <!-- If current is NOT dark (Light mode), show Dark option -->
+              <div v-if="!isDark" class="mode-indicator dark">
+                <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="mode-text">Dark</span>
+              </div>
+              <!-- If current IS dark (Dark mode), show Light option -->
+              <div v-else class="mode-indicator light">
+                <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <span class="mode-text">Light</span>
+              </div>
+            </div>
           </button>
         </div>
         
@@ -160,55 +178,51 @@ const closeMenu = () => {
   gap: 1rem;
 }
 
-.theme-toggle {
+.theme-toggle.badge-style {
+  width: auto;
+  min-width: 80px;
+  height: 32px;
+  border-radius: 9999px;
+  padding: 0 12px;
+  background: var(--bg-tertiary); /* Changed from bg-secondary for better contrast */
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle.badge-style:hover {
+  background: var(--bg-secondary); /* Darker on hover */
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.toggle-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: var(--radius-full);
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: var(--transition-bounce);
-  position: relative;
-  overflow: hidden;
+  width: 100%;
 }
 
-.theme-toggle::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: var(--transition);
-  border-radius: inherit;
-}
-
-.theme-toggle:hover::before {
-  opacity: 0.1;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-md);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
+.mode-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .theme-icon {
-  width: 20px;
-  height: 20px;
-  transition: var(--transition);
-  position: relative;
-  z-index: 1;
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
 }
 
-.theme-toggle:hover .theme-icon {
-  transform: rotate(180deg);
+.mode-text {
+  color: var(--color-primary); /* Changed from var(--color-text) to match icon */
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
 }
 
 @media (max-width: 768px) {
