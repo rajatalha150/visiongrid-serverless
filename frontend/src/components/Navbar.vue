@@ -193,6 +193,13 @@ const closeMenu = () => {
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
+  color: var(--color-text); /* Ensure base text color is set */
+}
+
+/* Explicitly target dark mode to ensure visibility */
+:root[class~="dark"] .theme-toggle.badge-style {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .theme-toggle.badge-style:hover {

@@ -6,6 +6,7 @@
     </main>
     <Footer />
     <Chatbot />
+    <CookieConsent />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Chatbot from './components/Chatbot.vue'
+import CookieConsent from './components/CookieConsent.vue'
 import { useScrollAnimation } from './composables/useScrollAnimation'
 import { useDarkMode } from './composables/useDarkMode'
 
