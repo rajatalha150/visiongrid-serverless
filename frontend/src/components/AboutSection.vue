@@ -5,22 +5,23 @@
         <div class="about-text">
           <h2 class="section-title text-left">About VisionGrid</h2>
           <p class="about-description">
-            Founded with a mission to deliver enterprise-grade infrastructure solutions, VisionGrid combines 
-            certified expertise with reliable technology to build the foundation of your business operations.
+            VisionGrid delivers enterprise-grade security and infrastructure ecosystems. We combine 
+            predictive intelligence with certified engineering to build resilient systems that 
+            protect your assets around the clock.
           </p>
           <p class="about-description">
-            Our team of certified engineers brings years of experience in structured cabling, 
-            network design, and security systems. We focus on delivering scalable solutions 
-            that grow with your business needs, ensuring maximum uptime and security.
+            From structured cabling to autonomous threat detection, our solutions are designed for 
+            scalability and zero-trust security. We don't just install hardware; we architect the 
+            future of your operational safety.
           </p>
           
           <div class="about-stats">
             <div class="stat-item">
-              <div class="stat-number">500+</div>
+              <div class="stat-number">100+</div>
               <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">10+</div>
+              <div class="stat-number">5+</div>
               <div class="stat-label">Years Experience</div>
             </div>
             <div class="stat-item">
@@ -149,8 +150,9 @@ const features = [
 
 .about-features h3 {
   font-size: 1.8rem;
-  color: var(--color-dark);
+  color: var(--color-text);
   margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 .feature-list {
@@ -161,26 +163,40 @@ const features = [
 
 .feature-item {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   align-items: flex-start;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
 }
 
 .feature-icon {
-  font-size: 1.5rem;
   flex-shrink: 0;
-  color: var(--color-primary); /* Ensure icon is visible */
+  color: var(--color-primary);
+  background: var(--bg-secondary);
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-content h4 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: var(--color-dark);
-  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
 }
 
 .feature-content p {
   color: var(--color-gray);
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {

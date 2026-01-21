@@ -105,14 +105,14 @@ const features = [
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
   margin-bottom: 1rem;
-  color: #0f172a; /* Explicit very dark slate for title */
+  color: var(--color-text); /* Use theme variable for text color */
   letter-spacing: -0.02em;
 }
 
 .highlight {
   position: relative;
   display: inline-block;
-  color: #1e3a8a; /* Deep blue for high contrast against silver */
+  color: var(--color-primary); /* Use theme primary color */
 }
 
 .highlight::after {
@@ -131,8 +131,8 @@ const features = [
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: #334155; /* Dark slate gray for subtitle */
-  font-weight: var(--font-weight-medium); /* Increased weight for readability */
+  color: var(--color-gray); /* Use theme gray */
+  font-weight: var(--font-weight-medium);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -171,18 +171,18 @@ const features = [
   gap: 1rem;
   padding: 1.5rem;
   border-radius: var(--radius-lg);
-  background: #f8fafc; /* Pure white/lightest gray card background */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border: 1px solid #cbd5e1; /* Distinct border */
+  background: var(--bg-card); /* Use theme card background */
+  box-shadow: var(--shadow-md); /* Use theme shadow */
+  border: 1px solid var(--border-color); /* Use theme border color */
   transition: var(--transition);
   min-width: 160px; 
 }
 
 .feature-item:hover {
   transform: translateY(-5px);
-  background: #ffffff;
+  background: var(--bg-card-hover); /* Use theme hover background */
   border-color: var(--color-primary);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .feature-icon {
@@ -191,13 +191,13 @@ const features = [
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background: #e2e8f0; /* Light gray circle bg */
+  background: var(--bg-secondary); /* Use theme secondary background */
   border-radius: 50%;
 }
 
 .feature-item span {
-  font-weight: var(--font-weight-bold); /* Bold text */
-  color: #1e293b; /* Dark Slate */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text); /* Use theme text color */
   font-size: 1.05rem; 
   letter-spacing: 0.5px;
 }

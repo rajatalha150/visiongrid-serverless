@@ -249,16 +249,16 @@
     "training": "Ongoing manufacturer training, advanced technology certifications"
   },
   "equipment_brands": {
-    "cameras": ["Hikvision Smart Series", "Dahua WizMind", "Axis ARTPEC", "Bosch Video Analytics", "Hanwha Wisenet"],
-    "networking": ["Ubiquiti UniFi", "Cisco Meraki", "Netgear Orbi Pro", "TP-Link Omada SDN"],
-    "security_systems": ["Honeywell Pro-Watch", "DSC PowerSeries Neo", "Qolsys IQ Panel", "2GIG Edge"],
-    "audio_video": ["Sonos Pro", "Bose Professional", "Yamaha ADECIA", "Epson Interactive"]
+    "ai_cameras": ["Hikvision Smart Series", "Dahua WizMind", "Axis ARTPEC", "Bosch Video Analytics", "Hanwha Wisenet"],
+    "smart_networking": ["Ubiquiti UniFi", "Cisco Meraki", "Netgear Orbi Pro", "TP-Link Omada SDN"],
+    "smart_security_systems": ["Honeywell Pro-Watch", "DSC PowerSeries Neo", "Qolsys IQ Panel", "2GIG Edge"],
+    "smart_av": ["Sonos Pro", "Bose Professional", "Yamaha ADECIA", "Epson Interactive"]
   },
   "special_offers": {
     "current_promotions": "Ask about our system upgrade promotions and smart security package deals!",
     "referral_program": "Refer a friend and both receive a discount on security services",
     "maintenance_plans": "Predictive maintenance plans with priority support",
-    "system_upgrade": "Upgrade existing systems to smart solutions with 20% discount"
+    "smart_upgrade": "Upgrade existing systems to smart solutions with 20% discount"
   },
   "advanced_features": {
     "computer_vision": {

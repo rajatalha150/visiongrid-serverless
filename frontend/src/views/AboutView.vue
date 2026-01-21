@@ -3,7 +3,7 @@
     <div class="page-hero">
       <div class="container">
         <h1 class="page-title">About VisionGrid</h1>
-        <p class="page-subtitle">Your trusted partner in security solutions</p>
+        <p class="page-subtitle">Pioneering Intelligent Security & Infrastructure Solutions</p>
       </div>
     </div>
     
@@ -11,26 +11,29 @@
       <div class="container">
         <div class="content-grid grid grid-2">
           <div class="content-text">
-            <h2>Our Story</h2>
+            <h2>Our Mission</h2>
             <p>
-              VisionGrid was founded with a simple mission: to revolutionize security solutions 
-              by combining cutting-edge technology with exceptional customer service. We believe 
-              that everyone deserves to feel safe and secure in their home or business.
+              At VisionGrid, we are dedicated to revolutionizing the security landscape through innovative technology. 
+              Our mission is to protect what matters most by deploying predictive, intelligent, and automated solutions 
+              that go beyond traditional surveillance.
             </p>
             <p>
-              Since our inception, we have been dedicated to providing customized security 
-              solutions that meet the unique needs of each client. Our team of certified 
-              technicians brings years of experience and a passion for excellence to every project.
+              We bridge the gap between physical security and digital intelligence, offering enterprise-grade 
+              infrastructure that adapts to modern threats. From smart camera ecosystems to self-healing networks, 
+              we build the foundation for a safer, smarter future.
             </p>
             <p>
-              We focus on customer satisfaction and service excellence, ensuring that every 
-              installation meets our high standards and exceeds our clients' expectations.
+              Our commitment extends beyond installation; we partner with our clients to ensure their systems 
+              evolve with their needs, delivering unmatched reliability and peace of mind.
             </p>
           </div>
           
           <div class="content-image">
             <div class="image-placeholder">
-              <span>Professional Team Image</span>
+              <div class="placeholder-content">
+                <div class="placeholder-icon" v-html="icons.building"></div>
+                <span>VisionGrid Headquarters</span>
+              </div>
             </div>
           </div>
         </div>
@@ -39,10 +42,10 @@
     
     <section class="section bg-light">
       <div class="container">
-        <h2 class="section-title">Our Values</h2>
+        <h2 class="section-title">Core Values</h2>
         <div class="values-grid grid grid-3">
           <div class="value-card card" v-for="value in values" :key="value.id">
-            <div class="value-icon">{{ value.icon }}</div>
+            <div class="value-icon" v-html="value.icon"></div>
             <h3>{{ value.title }}</h3>
             <p>{{ value.description }}</p>
           </div>
@@ -52,10 +55,10 @@
     
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Why Choose Us</h2>
+        <h2 class="section-title">Why Partner With Us</h2>
         <div class="benefits-grid grid grid-2">
           <div class="benefit-item" v-for="benefit in benefits" :key="benefit.id">
-            <div class="benefit-icon">{{ benefit.icon }}</div>
+            <div class="benefit-icon" v-html="benefit.icon"></div>
             <div class="benefit-content">
               <h4>{{ benefit.title }}</h4>
               <p>{{ benefit.description }}</p>
@@ -68,58 +71,69 @@
 </template>
 
 <script setup lang="ts">
+const icons = {
+  building: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22.01"></line><line x1="15" y1="22" x2="15" y2="22.01"></line><line x1="12" y1="22" x2="12" y2="22.01"></line><rect x="9" y="8" width="2" height="2"></rect><rect x="9" y="12" width="2" height="2"></rect><rect x="9" y="16" width="2" height="2"></rect><rect x="13" y="8" width="2" height="2"></rect><rect x="13" y="12" width="2" height="2"></rect><rect x="13" y="16" width="2" height="2"></rect></svg>`,
+  innovation: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`,
+  users: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
+  cert: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`,
+  zap: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`,
+  cpu: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>`,
+  headset: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>`
+}
+
 const values = [
   {
     id: 1,
-    icon: '🎯',
-    title: 'Excellence',
-    description: 'We strive for perfection in every installation and service we provide.'
+    icon: icons.innovation,
+    title: 'Innovation First',
+    description: 'Pioneering the future of security with intelligent analytics and smart integration.'
   },
   {
     id: 2,
-    icon: '🤝',
-    title: 'Trust',
-    description: 'Building lasting relationships through honest, reliable service.'
+    icon: icons.shield,
+    title: 'Unwavering Integrity',
+    description: 'Building trust through transparent solutions and a commitment to absolute safety.'
   },
   {
     id: 3,
-    icon: '💡',
-    title: 'Innovation',
-    description: 'Staying ahead with the latest security technology and solutions.'
+    icon: icons.users,
+    title: 'Client-Centric',
+    description: 'Designing bespoke systems that perfectly align with your unique operational needs.'
   }
 ]
 
 const benefits = [
   {
     id: 1,
-    icon: '🏆',
-    title: 'Certified Technicians',
-    description: 'Our team holds industry certifications and receives ongoing training.'
+    icon: icons.cert,
+    title: 'Elite Certified Engineers',
+    description: 'Our team comprises industry-vetted experts with top-tier certifications in security and networking.'
   },
   {
     id: 2,
-    icon: '⚡',
-    title: 'Quick Installation',
-    description: 'Efficient installation process with minimal disruption to your routine.'
+    icon: icons.zap,
+    title: 'Rapid Deployment',
+    description: 'Streamlined installation protocols ensure your system is active with minimal operational disruption.'
   },
   {
     id: 3,
-    icon: '📱',
-    title: 'Modern Technology',
-    description: 'Latest security cameras and networking equipment for optimal performance.'
+    icon: icons.cpu,
+    title: 'Next-Gen Technology',
+    description: 'Deploying advanced neural processing hardware for real-time threat detection and analytics.'
   },
   {
     id: 4,
-    icon: '💬',
-    title: 'Customer Support',
-    description: '24/7 support available to help with any questions or issues.'
+    icon: icons.headset,
+    title: '24/7 Critical Support',
+    description: 'Round-the-clock technical assistance and predictive maintenance to keep your systems online.'
   }
 ]
 </script>
 
 <style scoped>
 .page-hero {
-  background: linear-gradient(135deg, var(--color-dark) 0%, #2c3e50 100%);
+  background: var(--gradient-hero);
   color: var(--color-white);
   padding: 120px 0 80px;
   text-align: center;
@@ -130,27 +144,30 @@ const benefits = [
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--color-text); /* Use theme text color instead of hardcoded #0f172a */
 }
 
 .page-subtitle {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-gray-dark); /* Use theme gray instead of hardcoded #334155 */
+  font-weight: 500;
 }
 
 .content-grid {
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .content-text h2 {
-  font-size: 2rem;
-  color: var(--color-dark);
+  font-size: 2.2rem;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .content-text p {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--color-gray);
   margin-bottom: 1.5rem;
 }
@@ -162,18 +179,39 @@ const benefits = [
 
 .image-placeholder {
   width: 100%;
-  height: 300px;
-  background: var(--color-gray-light);
-  border-radius: 12px;
+  height: 400px;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gray);
-  font-size: 1.2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-primary);
+}
+
+.placeholder-content span {
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .bg-light {
-  background-color: var(--color-gray-light);
+  background-color: var(--bg-secondary);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  font-weight: 700;
 }
 
 .values-grid {
@@ -182,16 +220,32 @@ const benefits = [
 
 .value-card {
   text-align: center;
+  padding: 2rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 .value-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  display: inline-flex;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 50%;
 }
 
 .value-card h3 {
   font-size: 1.5rem;
-  color: var(--color-dark);
+  color: var(--color-text);
   margin-bottom: 1rem;
 }
 
@@ -207,19 +261,36 @@ const benefits = [
 
 .benefit-item {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: flex-start;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.benefit-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .benefit-icon {
-  font-size: 2rem;
   flex-shrink: 0;
+  color: var(--color-primary);
+  background: var(--bg-secondary);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .benefit-content h4 {
-  font-size: 1.3rem;
-  color: var(--color-dark);
+  font-size: 1.2rem;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .benefit-content p {
@@ -237,13 +308,13 @@ const benefits = [
   }
   
   .image-placeholder {
-    height: 200px;
+    height: 250px;
   }
   
   .benefit-item {
     flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
+    text-align: left;
+    gap: 1rem;
   }
 }
 </style>
