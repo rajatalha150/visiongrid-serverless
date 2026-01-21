@@ -111,9 +111,10 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-links a {
-  color: var(--text-secondary);
+  color: var(--color-gray-dark); /* Readable links */
   text-decoration: none;
   transition: var(--transition);
+  font-weight: 500;
 }
 
 .footer-links a:hover {
@@ -121,12 +122,12 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .contact-info p {
-  color: var(--text-secondary);
+  color: var(--color-gray-dark);
   margin-bottom: 0.5rem;
 }
 
 .contact-info strong {
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 .footer-bottom {

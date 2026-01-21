@@ -131,55 +131,73 @@ const faqs = [
 }
 
 .contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Give form slightly more space (was 1fr 1fr or flex) */
+  gap: 3rem; /* Reduce gap to fit both side-by-side */
   align-items: flex-start;
-  gap: 4rem;
+}
+
+.contact-info {
+  width: 100%;
+  text-align: left; /* Reset text align */
+  max-width: none;
+  margin: 0;
 }
 
 .contact-info h2 {
-  font-size: 2rem;
+  font-size: 2rem; /* Reduced from 2.5rem */
   color: var(--color-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduced from 1rem */
 }
 
 .contact-description {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1rem; /* Reduced from 1.2rem */
+  line-height: 1.5; /* Reduced from 1.7 */
   color: var(--color-gray);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
 }
 
 .contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 1.25rem; /* Reduced from 2rem */
+  margin-top: 1rem; /* Reduced from 2rem */
 }
 
 .contact-method {
-  display: flex;
-  gap: 1rem;
+  flex: auto;
+  flex-direction: row;
   align-items: flex-start;
+  text-align: left;
 }
 
 .method-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  margin-top: 0.2rem;
+  font-size: 1.25rem; /* Reduced from 1.5rem */
+  margin-bottom: 0;
+  margin-top: 0.1rem;
+  margin-right: 0.75rem; /* Reduced from 1rem */
 }
 
 .method-info h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Reduced from 1.2rem */
   color: var(--color-dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem; /* Reduced from 0.5rem */
+  font-weight: 700;
 }
 
 .method-info p {
   color: var(--color-gray);
-  line-height: 1.5;
+  line-height: 1.4; /* Reduced from 1.5 */
+  font-size: 0.95rem; /* Slightly smaller text */
+  margin: 0;
 }
 
 .method-info a {
   color: var(--color-primary);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .method-info a:hover {
@@ -187,10 +205,12 @@ const faqs = [
 }
 
 .contact-form-section {
-  background: var(--color-white);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
 }
 
 .bg-light {
@@ -218,6 +238,13 @@ const faqs = [
 .faq-item p {
   color: var(--color-gray);
   line-height: 1.6;
+}
+
+@media (max-width: 992px) { /* Breakpoint for side-by-side layout */
+  .contact-content {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 768px) {

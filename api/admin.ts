@@ -1,18 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
-import { promises as fs } from 'fs'
-import path from 'path'
-
-interface ContactInquiry {
-  id: number
-  name: string
-  email: string
-  phone?: string | null
-  company?: string | null
-  message: string
-  service?: string | null
-  created_at: string
-  status: 'new' | 'contacted' | 'closed'
-}
+import { getInquiries, updateInquiryStatus } from './db'
 
 interface InquiryStats {
   total: number
@@ -21,32 +8,7 @@ interface InquiryStats {
   closed: number
 }
 
-const DATA_FILE = path.join(process.cwd(), 'data', 'inquiries.json')
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
-
-async function ensureDataDirectory() {
-  const dataDir = path.dirname(DATA_FILE)
-  try {
-    await fs.access(dataDir)
-  } catch {
-    await fs.mkdir(dataDir, { recursive: true })
-  }
-}
-
-async function readInquiries(): Promise<ContactInquiry[]> {
-  try {
-    await ensureDataDirectory()
-    const data = await fs.readFile(DATA_FILE, 'utf-8')
-    return JSON.parse(data)
-  } catch {
-    return []
-  }
-}
-
-async function writeInquiries(inquiries: ContactInquiry[]): Promise<void> {
-  await ensureDataDirectory()
-  await fs.writeFile(DATA_FILE, JSON.stringify(inquiries, null, 2))
-}
 
 function authenticateAdmin(req: VercelRequest): boolean {
   const password = req.headers.authorization?.toString().replace('Bearer ', '')
@@ -82,7 +44,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const inquiries = await readInquiries()
+    const inquiries = await getInquiries()
 
     // Get inquiries with pagination
     if (req.method === 'GET' && action === 'inquiries') {
@@ -90,6 +52,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const limit = parseInt(req.query.limit as string) || 20
       const offset = (page - 1) * limit
 
+      // Note: In a real SQL query, we would use OFFSET/LIMIT in the SQL
+      // But since our abstraction returns all rows for now (or local file), we slice here.
+      // If the list gets huge, we should push pagination to db.ts.
+      // For free tier/small scale, this is fine.
       const paginatedInquiries = inquiries
         .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
         .slice(offset, offset + limit)
@@ -134,13 +100,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(400).json({ error: 'Invalid status' })
       }
 
-      const inquiryIndex = inquiries.findIndex(i => i.id === inquiryId)
-      if (inquiryIndex === -1) {
+      const success = await updateInquiryStatus(inquiryId, status)
+      
+      if (!success) {
         return res.status(404).json({ error: 'Inquiry not found' })
       }
-
-      inquiries[inquiryIndex].status = status
-      await writeInquiries(inquiries)
 
       return res.json({ message: 'Status updated successfully' })
     }

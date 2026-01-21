@@ -14,7 +14,8 @@ export default defineConfig({
       '192.168.1.245',
       'visiongrid.net',
       'www.visiongrid.net',
-      'site.visiongrid.net'
+      'site.visiongrid.net',
+      'nonabidingly-unproposed-angelia.ngrok-free.dev'
     ],
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -32,7 +33,8 @@ export default defineConfig({
       '192.168.1.245',
       'visiongrid.net',
       'www.visiongrid.net',
-      'site.visiongrid.net'
+      'site.visiongrid.net',
+      'nonabidingly-unproposed-angelia.ngrok-free.dev'
     ]
   },
   resolve: {

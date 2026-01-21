@@ -38,9 +38,23 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .contact-cta {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #e6ac37 100%);
-  color: var(--color-dark);
+  background: var(--bg-tertiary); /* Use theme tertiary background */
+  color: var(--color-text);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add a subtle overlay or pattern if desired, but keep it clean */
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
 }
 
 .cta-content {
@@ -107,7 +121,7 @@ import { RouterLink } from 'vue-router'
 
 .cta-feature span:last-child {
   font-weight: 600;
-  color: var(--color-dark);
+  color: var(--color-text); /* Theme aware */
 }
 
 @media (max-width: 768px) {

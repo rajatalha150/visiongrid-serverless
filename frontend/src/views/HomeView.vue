@@ -2,6 +2,7 @@
   <div class="home">
     <HeroSection />
     <ServicesOverview />
+    <ProcessSection />
     <AboutSection />
     <ContactCTA />
   </div>
@@ -10,6 +11,7 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue'
 import ServicesOverview from '@/components/ServicesOverview.vue'
+import ProcessSection from '@/components/ProcessSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import ContactCTA from '@/components/ContactCTA.vue'
 </script>

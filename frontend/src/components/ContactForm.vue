@@ -17,7 +17,7 @@
             v-model="form.name"
             type="text"
             required
-            placeholder="Enter your full name"
+            placeholder="Full name"
             class="form-input"
             :class="{ 'error': errors.name }"
             @blur="validateField('name')"
@@ -39,7 +39,7 @@
             v-model="form.email"
             type="email"
             required
-            placeholder="Enter your email address"
+            placeholder="Email address"
             class="form-input"
             :class="{ 'error': errors.email }"
             @blur="validateField('email')"
@@ -51,17 +51,17 @@
       </div>
     </div>
     
-    <div class="form-row">
+    <div class="form-row three-col">
       <div class="form-group">
         <label for="phone" class="form-label">
-          <span class="label-text">Phone Number</span>
+          <span class="label-text">Phone</span>
         </label>
         <div class="input-wrapper">
           <input
             id="phone"
             v-model="form.phone"
             type="tel"
-            placeholder="Enter your phone number"
+            placeholder="Phone number"
             class="form-input"
           />
           <div class="input-icon">📞</div>
@@ -71,36 +71,35 @@
       <div class="form-group">
         <label for="company" class="form-label">
           <span class="label-text">Company</span>
-          <span class="optional-indicator">(Optional)</span>
         </label>
         <div class="input-wrapper">
           <input
             id="company"
             v-model="form.company"
             type="text"
-            placeholder="Enter company name"
+            placeholder="Company name"
             class="form-input"
           />
           <div class="input-icon">🏢</div>
         </div>
       </div>
-    </div>
-    
-    <div class="form-group">
-      <label for="service" class="form-label">
-        <span class="label-text">Service Interested In</span>
-      </label>
-      <div class="select-wrapper">
-        <select id="service" v-model="form.service" class="form-select">
-          <option value="">Select a service</option>
-          <option value="camera-installation">📹 Camera Installation</option>
-          <option value="networking-solutions">🌐 Networking Solutions</option>
-          <option value="home-security">🏠 Home Security</option>
-          <option value="business-security">🏢 Business Security</option>
-          <option value="consultation">💬 Free Consultation</option>
-          <option value="other">❓ Other</option>
-        </select>
-        <div class="select-arrow">▼</div>
+
+      <div class="form-group">
+        <label for="service" class="form-label">
+          <span class="label-text">Service</span>
+        </label>
+        <div class="select-wrapper">
+          <select id="service" v-model="form.service" class="form-select">
+            <option value="">Select service</option>
+            <option value="camera-installation">Camera Install</option>
+            <option value="networking-solutions">Networking</option>
+            <option value="home-security">Home Security</option>
+            <option value="business-security">Biz Security</option>
+            <option value="consultation">Consultation</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="select-arrow">▼</div>
+        </div>
       </div>
     </div>
     
@@ -286,52 +285,57 @@ const submitForm = async () => {
 
 <style scoped>
 .contact-form {
-  max-width: 700px;
+  max-width: 100%; /* Changed from 700px to 100% to fill container */
+  width: 100%;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-2xl);
-  padding: var(--spacing-3xl);
+  border-radius: var(--radius-xl); 
+  padding: 2rem;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
 .form-header {
   text-align: center;
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: 1.5rem; /* Reduced from var(--spacing-3xl) */
 }
 
 .form-title {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Reduced from 2.5rem */
   font-weight: var(--font-weight-black);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0.5rem;
 }
 
 .form-subtitle {
   color: var(--color-gray);
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reduced from 1.1rem */
   font-weight: var(--font-weight-medium);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  gap: 1rem; /* Reduced from var(--spacing-lg) */
+  margin-bottom: 1rem; /* Reduced from var(--spacing-xl) */
+}
+
+.form-row.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 1rem; /* Reduced from var(--spacing-xl) */
 }
 
 .form-label {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 0.5rem;
   font-weight: var(--font-weight-semibold);
   color: var(--color-dark);
-  margin-bottom: var(--spacing-sm);
-  font-size: 0.95rem;
+  margin-bottom: 0.25rem; /* Reduced from var(--spacing-sm) */
+  font-size: 0.9rem; /* Slightly smaller */
 }
 
 .label-text {
@@ -359,10 +363,10 @@ const submitForm = async () => {
 .form-select,
 .form-textarea {
   width: 100%;
-  padding: 16px 48px 16px 16px;
+  padding: 10px 40px 10px 12px; /* Reduced padding */
   border: 2px solid #e9ecef;
   border-radius: var(--radius-lg);
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   font-family: inherit;
   transition: var(--transition-bounce);
   background: rgba(255, 255, 255, 0.8);
@@ -421,27 +425,27 @@ const submitForm = async () => {
 
 .form-textarea {
   resize: vertical;
-  min-height: 140px;
-  padding-bottom: 40px;
+  min-height: 100px; /* Reduced from 140px */
+  padding-bottom: 30px;
 }
 
 .textarea-counter {
   position: absolute;
-  bottom: 12px;
-  right: 16px;
-  font-size: 0.8rem;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.75rem;
   color: var(--color-gray);
   pointer-events: none;
 }
 
 .error-message {
-  margin-top: var(--spacing-xs);
-  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
   color: #e74c3c;
   font-weight: var(--font-weight-medium);
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 0.25rem;
 }
 
 .error-message::before {
@@ -452,7 +456,7 @@ const submitForm = async () => {
 .form-actions {
   display: flex;
   justify-content: center;
-  margin-top: var(--spacing-3xl);
+  margin-top: 1.5rem; /* Reduced from var(--spacing-3xl) */
 }
 
 .btn-loading {
@@ -536,7 +540,8 @@ const submitForm = async () => {
     font-size: 2rem;
   }
   
-  .form-row {
+  .form-row,
+  .form-row.three-col {
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -549,6 +554,14 @@ const submitForm = async () => {
   
   .input-icon {
     display: none;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+  /* On medium screens where it's still side-by-side, 
+     stack the 3-column row to prevent squishing */
+  .form-row.three-col {
+    grid-template-columns: 1fr; 
   }
 }
 

@@ -1,45 +1,49 @@
 :root {
-  /* Primary Colors (consistent across themes) */
-  --color-primary: #ffc03d;
-  --color-primary-light: #ffd670;
-  --color-primary-dark: #e6ac37;
+  /* Primary Colors - Professional & Corporate */
+  --color-primary: #004e98; /* Deep Blue */
+  --color-primary-light: #3a6ea5;
+  --color-primary-dark: #003366; /* Navy */
   
-  /* Light Mode Colors */
-  --color-dark: #212d45;
-  --color-dark-light: #2c3e50;
+  /* Accent Colors */
+  --color-accent: #c0c0c0; /* Silver */
+  --color-accent-dark: #a9a9a9;
+  
+  /* Light Mode Colors - Neutral Silver/Gray Theme */
+  --color-dark: #1e293b; 
+  --color-dark-light: #334155;
   --color-white: #ffffff;
-  --color-gray-light: #f8f9fa;
-  --color-gray: #6c757d;
-  --color-gray-dark: #343a40;
-  --color-text: #212529;
+  --color-gray-light: #e2e8f0; 
+  --color-gray: #475569; /* Darker gray for better text contrast */
+  --color-gray-dark: #334155; /* Even darker for subtitles */
+  --color-text: #0f172a; /* Almost black for maximum readability */
   
   /* Theme-aware colors */
-  --bg-primary: var(--color-white);
-  --bg-secondary: var(--color-gray-light);
-  --bg-tertiary: #e9ecef;
+  --bg-primary: #adb1b3; /* The requested Neutral Gray */
+  --bg-secondary: #e2e8f0; /* Lighter gray for cards to contrast against silver bg */
+  --bg-tertiary: #cbd5e1;
   --text-primary: var(--color-text);
-  --text-secondary: var(--color-gray);
+  --text-secondary: var(--color-gray-dark); /* Ensure secondary text is readable */
   --text-tertiary: var(--color-gray-dark);
-  --border-color: #e9ecef;
-  --border-color-light: #f1f3f4;
+  --border-color: #e2e8f0;
+  --border-color-light: #f8fafc;
   
-  /* Gradients - Light Mode */
-  --gradient-primary: linear-gradient(135deg, #ffc03d 0%, #e6ac37 100%);
-  --gradient-dark: linear-gradient(135deg, #212d45 0%, #2c3e50 100%);
-  --gradient-light: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  --gradient-hero: linear-gradient(135deg, #212d45 0%, #2c3e50 50%, #34495e 100%);
-  --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  /* Gradients - Professional */
+  --gradient-primary: linear-gradient(135deg, #004e98 0%, #003366 100%);
+  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-light: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --gradient-hero: #adb1b3;
+  --gradient-bg: linear-gradient(135deg, #adb1b3 0%, #cbd5e1 100%);
   
-  /* Shadows */
+  /* Shadows - Subtle & Clean */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-  --shadow-primary: 0 10px 30px rgba(255, 192, 61, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-primary: 0 4px 14px 0 rgba(0, 78, 152, 0.39);
   
   /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -62,59 +66,59 @@
   --transition-slow: all 0.5s ease;
   --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   
-  /* Border Radius */
+  /* Border Radius - Modern but Professional */
   --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-2xl: 24px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
   --radius-full: 9999px;
   
-  /* Glass Effect - Light Mode */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-backdrop: blur(10px);
+  /* Glass Effect - Subtle */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-backdrop: blur(12px);
 }
 
 /* Dark Mode Variables */
 .dark {
   /* Dark Mode Colors */
-  --color-dark: #f8f9fa;
-  --color-dark-light: #e9ecef;
-  --color-white: #0f1419;
-  --color-gray-light: #1a1f2e;
-  --color-gray: #9ca3af;
-  --color-gray-dark: #d1d5db;
-  --color-text: #f8f9fa;
+  --color-dark: #f8fafc;
+  --color-dark-light: #e2e8f0;
+  --color-white: #0f172a;
+  --color-gray-light: #1e293b;
+  --color-gray: #94a3b8;
+  --color-gray-dark: #cbd5e1;
+  --color-text: #f8fafc;
   
   /* Theme-aware colors - Dark Mode */
-  --bg-primary: #0f1419;
-  --bg-secondary: #1a1f2e;
-  --bg-tertiary: #252a3a;
-  --text-primary: #f8f9fa;
-  --text-secondary: #9ca3af;
-  --text-tertiary: #d1d5db;
-  --border-color: #2d3748;
-  --border-color-light: #374151;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #cbd5e1;
+  --border-color: #334155;
+  --border-color-light: #475569;
   
   /* Gradients - Dark Mode */
-  --gradient-dark: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  --gradient-light: linear-gradient(135deg, #1a1f2e 0%, #252a3a 100%);
-  --gradient-hero: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #252a3a 100%);
-  --gradient-bg: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  --gradient-dark: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --gradient-light: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --gradient-hero: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+  --gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   
   /* Shadows - Dark Mode */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
-  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.6);
-  --shadow-primary: 0 10px 30px rgba(255, 192, 61, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  --shadow-primary: 0 10px 30px rgba(0, 78, 152, 0.4);
   
   /* Glass Effect - Dark Mode */
-  --glass-bg: rgba(15, 20, 25, 0.2);
+  --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-backdrop: blur(20px);
+  --glass-backdrop: blur(12px);
 }
 
 * {
@@ -238,14 +242,17 @@ body {
 .btn-glass {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border);
-  color: #f8fafc;
+  border: 1px solid var(--border-color); /* Stronger border */
+  color: var(--color-text); /* Theme aware text color */
+  font-weight: var(--font-weight-medium);
 }
 
 .btn-glass:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: var(--bg-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .grid {

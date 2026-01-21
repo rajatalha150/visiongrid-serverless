@@ -1,35 +1,32 @@
 <template>
   <section class="hero">
     <div class="hero-bg">
-      <div class="hero-particles">
-        <div class="particle" v-for="n in 50" :key="n" :style="getParticleStyle()"></div>
-      </div>
+      <div class="hero-network-grid"></div>
     </div>
     <div class="hero-gradient-overlay"></div>
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title animate-fade-in-up">
-          Secure Your Future with 
-          <span class="highlight gradient-text">AI-Powered VisionGrid</span>
+          Enterprise-Grade 
+          <span class="highlight">Network & Security Infrastructure</span>
         </h1>
         <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.2s">
-          Revolutionary AI security solutions that learn, adapt, and protect intelligently. 
-          Smart installations, predictive analytics, and automated threat detection.
+          Complete office IT solutions, structured cabling, and advanced security systems designed for reliability and scalability.
         </p>
         <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.4s">
           <RouterLink to="/contact" class="btn btn-primary btn-lg shadow-glow">
-            <span>Get Started</span>
+            <span>Request Consultation</span>
             <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </RouterLink>
           <RouterLink to="/services" class="btn btn-glass btn-lg">
-            <span>Our Services</span>
+            <span>Explore Solutions</span>
           </RouterLink>
         </div>
         <div class="hero-features animate-fade-in-up" style="animation-delay: 0.6s">
           <div class="feature-item hover-float" v-for="(feature, index) in features" :key="feature.id" :style="`animation-delay: ${0.8 + index * 0.1}s`">
-            <div class="feature-icon animate-pulse">{{ feature.icon }}</div>
+            <div class="feature-icon" v-html="feature.icon"></div>
             <span>{{ feature.label }}</span>
           </div>
         </div>
@@ -44,28 +41,30 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 
-const features = [
-  { id: 1, icon: '🤖', label: 'AI Detection' },
-  { id: 2, icon: '🧠', label: 'Smart Learning' },
-  { id: 3, icon: '📞', label: '24/7 AI Support' }
-]
+// SVG Icons for professional look
+const icons = {
+  server: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`,
+  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`,
+  network: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="16" y="2" width="6" height="6" rx="1" ry="1"></rect><line x1="5" y1="8" x2="5" y2="12"></line><line x1="12" y1="12" x2="12" y2="16"></line><line x1="19" y1="8" x2="19" y2="12"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`
+}
 
-const getParticleStyle = () => ({
-  left: Math.random() * 100 + '%',
-  animationDelay: Math.random() * 3 + 's',
-  animationDuration: (3 + Math.random() * 4) + 's'
-})
+const features = [
+  { id: 1, icon: icons.network, label: 'Infrastructure' },
+  { id: 2, icon: icons.shield, label: 'Security' },
+  { id: 3, icon: icons.server, label: 'Support 24/7' }
+]
 </script>
 
 <style scoped>
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   background: var(--gradient-hero);
   overflow: hidden;
   margin-top: 70px;
+  padding: 4rem 0;
 }
 
 .hero-bg {
@@ -75,50 +74,21 @@ const getParticleStyle = () => ({
   right: 0;
   bottom: 0;
   z-index: 1;
+  background-color: var(--bg-primary);
 }
 
-.hero-particles {
+.hero-network-grid {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--color-primary);
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: floatUp 6s infinite ease-in-out;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0;
-  }
+  background-image: radial-gradient(circle at center, #ffffff 0%, transparent 70%); /* White glow for silver theme */
+  opacity: 0.5;
+  mix-blend-mode: overlay; /* Overlay works great for metallic effect */
+  background-size: cover;
 }
 
 .hero-gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(33, 45, 69, 0.4) 100%);
-  z-index: 2;
+  display: none; /* Removed to allow soft yellow glow to show */
 }
 
 .hero-content {
@@ -127,52 +97,42 @@ const getParticleStyle = () => ({
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  color: #e2e8f0;
+  color: var(--color-white);
 }
 
 .hero-title {
-  font-size: 4rem;
-  font-weight: var(--font-weight-black);
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  color: #cbd5e1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #0f172a; /* Explicit very dark slate for title */
+  letter-spacing: -0.02em;
 }
 
 .highlight {
   position: relative;
   display: inline-block;
+  color: #1e3a8a; /* Deep blue for high contrast against silver */
 }
 
 .highlight::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -4px;
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient-primary);
+  background: var(--color-primary);
   border-radius: var(--radius-sm);
-  animation: expandWidth 1s ease-out 0.5s both;
-}
-
-@keyframes expandWidth {
-  from {
-    width: 0;
-    left: 50%;
-  }
-  to {
-    width: 100%;
-    left: 0;
-  }
+  opacity: 0.8;
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  line-height: 1.7;
-  margin-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: var(--font-weight-normal);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #334155; /* Dark slate gray for subtitle */
+  font-weight: var(--font-weight-medium); /* Increased weight for readability */
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -187,9 +147,9 @@ const getParticleStyle = () => ({
 }
 
 .btn-icon {
-  width: 16px;
-  height: 16px;
-  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
   transition: var(--transition);
 }
 
@@ -211,122 +171,59 @@ const getParticleStyle = () => ({
   gap: 1rem;
   padding: 1.5rem;
   border-radius: var(--radius-lg);
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border);
-  transition: var(--transition-bounce);
+  background: #f8fafc; /* Pure white/lightest gray card background */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #cbd5e1; /* Distinct border */
+  transition: var(--transition);
+  min-width: 160px; 
 }
 
 .feature-item:hover {
-  transform: translateY(-10px) scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  background: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  filter: drop-shadow(0 4px 8px rgba(255, 192, 61, 0.3));
+  color: var(--color-primary); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #e2e8f0; /* Light gray circle bg */
+  border-radius: 50%;
 }
 
 .feature-item span {
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
-  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold); /* Bold text */
+  color: #1e293b; /* Dark Slate */
+  font-size: 1.05rem; 
   letter-spacing: 0.5px;
-}
-
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.scroll-arrow {
-  width: 2px;
-  height: 30px;
-  background: var(--color-primary);
-  position: relative;
-  animation: scrollBounce 2s infinite;
-}
-
-.scroll-arrow::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: -6px;
-  width: 14px;
-  height: 14px;
-  border-right: 2px solid var(--color-primary);
-  border-bottom: 2px solid var(--color-primary);
-  transform: rotate(45deg);
-}
-
-@keyframes scrollBounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  40% {
-    transform: translateY(-10px);
-    opacity: 0.7;
-  }
-  60% {
-    transform: translateY(-5px);
-    opacity: 0.9;
-  }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 80vh;
-    padding: 2rem 0;
+    min-height: auto;
+    padding: 6rem 0 4rem;
   }
   
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-actions {
-    gap: 1rem;
-  }
-  
-  .hero-features {
-    gap: 2rem;
-  }
-  
-  .feature-icon {
-    font-size: 2.5rem;
-  }
-  
-  .feature-item {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
   .hero-title {
     font-size: 2.5rem;
   }
   
   .hero-subtitle {
     font-size: 1.1rem;
-  }
-  
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 2rem;
   }
   
   .hero-features {
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-item {
+    min-width: 100px;
+    padding: 1rem;
   }
 }
 </style>

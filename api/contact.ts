@@ -1,44 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
-import { promises as fs } from 'fs'
-import path from 'path'
-
-interface ContactInquiry {
-  id: number
-  name: string
-  email: string
-  phone?: string | null
-  company?: string | null
-  message: string
-  service?: string | null
-  created_at: string
-  status: 'new' | 'contacted' | 'closed'
-}
-
-const DATA_FILE = path.join(process.cwd(), 'data', 'inquiries.json')
-
-async function ensureDataDirectory() {
-  const dataDir = path.dirname(DATA_FILE)
-  try {
-    await fs.access(dataDir)
-  } catch {
-    await fs.mkdir(dataDir, { recursive: true })
-  }
-}
-
-async function readInquiries(): Promise<ContactInquiry[]> {
-  try {
-    await ensureDataDirectory()
-    const data = await fs.readFile(DATA_FILE, 'utf-8')
-    return JSON.parse(data)
-  } catch {
-    return []
-  }
-}
-
-async function writeInquiries(inquiries: ContactInquiry[]): Promise<void> {
-  await ensureDataDirectory()
-  await fs.writeFile(DATA_FILE, JSON.stringify(inquiries, null, 2))
-}
+import { addInquiry } from './db'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Set CORS headers
@@ -79,12 +40,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       })
     }
 
-    // Read existing inquiries
-    const inquiries = await readInquiries()
-    
-    // Create new inquiry
-    const newInquiry: ContactInquiry = {
-      id: inquiries.length > 0 ? Math.max(...inquiries.map(i => i.id)) + 1 : 1,
+    // Save inquiry using DB abstraction
+    const newInquiry = await addInquiry({
       name: name.trim(),
       email: email.trim().toLowerCase(),
       phone: phone?.trim() || null,
@@ -93,13 +50,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       service: service || null,
       created_at: new Date().toISOString(),
       status: 'new'
-    }
-
-    // Add to inquiries
-    inquiries.push(newInquiry)
-    
-    // Save to file
-    await writeInquiries(inquiries)
+    })
 
     res.status(201).json({
       message: 'Your inquiry has been submitted successfully',

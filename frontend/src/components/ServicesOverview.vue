@@ -3,13 +3,13 @@
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">
-        Comprehensive security solutions tailored to your needs
+        Enterprise-grade infrastructure solutions tailored for modern businesses
       </p>
       
       <div class="services-grid grid">
         <div class="service-card card card-hover-lift animate-on-scroll" v-for="service in services" :key="service.id">
           <div class="service-icon-wrapper">
-            <div class="service-icon hover-scale">{{ service.icon }}</div>
+            <div class="service-icon hover-scale" v-html="service.icon"></div>
             <div class="service-icon-bg"></div>
           </div>
           <h3 class="service-title">{{ service.title }}</h3>
@@ -29,7 +29,7 @@
       </div>
       
       <div class="services-cta">
-        <RouterLink to="/services" class="btn btn-primary">View All Services</RouterLink>
+        <RouterLink to="/services" class="btn btn-primary">View Full Service Catalog</RouterLink>
       </div>
     </div>
   </section>
@@ -48,70 +48,66 @@ onMounted(() => {
   reinitializeAnimation()
 })
 
+// Professional SVG Icons
+const icons = {
+  camera: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>`,
+  network: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="16" y="2" width="6" height="6" rx="1" ry="1"></rect><line x1="5" y1="8" x2="5" y2="12"></line><line x1="12" y1="12" x2="12" y2="16"></line><line x1="19" y1="8" x2="19" y2="12"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
+  access: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`,
+  conference: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
+  server: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`
+}
+
 const services = [
   {
     id: 1,
-    slug: 'camera-installation',
-    icon: '🤖',
-    title: 'AI-Powered Camera Systems',
-    description: 'Next-generation security cameras with artificial intelligence for smart detection and automated threat recognition.',
+    slug: 'network-infrastructure',
+    icon: icons.network,
+    title: 'Structured Cabling & Network Design',
+    description: 'Complete office network infrastructure setup including Cat6/Fiber cabling, server rack installation, and enterprise-grade WiFi configuration.',
     features: [
-      'AI person & vehicle detection',
-      'Facial recognition technology',
-      'Smart motion tracking',
-      'Real-time threat alerts'
+      'Certified structured cabling',
+      'Server room organization',
+      'Enterprise WiFi coverage',
+      'Fiber optic termination'
     ]
   },
   {
     id: 2,
-    slug: 'networking-solutions',
-    icon: '🧠',
-    title: 'Smart Network Infrastructure',
-    description: 'AI-optimized network systems with intelligent traffic management and predictive maintenance.',
+    slug: 'surveillance-systems',
+    icon: icons.camera,
+    title: 'Commercial Surveillance Systems',
+    description: 'High-definition security camera systems with remote monitoring capabilities and reliable 24/7 recording storage.',
     features: [
-      'AI-powered network optimization',
-      'Intelligent bandwidth allocation',
-      'Predictive maintenance alerts',
-      'Machine learning traffic analysis'
+      '4K IP camera systems',
+      'NVR storage solutions',
+      'Remote mobile viewing',
+      'License plate recognition'
     ]
   },
   {
     id: 3,
-    slug: 'home-security',
-    icon: '🏡',
-    title: 'AI Home Protection',
-    description: 'Intelligent home security with AI-driven threat detection and automated response systems.',
+    slug: 'access-control',
+    icon: icons.access,
+    title: 'Access Control & Security',
+    description: 'Advanced entry management systems for offices and commercial buildings, ensuring secure and authorized access only.',
     features: [
-      'AI behavioral pattern learning',
-      'Smart intruder detection',
-      'Voice recognition alerts',
-      'AI-powered false alarm reduction'
+      'Keycard & fob systems',
+      'Biometric scanners',
+      'Cloud-based management',
+      'Visitor entry logs'
     ]
   },
   {
     id: 4,
-    slug: 'business-security',
-    icon: '🏢',
-    title: 'Enterprise AI Security',
-    description: 'Advanced AI-driven security solutions with predictive analytics and automated threat response.',
+    slug: 'conference-solutions',
+    icon: icons.conference,
+    title: 'Corporate Conference Solutions',
+    description: 'Modern conference room setups with integrated audio/video systems for seamless presentations and video calls.',
     features: [
-      'AI-powered threat prediction',
-      'Behavioral analytics dashboard',
-      'Automated incident response',
-      'Machine learning anomaly detection'
-    ]
-  },
-  {
-    id: 5,
-    slug: 'audio-video-systems',
-    icon: '🎙️',
-    title: 'Smart AV & Communication',
-    description: 'AI-enhanced audio/video systems with intelligent sound optimization and automated meeting management.',
-    features: [
-      'AI-powered sound optimization',
-      'Smart meeting room automation',
-      'Voice-activated controls',
-      'Automated camera tracking'
+      'Zoom/Teams room integration',
+      'Wireless presentation systems',
+      'Professional audio distribution',
+      'Video wall installation'
     ]
   }
 ]
@@ -119,7 +115,7 @@ const services = [
 
 <style scoped>
 .services-overview {
-  background: var(--gradient-light);
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -131,7 +127,7 @@ const services = [
   right: -20%;
   width: 40%;
   height: 200%;
-  background: radial-gradient(ellipse, rgba(255, 192, 61, 0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(0, 78, 152, 0.05) 0%, transparent 70%);
   transform: rotate(15deg);
   z-index: 1;
 }
@@ -143,87 +139,72 @@ const services = [
 
 .services-grid {
   margin-bottom: 4rem;
-  gap: 3rem;
+  gap: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .service-card {
   text-align: center;
   position: relative;
-  background: var(--color-white);
-  border: 1px solid rgba(255, 192, 61, 0.1);
-  transition: var(--transition-bounce);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: var(--shadow-2xl);
-  border-color: rgba(255, 192, 61, 0.3);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
 }
 
 .service-icon-wrapper {
   position: relative;
   display: inline-block;
   margin-bottom: 1.5rem;
+  color: var(--color-primary);
 }
 
 .service-icon {
-  font-size: 4rem;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 4px 12px rgba(255, 192, 61, 0.3));
+  transition: var(--transition);
 }
 
 .service-icon-bg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-primary);
+  width: 70px;
+  height: 70px;
+  background: var(--color-primary);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.1;
-  transition: var(--transition-bounce);
-}
-
-.service-card:hover .service-icon-bg {
-  transform: translate(-50%, -50%) scale(1.2);
-  opacity: 0.2;
-}
-
-.service-title {
-  font-size: 1.6rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-dark);
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.service-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-sm);
+  opacity: 0.05;
   transition: var(--transition);
 }
 
-.service-card:hover .service-title::after {
-  width: 100px;
+.service-card:hover .service-icon-bg {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.1;
+}
+
+.service-title {
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text); /* Theme aware */
+  margin-bottom: 1rem;
 }
 
 .service-description {
-  color: var(--color-gray);
+  color: var(--color-gray); /* Readable description */
   margin-bottom: 2rem;
-  line-height: 1.7;
-  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  flex-grow: 1;
 }
 
 .service-features {
@@ -231,41 +212,43 @@ const services = [
   padding: 0;
   text-align: left;
   margin-bottom: 2rem;
+  background: var(--bg-secondary); /* Contrast against card bg */
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color); /* Add border for definition */
 }
 
 .service-features li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
-  color: var(--color-gray-dark);
-  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-dark); /* Darker text for readability */
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.service-features li:last-child {
+  margin-bottom: 0;
 }
 
 .feature-check {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
-  background: var(--gradient-primary);
-  color: var(--color-dark);
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  color: var(--color-white);
   border-radius: 50%;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: var(--font-weight-bold);
   flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .service-action {
-  margin-top: 1.5rem;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: var(--transition);
-}
-
-.service-card:hover .service-action {
-  opacity: 1;
-  transform: translateY(0);
+  margin-top: auto;
 }
 
 .services-cta {
@@ -273,39 +256,10 @@ const services = [
   margin-top: 3rem;
 }
 
-.services-cta .btn {
-  padding: 18px 48px;
-  font-size: 1.1rem;
-}
-
-@media (max-width: 1200px) {
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-  }
-}
-
 @media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .service-icon {
-    font-size: 3rem;
-  }
-  
-  .service-title {
-    font-size: 1.4rem;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px) scale(1.03);
-  }
-  
-  .service-action {
-    opacity: 1;
-    transform: translateY(0);
+    gap: 1.5rem;
   }
 }
 </style>

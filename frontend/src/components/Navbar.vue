@@ -69,6 +69,7 @@ const closeMenu = () => {
   right: 0;
   z-index: 1000;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  height: 70px; /* Ensure fixed height */
 }
 
 .navbar-content {
@@ -85,6 +86,7 @@ const closeMenu = () => {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  transition: var(--transition);
 }
 
 .logo {
@@ -115,6 +117,7 @@ const closeMenu = () => {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
+  font-size: 1rem;
 }
 
 .navbar-link:hover,
