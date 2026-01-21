@@ -178,20 +178,27 @@ const faqs = [
 
 .contact-method {
   flex: auto;
+  display: flex; /* Changed from flex-direction: row + flex: auto */
   flex-direction: row;
   align-items: flex-start;
   text-align: left;
 }
 
 .method-icon {
-  font-size: 1.25rem; /* Reduced from 1.5rem */
-  margin-bottom: 0;
-  margin-top: 0.1rem;
-  margin-right: 0.75rem; /* Reduced from 1rem */
+  width: 32px; /* Fixed width for alignment */
+  height: 32px; /* Fixed height */
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-right: 1rem; /* Spacing */
+  margin-top: 0.25rem; /* Slight top offset to align with line-height */
   color: var(--color-primary);
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align to top */
   justify-content: center;
+}
+
+.method-icon :deep(svg) {
+  width: 24px;
+  height: 24px;
 }
 
 .method-info h4 {

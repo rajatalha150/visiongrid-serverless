@@ -30,6 +30,7 @@
             <li><RouterLink to="/about">About Us</RouterLink></li>
             <li><RouterLink to="/services">Our Services</RouterLink></li>
             <li><RouterLink to="/contact">Contact</RouterLink></li>
+            <li><a href="https://careers.visiongrid.net" target="_blank" rel="noopener noreferrer">Careers</a></li>
             <li><a href="#support">Support</a></li>
           </ul>
         </div>
