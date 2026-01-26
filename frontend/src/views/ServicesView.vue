@@ -239,7 +239,7 @@ const process = [
     id: 3,
     icon: icons.install,
     title: 'Deployment',
-    description: 'Precision installation by certified engineers with rigorous testing protocols.'
+    description: 'Precision installation by expert engineers with rigorous testing protocols.'
   },
   {
     id: 4,

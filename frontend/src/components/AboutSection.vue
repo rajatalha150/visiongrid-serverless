@@ -6,7 +6,7 @@
           <h2 class="section-title text-left">About VisionGrid</h2>
           <p class="about-description">
             VisionGrid delivers enterprise-grade security and infrastructure ecosystems. We combine 
-            predictive intelligence with certified engineering to build resilient systems that 
+            predictive intelligence with expert engineering to build resilient systems that 
             protect your assets around the clock.
           </p>
           <p class="about-description">
@@ -67,8 +67,8 @@ const features = [
   {
     id: 1,
     icon: icons.cert,
-    title: 'Certified Technicians',
-    description: 'Licensed professionals with industry certifications for all installation types.'
+    title: 'Expert Technicians',
+    description: 'Experienced professionals with deep expertise for all installation types.'
   },
   {
     id: 2,

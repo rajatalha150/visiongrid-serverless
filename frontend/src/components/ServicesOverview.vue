@@ -52,7 +52,7 @@ onMounted(() => {
 const icons = {
   camera: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>`,
   network: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="16" y="2" width="6" height="6" rx="1" ry="1"></rect><line x1="5" y1="8" x2="5" y2="12"></line><line x1="12" y1="12" x2="12" y2="16"></line><line x1="19" y1="8" x2="19" y2="12"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
-  access: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`,
+  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`,
   conference: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
   server: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`
 }
@@ -65,7 +65,7 @@ const services = [
     title: 'Structured Cabling & Network Design',
     description: 'Complete office network infrastructure setup including Cat6/Fiber cabling, server rack installation, and enterprise-grade WiFi configuration.',
     features: [
-      'Certified structured cabling',
+      'Professional structured cabling',
       'Server room organization',
       'Enterprise WiFi coverage',
       'Fiber optic termination'
@@ -86,15 +86,15 @@ const services = [
   },
   {
     id: 3,
-    slug: 'access-control',
-    icon: icons.access,
-    title: 'Access Control & Security',
-    description: 'Advanced entry management systems for offices and commercial buildings, ensuring secure and authorized access only.',
+    slug: 'cyber-security',
+    icon: icons.shield,
+    title: 'Cyber Security & Endpoint Management',
+    description: 'Comprehensive local application security, network strengthening, and endpoint management for resilient infrastructure.',
     features: [
-      'Keycard & fob systems',
-      'Biometric scanners',
-      'Cloud-based management',
-      'Visitor entry logs'
+      'Endpoint protection',
+      'Network hardening',
+      'Local app security',
+      'Threat mitigation'
     ]
   },
   {

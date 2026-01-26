@@ -204,7 +204,7 @@ body {
 
 .btn-primary {
   background: var(--gradient-primary);
-  color: var(--color-dark);
+  color: #ffffff; /* Always white text for better readability */
   box-shadow: var(--shadow-primary);
 }
 
