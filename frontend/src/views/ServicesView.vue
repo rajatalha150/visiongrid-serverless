@@ -251,8 +251,12 @@ const process = [
 </script>
 
 <style scoped>
+.services-page {
+  background-color: var(--bg-secondary);
+}
+
 .page-hero {
-  background: var(--gradient-hero);
+  background: var(--bg-secondary);
   color: var(--color-white);
   padding: 120px 0 80px;
   text-align: center;
@@ -394,7 +398,7 @@ const process = [
 }
 
 .bg-light {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary); /* Changed for contrast */
 }
 
 .process-steps {

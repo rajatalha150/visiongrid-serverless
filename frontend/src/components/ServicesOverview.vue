@@ -147,12 +147,17 @@ const services = [
 .service-card {
   text-align: center;
   position: relative;
-  background: var(--bg-primary);
+  background: #cbd5e1; /* Set to specific color as requested */
   border: 1px solid var(--border-color);
   transition: var(--transition);
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Explicitly target dark mode to ensure readability */
+:root[class~="dark"] .service-card {
+  background: var(--bg-primary);
 }
 
 .service-card:hover {

@@ -119,8 +119,12 @@ const faqs = [
 </script>
 
 <style scoped>
+.contact-page {
+  background-color: var(--bg-secondary);
+}
+
 .page-hero {
-  background: var(--gradient-hero);
+  background: var(--bg-secondary);
   color: var(--color-white);
   padding: 120px 0 80px;
   text-align: center;
@@ -235,7 +239,7 @@ const faqs = [
 }
 
 .bg-light {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary); /* Changed for contrast */
 }
 
 .section-title {
@@ -252,12 +256,17 @@ const faqs = [
 }
 
 .faq-item {
-  background: var(--bg-card);
+  background: #cbd5e1; /* Set to specific color as requested */
   padding: 1.5rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
   transition: var(--transition);
+}
+
+/* Explicitly target dark mode to ensure readability */
+:root[class~="dark"] .faq-item {
+  background: var(--bg-card);
 }
 
 .faq-item:hover {

@@ -132,8 +132,12 @@ const benefits = [
 </script>
 
 <style scoped>
+.about-page {
+  background-color: var(--bg-secondary);
+}
+
 .page-hero {
-  background: var(--gradient-hero);
+  background: var(--bg-secondary); /* Changed from gradient-hero to match Services */
   color: var(--color-white);
   padding: 120px 0 80px;
   text-align: center;
@@ -203,7 +207,7 @@ const benefits = [
 }
 
 .bg-light {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary); /* Changed to create slight contrast against page background */
 }
 
 .section-title {
@@ -221,11 +225,16 @@ const benefits = [
 .value-card {
   text-align: center;
   padding: 2rem;
-  background: var(--bg-card);
+  background: #cbd5e1; /* Set to specific color as requested */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
   transition: var(--transition);
+}
+
+/* Explicitly target dark mode to ensure readability */
+:root[class~="dark"] .value-card {
+  background: var(--bg-card);
 }
 
 .value-card:hover {

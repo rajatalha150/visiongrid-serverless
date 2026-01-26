@@ -78,7 +78,7 @@ const closeMenu = () => {
 
 <style scoped>
 .navbar {
-  background-color: var(--bg-primary);
+  background-color: #cbd5e1; /* Set to specific color as requested */
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
@@ -89,6 +89,11 @@ const closeMenu = () => {
   z-index: 1000;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   height: 70px; /* Ensure fixed height */
+}
+
+/* Explicitly target dark mode to override the hardcoded light mode color */
+:root[class~="dark"] .navbar {
+  background-color: var(--bg-primary);
 }
 
 .navbar-content {

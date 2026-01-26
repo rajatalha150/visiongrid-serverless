@@ -74,7 +74,7 @@ const features = [
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary); /* Changed from bg-primary to match Our Services */
 }
 
 .hero-network-grid {
@@ -171,11 +171,16 @@ const features = [
   gap: 1rem;
   padding: 1.5rem;
   border-radius: var(--radius-lg);
-  background: var(--bg-card); /* Use theme card background */
+  background: #cbd5e1; /* Set to specific color as requested */
   box-shadow: var(--shadow-md); /* Use theme shadow */
   border: 1px solid var(--border-color); /* Use theme border color */
   transition: var(--transition);
   min-width: 160px; 
+}
+
+/* Explicitly target dark mode to ensure readability */
+:root[class~="dark"] .feature-item {
+  background: var(--bg-card);
 }
 
 .feature-item:hover {

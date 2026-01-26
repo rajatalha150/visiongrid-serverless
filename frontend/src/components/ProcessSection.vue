@@ -109,12 +109,17 @@ const steps = [
 }
 
 .step-content {
-  background: var(--bg-secondary);
+  background: #cbd5e1; /* Set to specific color as requested */
   padding: 2rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   transition: var(--transition);
   height: 100%;
+}
+
+/* Explicitly target dark mode to ensure readability */
+:root[class~="dark"] .step-content {
+  background: var(--bg-secondary);
 }
 
 .process-step:hover .step-content {

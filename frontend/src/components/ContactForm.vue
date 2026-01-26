@@ -298,6 +298,11 @@ const submitForm = async () => {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-xl); 
   padding: 2rem;
+  background: #cbd5e1; /* Changed to specific color as requested */
+}
+
+/* Add dark mode override for ContactForm */
+:root[class~="dark"] .contact-form {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
