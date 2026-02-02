@@ -11,7 +11,27 @@
           <RouterLink to="/" class="navbar-link" @click="closeMenu">Home</RouterLink>
           <RouterLink to="/about" class="navbar-link" @click="closeMenu">About</RouterLink>
           <RouterLink to="/services" class="navbar-link" @click="closeMenu">Services</RouterLink>
-          <a href="https://downloads.visiongrid.net" class="navbar-link" target="_blank" rel="noopener noreferrer" @click="closeMenu">Applications</a>
+          
+          <!-- Applications Dropdown -->
+          <div class="dropdown-container" @mouseleave="isDropdownOpen = false">
+            <button class="navbar-link dropdown-toggle" @click="toggleDropdown" @mouseenter="isDropdownOpen = true">
+              Applications
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-icon" :class="{ 'rotate': isDropdownOpen }">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="dropdown-menu" :class="{ 'show': isDropdownOpen }">
+              <a href="https://downloads.visiongrid.net" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                <span class="item-icon">📷</span>
+                Camera Site Planner
+              </a>
+              <a href="https://invoice.visiongrid.net/" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                <span class="item-icon">📄</span>
+                Invoice Generator
+              </a>
+            </div>
+          </div>
+
           <RouterLink to="/contact" class="navbar-link" @click="closeMenu">Contact</RouterLink>
         </div>
         
@@ -65,14 +85,20 @@ import { RouterLink } from 'vue-router'
 import { useDarkMode } from '../composables/useDarkMode'
 
 const isMenuOpen = ref(false)
+const isDropdownOpen = ref(false)
 const { isDark, toggleDarkMode } = useDarkMode()
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value
+}
+
 const closeMenu = () => {
   isMenuOpen.value = false
+  isDropdownOpen.value = false
 }
 </script>
 
@@ -238,6 +264,90 @@ const closeMenu = () => {
   letter-spacing: 0.3px;
 }
 
+/* Dropdown Styles */
+.dropdown-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.dropdown-icon {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-secondary);
+  color: var(--color-primary);
+}
+
+.item-icon {
+  font-size: 1.1rem;
+}
+
+/* Dark mode overrides for dropdown */
+:root[class~="dark"] .dropdown-menu {
+  background-color: var(--bg-primary);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[class~="dark"] .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: flex;
@@ -258,6 +368,45 @@ const closeMenu = () => {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
+    max-height: 80vh; /* Prevent overflow on small screens */
+    overflow-y: auto;
+  }
+  
+  .dropdown-container {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: none; /* Hide by default on mobile */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+    transform: none;
+  }
+
+  .dropdown-item {
+    justify-content: center;
+    padding: 0.75rem;
   }
   
   .navbar-actions {
