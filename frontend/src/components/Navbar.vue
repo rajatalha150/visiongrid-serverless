@@ -38,7 +38,7 @@
                   <a href="https://siteplanner.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
                     Web App
                   </a>
-                  <a href="https://download.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                  <a href="https://downloads.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
                     Download Setup
                   </a>
                 </div>
