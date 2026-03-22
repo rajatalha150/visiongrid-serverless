@@ -381,7 +381,7 @@ const submitForm = async () => {
   font-size: 0.95rem; /* Slightly smaller font */
   font-family: inherit;
   transition: var(--transition-bounce);
-  background: var(--bg-card); /* Changed from rgba(255, 255, 255, 0.8) to theme var */
+  background: var(--bg-primary); /* Match main site background */
   color: var(--color-text); /* Ensure text is visible in dark mode */
   backdrop-filter: blur(10px);
 }
