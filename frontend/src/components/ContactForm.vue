@@ -383,7 +383,12 @@ const submitForm = async () => {
   transition: var(--transition-bounce);
   background: var(--bg-primary); /* Match main site background */
   color: var(--color-text); /* Ensure text is visible in dark mode */
-  backdrop-filter: blur(10px);
+  backdrop-filter: none; /* Keep field flat to match background */
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-gray);
 }
 
 .form-input:focus,
