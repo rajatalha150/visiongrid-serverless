@@ -178,11 +178,6 @@ const features = [
   min-width: 160px; 
 }
 
-/* Explicitly target dark mode to ensure readability */
-:root[class~="dark"] .feature-item {
-  background: var(--bg-card);
-}
-
 .feature-item:hover {
   transform: translateY(-5px);
   background: var(--bg-card-hover); /* Use theme hover background */

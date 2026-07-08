@@ -264,11 +264,6 @@ const faqs = [
   transition: var(--transition);
 }
 
-/* Explicitly target dark mode to ensure readability */
-:root[class~="dark"] .faq-item {
-  background: var(--bg-card);
-}
-
 .faq-item:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);

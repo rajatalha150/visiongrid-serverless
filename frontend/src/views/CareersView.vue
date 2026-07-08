@@ -196,11 +196,6 @@ const jobs = [
   box-shadow: var(--shadow-sm);
 }
 
-/* Dark mode override */
-:root[class~="dark"] .job-card {
-  background: var(--bg-card);
-}
-
 .job-card:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);

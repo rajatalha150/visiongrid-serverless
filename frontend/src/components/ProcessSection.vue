@@ -117,11 +117,6 @@ const steps = [
   height: 100%;
 }
 
-/* Explicitly target dark mode to ensure readability */
-:root[class~="dark"] .step-content {
-  background: var(--bg-secondary);
-}
-
 .process-step:hover .step-content {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);

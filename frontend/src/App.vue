@@ -17,13 +17,9 @@ import Footer from './components/Footer.vue'
 import Chatbot from './components/Chatbot.vue'
 import CookieConsent from './components/CookieConsent.vue'
 import { useScrollAnimation } from './composables/useScrollAnimation'
-import { useDarkMode } from './composables/useDarkMode'
 
 // Initialize scroll animations
 useScrollAnimation()
-
-// Initialize dark mode
-useDarkMode()
 </script>
 
 <style scoped>

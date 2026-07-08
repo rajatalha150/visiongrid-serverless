@@ -301,11 +301,6 @@ const submitForm = async () => {
   background: #cbd5e1; /* Changed to specific color as requested */
 }
 
-/* Add dark mode override for ContactForm */
-:root[class~="dark"] .contact-form {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-}
-
 .form-header {
   text-align: center;
   margin-bottom: 1.5rem; /* Reduced from var(--spacing-3xl) */

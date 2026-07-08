@@ -52,41 +52,7 @@
 
           <RouterLink to="/contact" class="navbar-link" @click="closeMenu">Contact</RouterLink>
         </div>
-        
-        <div class="navbar-actions">
-          <button 
-            class="theme-toggle badge-style" 
-            @click="toggleDarkMode"
-            :aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
-            :title="`Switch to ${isDark ? 'light' : 'dark'} mode`"
-          >
-            <div class="toggle-content">
-              <!-- If current is NOT dark (Light mode), show Dark option -->
-              <div v-if="!isDark" class="mode-indicator dark">
-                <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <span class="mode-text">Dark</span>
-              </div>
-              <!-- If current IS dark (Dark mode), show Light option -->
-              <div v-else class="mode-indicator light">
-                <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="5"></circle>
-                  <line x1="12" y1="1" x2="12" y2="3"></line>
-                  <line x1="12" y1="21" x2="12" y2="23"></line>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                  <line x1="1" y1="12" x2="3" y2="12"></line>
-                  <line x1="21" y1="12" x2="23" y2="12"></line>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <span class="mode-text">Light</span>
-              </div>
-            </div>
-          </button>
-        </div>
-        
+
         <button class="mobile-menu-toggle" :class="{ active: isMenuOpen }" @click="toggleMenu" aria-label="Toggle menu">
           <span></span>
           <span></span>
@@ -100,12 +66,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useDarkMode } from '../composables/useDarkMode'
 
 const isMenuOpen = ref(false)
 const isDropdownOpen = ref(false)
 const isPlannerOpen = ref(false)
-const { isDark, toggleDarkMode } = useDarkMode()
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -148,11 +112,6 @@ const closeDropdowns = () => {
   z-index: 1000;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   height: 70px; /* Ensure fixed height */
-}
-
-/* Explicitly target dark mode to override the hardcoded light mode color */
-:root[class~="dark"] .navbar {
-  background-color: var(--bg-primary);
 }
 
 .navbar-content {
@@ -241,60 +200,6 @@ const closeDropdowns = () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.theme-toggle.badge-style {
-  width: auto;
-  min-width: 80px;
-  height: 32px;
-  border-radius: 9999px;
-  padding: 0 12px;
-  background: var(--bg-tertiary); /* Changed from bg-secondary for better contrast */
-  border: 1px solid var(--border-color);
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-  color: var(--color-text); /* Ensure base text color is set */
-}
-
-/* Explicitly target dark mode to ensure visibility */
-:root[class~="dark"] .theme-toggle.badge-style {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.theme-toggle.badge-style:hover {
-  background: var(--bg-secondary); /* Darker on hover */
-  border-color: var(--color-primary);
-  transform: translateY(-1px);
-}
-
-.toggle-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.mode-indicator {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.theme-icon {
-  width: 16px;
-  height: 16px;
-  color: var(--color-primary);
-}
-
-.mode-text {
-  color: var(--color-primary); /* Changed from var(--color-text) to match icon */
-  font-size: 0.85rem;
-  letter-spacing: 0.3px;
 }
 
 /* Dropdown Styles */
@@ -429,16 +334,6 @@ const closeDropdowns = () => {
 .submenu-item:hover {
   background-color: var(--bg-secondary);
   color: var(--color-primary);
-}
-
-/* Dark mode overrides for dropdown */
-:root[class~="dark"] .dropdown-menu {
-  background-color: var(--bg-primary);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-:root[class~="dark"] .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 @media (max-width: 768px) {

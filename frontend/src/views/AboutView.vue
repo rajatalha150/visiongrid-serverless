@@ -232,11 +232,6 @@ const benefits = [
   transition: var(--transition);
 }
 
-/* Explicitly target dark mode to ensure readability */
-:root[class~="dark"] .value-card {
-  background: var(--bg-card);
-}
-
 .value-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);

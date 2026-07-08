@@ -155,11 +155,6 @@ const services = [
   flex-direction: column;
 }
 
-/* Explicitly target dark mode to ensure readability */
-:root[class~="dark"] .service-card {
-  background: var(--bg-primary);
-}
-
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
