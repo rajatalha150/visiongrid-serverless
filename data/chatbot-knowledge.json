@@ -1,13 +1,39 @@
 {
   "company": {
     "name": "VisionGrid",
+    "tagline": "Enterprise-Grade Network & Security Infrastructure",
+    "hero_subtitle": "Complete office IT solutions, structured cabling, and advanced security systems designed for reliability and scalability.",
+    "footer_tagline": "Secure Your Space with Expert Solutions",
+    "footer_description": "Professional camera installation and networking solutions for homes and businesses. Your security is our priority.",
     "description": "VisionGrid is a pioneering security solutions provider, specializing in intelligent camera systems, smart networking, smart home protection, enterprise security analytics, and automated AV systems.",
     "experience": "5+ years in security innovation",
     "installations": "100+ advanced system installations",
     "support": "24/7 technical support",
     "location": "Local metropolitan area",
-    "certifications": ["Advanced Security Systems Certified", "Licensed security installer", "Network certified technicians", "Insured and bonded"],
-    "mission": "To revolutionize security through innovative technology, protecting what matters most with predictive, intelligent, and automated solutions"
+    "mission": "At VisionGrid, we are dedicated to revolutionizing the security landscape through innovative technology. Our mission is to protect what matters most by deploying predictive, intelligent, and automated solutions that go beyond traditional surveillance. We bridge the gap between physical security and digital intelligence, offering enterprise-grade infrastructure that adapts to modern threats. From smart camera ecosystems to self-healing networks, we build the foundation for a safer, smarter future. Our commitment extends beyond installation; we partner with our clients to ensure their systems evolve with their needs, delivering unmatched reliability and peace of mind.",
+    "stats": {
+      "projects": "100+ Projects Completed",
+      "years": "5+ Years Experience",
+      "support": "24/7 Critical Support"
+    },
+    "core_values": [
+      { "name": "Innovation First", "description": "Pioneering the future of security with intelligent analytics and smart integration." },
+      { "name": "Unwavering Integrity", "description": "Building trust through transparent solutions and a commitment to absolute safety." },
+      { "name": "Client-Centric", "description": "Designing bespoke systems that perfectly align with your unique operational needs." }
+    ],
+    "why_partner": [
+      { "name": "Elite Certified Engineers", "description": "Our team comprises industry-vetted experts with top-tier certifications in security and networking." },
+      { "name": "Rapid Deployment", "description": "Streamlined installation protocols ensure your system is active with minimal operational disruption." },
+      { "name": "Next-Gen Technology", "description": "Deploying advanced neural processing hardware for real-time threat detection and analytics." },
+      { "name": "24/7 Critical Support", "description": "Round-the-clock technical assistance and predictive maintenance to keep your systems online." }
+    ],
+    "why_choose": [
+      { "name": "Expert Technicians", "description": "Experienced professionals with deep expertise for all installation types." },
+      { "name": "Scalable Solutions", "description": "Infrastructure designed to grow with your business without costly overhauls." },
+      { "name": "Reliable Support", "description": "Dedicated support teams available 24/7 to ensure your systems never fail." },
+      { "name": "Quality Guarantee", "description": "We stand by our work with comprehensive warranties on parts and labor." }
+    ],
+    "certifications": ["Advanced Security Systems Certified", "Licensed security installer", "Network certified technicians", "Insured and bonded"]
   },
   "keywords": {
     "greetings": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
@@ -21,12 +47,13 @@
     "location": ["area", "location", "where", "service area", "coverage", "travel"],
     "time": ["how long", "duration", "time", "hours", "days", "when", "schedule"],
     "payment": ["payment", "financing", "finance", "pay", "money", "credit", "loan"],
-    "technology": ["technology", "smart", "intelligent", "machine learning", "automation", "features"]
+    "technology": ["technology", "smart", "intelligent", "machine learning", "automation", "features"],
+    "careers": ["career", "careers", "job", "jobs", "hiring", "employment", "work", "apply", "join", "team", "recruit"]
   },
   "services": {
     "camera_installation": {
       "name": "Smart Camera Systems",
-      "description": "Next-generation security cameras with intelligent detection and automated threat recognition",
+      "description": "Next-generation surveillance infrastructure with intelligent threat detection and automated response capabilities.",
       "pricing": {
         "basic_package": "$399-699",
         "premium_package": "$899-1499",
@@ -42,11 +69,25 @@
         "Cloud processing",
         "License plate recognition"
       ],
+      "key_features": [
+        "Indoor and outdoor smart sensors",
+        "4K resolution with enhanced night vision",
+        "Advanced motion tracking & analysis",
+        "Secure remote access via mobile",
+        "Redundant cloud & edge storage"
+      ],
+      "benefits": [
+        "24/7 autonomous monitoring",
+        "Proactive threat deterrence",
+        "High-fidelity evidence retention",
+        "Insurance compliance & discounts",
+        "Complete operational visibility"
+      ],
       "keywords": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording", "smart", "intelligent", "smart detection"]
     },
     "networking_solutions": {
-      "name": "Smart Network Infrastructure",
-      "description": "Optimized network systems with intelligent traffic management and predictive maintenance",
+      "name": "Network Infrastructure",
+      "description": "Enterprise-grade network architecture designed for zero-latency connectivity and maximum security throughput.",
       "pricing": {
         "home_network": "$299-499",
         "business_network": "$699-1199",
@@ -61,11 +102,25 @@
         "Advanced traffic analysis",
         "Self-healing network topology"
       ],
+      "key_features": [
+        "Strategic topology planning",
+        "High-density Wi-Fi 6/7 deployment",
+        "Structured cabling & management",
+        "Advanced firewall & threat protection",
+        "Real-time network health monitoring"
+      ],
+      "benefits": [
+        "Gigabit-speed reliability",
+        "Seamless mesh connectivity",
+        "Hardened security perimeter",
+        "Scalable bandwidth capacity",
+        "Zero-downtime architecture"
+      ],
       "keywords": ["network", "networking", "wifi", "internet", "connection", "router", "cable", "smart network", "optimization"]
     },
     "home_security": {
-      "name": "Smart Home Protection",
-      "description": "Intelligent home security with advanced threat detection and automated response systems",
+      "name": "Residential Protection",
+      "description": "Integrated home defense ecosystems that blend advanced security protocols with smart home automation.",
       "pricing": {
         "starter_package": "$499-799",
         "complete_package": "$999-1399",
@@ -81,11 +136,25 @@
         "Intelligent scene recognition",
         "Smart doorbell with identification"
       ],
+      "key_features": [
+        "Smart perimeter breach detection",
+        "Automated home integration",
+        "Biometric & mobile access control",
+        "Professional monitoring links",
+        "Uninterruptible power supply"
+      ],
+      "benefits": [
+        "Comprehensive family safety",
+        "Reduced insurance premiums",
+        "Property value enhancement",
+        "Remote estate management",
+        "Rapid emergency dispatch"
+      ],
       "keywords": ["home security", "residential", "house", "family", "personal", "smart home", "smart security"]
     },
     "business_security": {
-      "name": "Enterprise Smart Security",
-      "description": "Advanced security solutions with predictive analytics and automated threat response",
+      "name": "Enterprise Security",
+      "description": "Commercial security solutions engineered for regulatory compliance and multi-site asset protection.",
       "pricing": {
         "small_business": "$899-1599",
         "medium_business": "$1699-3299",
@@ -101,11 +170,25 @@
         "Intelligent video analytics",
         "Automated compliance monitoring"
       ],
+      "key_features": [
+        "Centralized multi-site command",
+        "Role-based access control",
+        "Predictive behavioral analytics",
+        "Legacy system integration",
+        "Automated compliance reporting"
+      ],
+      "benefits": [
+        "Asset & inventory protection",
+        "Personnel safety assurance",
+        "Regulatory audit readiness",
+        "Operational intelligence data",
+        "Loss prevention optimization"
+      ],
       "keywords": ["business security", "commercial", "office", "enterprise", "company", "analytics", "smart security"]
     },
     "audio_video_systems": {
-      "name": "Smart AV & Communication Systems",
-      "description": "Enhanced audio/video systems with intelligent sound optimization and automated meeting management",
+      "name": "Pro AV Systems",
+      "description": "Professional audio-visual environments designed for immersive clarity and seamless communication.",
       "pricing": {
         "home_entertainment": "$699-1299",
         "conference_room": "$999-1999",
@@ -121,9 +204,45 @@
         "Smart lighting integration",
         "Predictive maintenance alerts"
       ],
+      "key_features": [
+        "High-fidelity acoustic arrays",
+        "Smart conference automation",
+        "Interactive display solutions",
+        "Acoustic calibration & tuning",
+        "Unified control interfaces"
+      ],
+      "benefits": [
+        "Cinema-grade audiovisuals",
+        "Frictionless meeting experiences",
+        "Impactful presentation tools",
+        "Platform-agnostic integration",
+        "Dedicated technical support"
+      ],
       "keywords": ["audio", "video", "sound", "speakers", "conference", "projection", "entertainment", "smart av", "smart audio"]
     }
   },
+  "home_page_services": [
+    {
+      "name": "Structured Cabling & Network Design",
+      "description": "Complete office network infrastructure setup including Cat6/Fiber cabling, server rack installation, and enterprise-grade WiFi configuration.",
+      "features": ["Professional structured cabling", "Server room organization", "Enterprise WiFi coverage", "Fiber optic termination"]
+    },
+    {
+      "name": "Commercial Surveillance Systems",
+      "description": "High-definition security camera systems with remote monitoring capabilities and reliable 24/7 recording storage.",
+      "features": ["4K IP camera systems", "NVR storage solutions", "Remote mobile viewing", "License plate recognition"]
+    },
+    {
+      "name": "Cyber Security & Endpoint Management",
+      "description": "Comprehensive local application security, network strengthening, and endpoint management for resilient infrastructure.",
+      "features": ["Endpoint protection", "Network hardening", "Local app security", "Threat mitigation"]
+    },
+    {
+      "name": "Corporate Conference Solutions",
+      "description": "Modern conference room setups with integrated audio/video systems for seamless presentations and video calls.",
+      "features": ["Zoom/Teams room integration", "Wireless presentation systems", "Professional audio distribution", "Video wall installation"]
+    }
+  ],
   "appointments": {
     "consultation": {
       "type": "Free Security Assessment",
@@ -138,14 +257,20 @@
     }
   },
   "contact": {
-    "phone": "Contact us through our website form",
-    "email": "Use our contact form for inquiries",
+    "phone": "(862) 235-4618",
+    "email": "info@visiongrid.net",
+    "hours": "Mon-Fri 08:00-18:00 EST; Weekend by appointment only",
     "response_time": "We respond within 24 hours with custom solutions",
-    "emergency_support": "24/7 technical support available for existing customers"
+    "emergency_support": "24/7 technical support available for existing customers",
+    "sla": {
+      "standard": "< 24 Hours",
+      "critical": "Same Day Dispatch"
+    },
+    "form_url": "/contact"
   },
   "warranty": {
-    "equipment": "2-3 years manufacturer warranty on all equipment",
-    "installation": "1 year warranty on system installation and configuration",
+    "equipment": "2-5 years manufacturer warranty on all hardware (tier-dependent)",
+    "installation": "1 year warranty on system installation and configuration; comprehensive warranties on parts and labor",
     "support": "Lifetime technical support with system updates"
   },
   "process": [
@@ -170,56 +295,68 @@
       "description": "Ongoing system optimization and predictive maintenance support"
     }
   ],
+  "process_services_page": [
+    { "step": 1, "title": "Consultation", "description": "Comprehensive assessment of your security requirements and site architecture." },
+    { "step": 2, "title": "System Design", "description": "Custom engineering of your security ecosystem with detailed coverage mapping." },
+    { "step": 3, "title": "Deployment", "description": "Precision installation by expert engineers with rigorous testing protocols." },
+    { "step": 4, "title": "Support", "description": "Continuous system optimization and 24/7 technical assistance." }
+  ],
+  "process_home": [
+    { "step": 1, "title": "Site Survey & Design", "description": "We conduct a comprehensive analysis of your facility to design a custom infrastructure plan that meets your specific operational needs." },
+    { "step": 2, "title": "Professional Installation", "description": "Our certified technicians handle the physical deployment, including structured cabling, hardware mounting, and electrical integration." },
+    { "step": 3, "title": "Network Configuration", "description": "We configure all systems for optimal performance, security, and redundancy, ensuring your network is robust and secure." },
+    { "step": 4, "title": "24/7 Support & Maintenance", "description": "Ongoing monitoring and maintenance ensure your systems remain operational, with rapid response teams available around the clock." }
+  ],
   "faq": [
     {
-      "keywords": ["how long", "installation time", "duration"],
-      "question": "How long does system installation take?",
-      "answer": "System installation typically takes 3-10 hours depending on the complexity and features being configured. We include system training and setup in our installation process."
+      "keywords": ["how long", "installation time", "duration", "deployment timeline", "deploy"],
+      "question": "How long does a deployment/installation take?",
+      "answer": "Standard commercial deployments are executed within 4-8 hours. Complex enterprise integration timelines are established during the initial site architecture review. Typical installation takes 3-10 hours depending on complexity and features; system training and setup are included."
     },
     {
-      "keywords": ["financing", "payment plans", "finance options"],
+      "keywords": ["financing", "payment plans", "finance options", "payment"],
       "question": "Do you offer financing for security systems?",
       "answer": "Yes, we offer flexible payment plans and financing options for all security solutions. Contact us to discuss what works best for your budget and upgrade needs."
     },
     {
-      "keywords": ["service area", "location", "where do you serve"],
+      "keywords": ["service area", "location", "where do you serve", "territory", "coverage"],
       "question": "What areas do you serve for installations?",
-      "answer": "We serve the local metropolitan area with specialized security installations. Contact us to confirm service availability and compatibility in your specific location."
+      "answer": "We provide comprehensive coverage for residential and commercial clients throughout the greater metropolitan region. Please contact our dispatch team for specific site eligibility."
     },
     {
-      "keywords": ["integration", "existing systems", "smart home"],
-      "question": "Can you integrate with existing systems?",
-      "answer": "Yes, we specialize in integrating advanced capabilities with existing security systems, smart home platforms, and business infrastructure. Our modules can enhance most modern security setups."
+      "keywords": ["integration", "existing systems", "smart home", "legacy"],
+      "question": "Can you integrate with existing/legacy systems?",
+      "answer": "Yes. Our engineering team specializes in hybrid environments, capable of retrofitting and integrating modern intelligent sensors with existing analog or IP-based legacy systems, as well as smart home platforms and business infrastructure."
     },
     {
-      "keywords": ["licensed", "insured", "certified", "qualified"],
-      "question": "Are you certified for security installations?",
-      "answer": "Yes, we are Advanced Security Systems Certified, fully licensed security installers, insured and bonded. Our technicians receive continuous training on the latest security technologies."
+      "keywords": ["licensed", "insured", "certified", "qualified", "warranty", "hardware warranty"],
+      "question": "Are you certified, and are hardware warranties included?",
+      "answer": "Yes, we are Advanced Security Systems Certified, fully licensed security installers, insured and bonded. We provide comprehensive enterprise-grade warranties on all hardware and installation labor, typically ranging from 2-5 years based on component tier."
     },
     {
-      "keywords": ["emergency", "24/7", "after hours", "weekend"],
-      "question": "Do you provide system support after hours?",
-      "answer": "We offer 24/7 technical support for existing customers. Our monitoring systems can detect issues and provide automated responses even when our technicians are offline."
+      "keywords": ["emergency", "24/7", "after hours", "weekend", "support", "sla", "uptime"],
+      "question": "Do you provide after-hours support / SLAs?",
+      "answer": "We offer 24/7 technical support for existing customers, with tiered support SLAs including 24/7 critical response and predictive maintenance packages to ensure 99.9% system uptime. Our monitoring systems can detect issues and provide automated responses even when technicians are offline."
     },
     {
-      "keywords": ["free estimate", "quote", "consultation cost"],
+      "keywords": ["free estimate", "quote", "consultation cost", "free consultation"],
       "question": "Is the security assessment free?",
       "answer": "Yes! We provide completely free security assessments and consultations. Our analysis tools help us provide accurate recommendations with no obligation or hidden fees."
     },
     {
-      "keywords": ["maintenance", "ongoing support", "service plan"],
+      "keywords": ["maintenance", "ongoing support", "service plan", "predictive"],
       "question": "How do you maintain security systems?",
       "answer": "Our systems include predictive maintenance that alerts us to potential issues before they occur. We offer maintenance plans with automatic updates and continuous optimization."
     },
     {
-      "keywords": ["mobile app", "remote access", "phone control"],
-      "question": "Can I control features from my phone?",
-      "answer": "Absolutely! Our security systems include advanced mobile apps with smart notifications, intuitive controls, and real-time threat analysis accessible from anywhere."
+      "keywords": ["mobile app", "remote access", "phone control", "fleet management", "remote monitoring"],
+      "question": "Can I control/monitor the system remotely?",
+      "answer": "Absolutely. All our ecosystems are engineered with secure, encrypted remote access for real-time monitoring and management via our dedicated mobile and web portals, including fleet management for multi-site deployments."
     },
     {
-      "keywords": ["upgrade", "expand", "add cameras", "more coverage"],
+      "keywords": ["upgrade", "expand", "add cameras", "more coverage", "scalable"],
       "question": "Can I expand my system later?",
-      "answer": "Yes, our systems are designed to be scalable. You can easily add more smart cameras, modules, or upgrade existing components to newer features as technology advances."
+      "answer": "Yes, our systems are designed to be scalable. You can easily add more smart cameras, modules, or upgrade existing components to newer features as technology advances — infrastructure grows with your business without costly overhauls."
     },
     {
       "keywords": ["features", "technology", "capabilities", "smart"],
@@ -232,10 +369,118 @@
       "answer": "Our smart systems learn to distinguish between real threats and harmless activities like pets, weather, or routine movements, reducing false alarms by up to 95% compared to traditional motion sensors."
     }
   ],
+  "careers": {
+    "intro": "At VisionGrid, we don't just install technology; we build the nervous systems of modern businesses. We are looking for dedicated problem-solvers who take pride in their craft. Whether you're pulling cable or configuring a server, your work directly impacts the safety and efficiency of our community.",
+    "apply": "Apply via our contact form at /contact — each role's Apply Now button links there. No resume upload field exists; send your details through the inquiry form.",
+    "benefits_note": "Specific benefits are not listed on the careers page; inquire via the contact form for details.",
+    "roles": [
+      {
+        "title": "Security Systems Technician",
+        "type": "Full-time",
+        "description": "The face of VisionGrid on-site, installing and configuring high-end surveillance systems that protect our clients' assets.",
+        "duties": [
+          "Install, program, and calibrate IP and analog security cameras.",
+          "Mount hardware professionally on various surfaces (drywall, concrete, exterior).",
+          "Configure NVRs and remote viewing applications for clients.",
+          "Troubleshoot image quality and connectivity issues on the fly."
+        ],
+        "requirements": [
+          "Experience with power tools and ladder safety.",
+          "Basic understanding of IP networking.",
+          "Clean driving record and ability to travel locally.",
+          "An obsession with neat wire management."
+        ]
+      },
+      {
+        "title": "Low Voltage Cabling Specialist",
+        "type": "Full-time",
+        "description": "The backbone of our infrastructure projects — someone who sees a messy server closet as a challenge and understands that a reliable network starts with physical layer perfection.",
+        "duties": [
+          "Run, terminate, and test Cat6, Coax, and Fiber optic cables.",
+          "Dress and label cables in server racks for a showroom-quality finish.",
+          "Navigate crawl spaces and drop ceilings with care.",
+          "Perform cable certification tests and document results."
+        ],
+        "requirements": [
+          "Steady hands for precise termination (RJ45, Keystone).",
+          "Comfortable working at heights (lifts and ladders).",
+          "Ability to read floor plans and wiring schematics.",
+          "Pride in leaving a job site cleaner than you found it."
+        ]
+      },
+      {
+        "title": "Windows System Administrator",
+        "type": "Full-time",
+        "description": "A digital mechanic keeping our clients' environments running smoothly — managing the Windows-based servers and workstations that power integrated security and business systems.",
+        "duties": [
+          "Manage and maintain Windows Server environments (Active Directory, DNS, DHCP).",
+          "Deploy security patches and system updates without disrupting operations.",
+          "Manage user access controls and permissions.",
+          "Troubleshoot OS-level issues and hardware compatibility."
+        ],
+        "requirements": [
+          "Solid grasp of Windows Server 2019/2022 ecosystem.",
+          "Experience with PowerShell scripting is a huge plus.",
+          "Understanding of virtualization (Hyper-V or VMware).",
+          "Patience to explain technical issues to non-technical users."
+        ]
+      },
+      {
+        "title": "Network Support Specialist",
+        "type": "Full-time",
+        "description": "Ensures data flows where it needs to go, securely and fast — the first line of defense against connectivity issues.",
+        "duties": [
+          "Configure routers, switches, and firewalls (VLANs, VPNs, Port Forwarding).",
+          "Diagnose and resolve network bottlenecks and connectivity drops.",
+          "Set up secure Wi-Fi networks for high-density environments.",
+          "Monitor network health and respond to outages."
+        ],
+        "requirements": [
+          "Understanding of the OSI model and TCP/IP fundamentals.",
+          "Experience with Ubiquiti, Mikrotik, or Cisco gear.",
+          "Analytical mindset for root-cause troubleshooting.",
+          "Strong communication skills for remote support tickets."
+        ]
+      },
+      {
+        "title": "Field Service Technician (General IT)",
+        "type": "Part-time / Contract",
+        "description": "A versatile jack-of-all-trades and our rapid-response hero — from swapping a hard drive to helping a client recover a lost password.",
+        "duties": [
+          "Perform on-site hardware repairs (PCs, Printers, POS systems).",
+          "Assist with new workstation setups and cable management.",
+          "Provide hands-on support for remote engineering teams.",
+          "Document site configurations and inventory."
+        ],
+        "requirements": [
+          "Broad knowledge of computer hardware and peripherals.",
+          "Ability to think on your feet and improvise solutions.",
+          "Professional demeanor and punctuality.",
+          "Your own reliable set of basic IT tools."
+        ]
+      }
+    ]
+  },
+  "links": {
+    "camera_site_planner": {
+      "web": "https://siteplanner.visiongrid.net",
+      "download": "https://downloads.visiongrid.net"
+    },
+    "invoice_generator": "https://invoice.visiongrid.net",
+    "contact_form": "/contact",
+    "careers_page": "/careers",
+    "services_page": "/services",
+    "about_page": "/about"
+  },
+  "territory": {
+    "coverage": "Greater metropolitan region (residential and commercial). No specific street address is published.",
+    "eligibility": "Contact our dispatch team for specific site eligibility.",
+    "travel_policy": "Free consultation within 25 miles; travel fees may apply for distant installations."
+  },
   "responses": {
     "greeting": "Hello! I'm VisionGrid's virtual assistant. I can help you with information about our intelligent security services, features, pricing, and consultations. What would you like to know about our solutions?",
-    "default": "I'd be happy to help you with information about VisionGrid's security services! I can assist with smart features, system details, pricing, scheduling consultations, installation process, and technical questions. What specific information are you looking for?",
-    "contact_redirect": "For detailed system quotes or to speak with our security specialists, please use our contact form or schedule a free assessment. We respond within 24 hours with intelligent recommendations!",
+    "default": "I'd be happy to help you with information about VisionGrid's security services! I can assist with smart features, system details, pricing, scheduling consultations, installation process, careers, and technical questions. What specific information are you looking for?",
+    "contact_redirect": "For detailed system quotes or to speak with our security specialists, please use our contact form (/contact) or call (862) 235-4618. We respond within 24 hours with intelligent recommendations!",
     "thank_you": "You're welcome! Is there anything else about our security services I can help you with today?"
   },
   "locations": {
@@ -252,14 +497,25 @@
     "ai_cameras": ["Hikvision Smart Series", "Dahua WizMind", "Axis ARTPEC", "Bosch Video Analytics", "Hanwha Wisenet"],
     "smart_networking": ["Ubiquiti UniFi", "Cisco Meraki", "Netgear Orbi Pro", "TP-Link Omada SDN"],
     "smart_security_systems": ["Honeywell Pro-Watch", "DSC PowerSeries Neo", "Qolsys IQ Panel", "2GIG Edge"],
-    "smart_av": ["Sonos Pro", "Bose Professional", "Yamaha ADECIA", "Epson Interactive"]
+    "smart_av": ["Sonos Pro", "Bose Professional", "Yamaha ADECIA", "Epson Interactive"],
+    "networking_gear_used": ["Ubiquiti", "Mikrotik", "Cisco"]
   },
   "special_offers": {
     "current_promotions": "Ask about our system upgrade promotions and smart security package deals!",
     "referral_program": "Refer a friend and both receive a discount on security services",
     "maintenance_plans": "Predictive maintenance plans with priority support",
-    "smart_upgrade": "Upgrade existing systems to smart solutions with 20% discount"
+    "smart_upgrade": "Upgrade existing systems to smart solutions with 20% discount",
+    "free_consultation": "Free security assessment and consultation — no obligation or hidden fees."
   },
+  "do_not_invent": [
+    "Exact prices beyond the pricing ranges listed in the knowledge base",
+    "A street address or specific city/state (none is published)",
+    "Specific certification names beyond those listed",
+    "Social media accounts or handles (the site has none)",
+    "Delivery, shipping, or product order tracking",
+    "Guaranteed installation dates or exact timelines beyond the ranges given",
+    "Any service, feature, brand, or fact not present in the knowledge base"
+  ],
   "advanced_features": {
     "computer_vision": {
       "description": "Advanced algorithms for real-time object and behavior recognition",

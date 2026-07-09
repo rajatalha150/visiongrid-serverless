@@ -103,7 +103,11 @@ const sendMessage = async () => {
   await scrollToBottom()
   
   try {
-    const data = await sendChatMessage(userMessage, messages.value)
+    // Send only recent context (last ~6 messages, excluding the user message
+    // we just pushed) so the prompt stays small and the current message isn't
+    // duplicated in the model's message stack.
+    const recentHistory = messages.value.slice(-7, -1)
+    const data = await sendChatMessage(userMessage, recentHistory)
     messages.value.push({ role: 'assistant', content: data.response })
     
   } catch (error) {
