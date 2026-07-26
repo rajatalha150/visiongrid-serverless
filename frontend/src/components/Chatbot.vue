@@ -124,11 +124,40 @@ const sendMessage = async () => {
 const getLocalResponse = (message: string): string => {
   const msg = message.toLowerCase()
   const kb = knowledge.value
-  
+
   if (msg.includes('hello') || msg.includes('hi')) {
-    return "Hello! I'm VisionGrid's virtual assistant. I can help you with information about our security services, pricing, appointments, and more. What would you like to know?"
+    return "Hello! I'm VisionGrid's virtual assistant. I can help you with our enterprise network and security services, and with EZ Solutions - our PDF tools for accountants (EZ-Summary and EZ-Extract). What would you like to know?"
   }
-  
+
+  // EZ Solutions fast-path
+  const isEzSummary = msg.includes('ez-summary') || msg.includes('ez summary') || msg.includes('ezsummary') ||
+    msg.includes('bank statement') || (msg.includes('statement') && (msg.includes('pdf') || msg.includes('excel')))
+  const isEzExtract = msg.includes('ez-extract') || msg.includes('ez extract') || msg.includes('ezextract') ||
+    msg.includes('pdf field') || msg.includes('extract from pdf')
+  const isEz = isEzSummary || isEzExtract || msg.includes('ez solutions') || msg.includes('ezsolutions') ||
+    (msg.includes('ez ') && (msg.includes('pdf') || msg.includes('excel')))
+
+  if (isEz) {
+    const ez = kb.ez_solutions
+    if (ez) {
+      const summary = ez.products?.ez_summary
+      const extract = ez.products?.ez_extract
+
+      if (isEzExtract && !isEzSummary && extract) {
+        return `EZ-Extract is our universal PDF field extractor (coming soon). Click on any value in any PDF, pick an anchor and direction, and save a reusable template. It works on invoices, tax forms, statements, and reports.\n\nKey features:\n${extract.key_features.map((f: string) => `  ✓ ${f}`).join('\n')}\n\nJoin the waitlist (one email, no spam): ${extract.waitlist_url}\nLearn more: ${extract.url}`
+      }
+
+      if (isEzSummary && !isEzExtract && summary) {
+        const plans = summary.pricing_plans
+          .map((p: any) => `  • ${p.name}: $${p.price_usd}${p.billing === 'monthly' ? '/mo' : p.billing === 'one_time' ? ' one-time' : ' (3-day free trial)'}`)
+          .join('\n')
+        return `EZ-Summary turns bank statement PDFs into clean Excel or CSV in one click. Windows app, runs offline, no Python needed.\n\nKey features:\n${summary.key_features.map((f: string) => `  ✓ ${f}`).join('\n')}\n\nPricing:\n${plans}\n\nStart a 3-day free trial (5 pages, no card): ${summary.trial_url}\nLearn more: ${summary.url}`
+      }
+
+      return `EZ Solutions is VisionGrid's suite of PDF tools for accountants and small businesses: https://ez.visiongrid.net\n\n• EZ-Summary (live now): bank statements → Excel in one click. Windows, offline, 3-day free trial.\n  → https://ez.visiongrid.net/trial\n\n• EZ-Extract (coming soon): universal PDF field extractor for invoices, tax forms, statements, and reports.\n  → https://ez.visiongrid.net/watchlist\n\nWhich one would you like to know more about?`
+    }
+  }
+
   if (msg.includes('service') || msg.includes('what do you do')) {
     const services = Object.values(kb.services || {}).map((s: any) => s.name).join(', ')
     return `VisionGrid offers comprehensive security solutions including: ${services}. We have ${kb.company?.experience} of experience with ${kb.company?.installations} installations completed. Which service interests you most?`

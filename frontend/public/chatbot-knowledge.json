@@ -17,38 +17,185 @@
       "support": "24/7 Critical Support"
     },
     "core_values": [
-      { "name": "Innovation First", "description": "Pioneering the future of security with intelligent analytics and smart integration." },
-      { "name": "Unwavering Integrity", "description": "Building trust through transparent solutions and a commitment to absolute safety." },
-      { "name": "Client-Centric", "description": "Designing bespoke systems that perfectly align with your unique operational needs." }
+      {
+        "name": "Innovation First",
+        "description": "Pioneering the future of security with intelligent analytics and smart integration."
+      },
+      {
+        "name": "Unwavering Integrity",
+        "description": "Building trust through transparent solutions and a commitment to absolute safety."
+      },
+      {
+        "name": "Client-Centric",
+        "description": "Designing bespoke systems that perfectly align with your unique operational needs."
+      }
     ],
     "why_partner": [
-      { "name": "Elite Certified Engineers", "description": "Our team comprises industry-vetted experts with top-tier certifications in security and networking." },
-      { "name": "Rapid Deployment", "description": "Streamlined installation protocols ensure your system is active with minimal operational disruption." },
-      { "name": "Next-Gen Technology", "description": "Deploying advanced neural processing hardware for real-time threat detection and analytics." },
-      { "name": "24/7 Critical Support", "description": "Round-the-clock technical assistance and predictive maintenance to keep your systems online." }
+      {
+        "name": "Elite Certified Engineers",
+        "description": "Our team comprises industry-vetted experts with top-tier certifications in security and networking."
+      },
+      {
+        "name": "Rapid Deployment",
+        "description": "Streamlined installation protocols ensure your system is active with minimal operational disruption."
+      },
+      {
+        "name": "Next-Gen Technology",
+        "description": "Deploying advanced neural processing hardware for real-time threat detection and analytics."
+      },
+      {
+        "name": "24/7 Critical Support",
+        "description": "Round-the-clock technical assistance and predictive maintenance to keep your systems online."
+      }
     ],
     "why_choose": [
-      { "name": "Expert Technicians", "description": "Experienced professionals with deep expertise for all installation types." },
-      { "name": "Scalable Solutions", "description": "Infrastructure designed to grow with your business without costly overhauls." },
-      { "name": "Reliable Support", "description": "Dedicated support teams available 24/7 to ensure your systems never fail." },
-      { "name": "Quality Guarantee", "description": "We stand by our work with comprehensive warranties on parts and labor." }
+      {
+        "name": "Expert Technicians",
+        "description": "Experienced professionals with deep expertise for all installation types."
+      },
+      {
+        "name": "Scalable Solutions",
+        "description": "Infrastructure designed to grow with your business without costly overhauls."
+      },
+      {
+        "name": "Reliable Support",
+        "description": "Dedicated support teams available 24/7 to ensure your systems never fail."
+      },
+      {
+        "name": "Quality Guarantee",
+        "description": "We stand by our work with comprehensive warranties on parts and labor."
+      }
     ],
-    "certifications": ["Advanced Security Systems Certified", "Licensed security installer", "Network certified technicians", "Insured and bonded"]
+    "certifications": [
+      "Advanced Security Systems Certified",
+      "Licensed security installer",
+      "Network certified technicians",
+      "Insured and bonded"
+    ]
   },
   "keywords": {
-    "greetings": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
-    "services": ["service", "services", "what do you do", "offerings", "solutions", "install", "installation"],
-    "pricing": ["price", "cost", "pricing", "how much", "expensive", "cheap", "budget", "quote", "estimate"],
-    "camera": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording", "detection", "smart camera"],
-    "network": ["network", "networking", "wifi", "internet", "connection", "router", "cable", "smart network"],
-    "security": ["security", "alarm", "protection", "safe", "secure", "monitoring", "smart security"],
-    "appointment": ["appointment", "consultation", "schedule", "meet", "visit", "call", "book"],
-    "warranty": ["warranty", "guarantee", "support", "maintenance", "repair", "fix"],
-    "location": ["area", "location", "where", "service area", "coverage", "travel"],
-    "time": ["how long", "duration", "time", "hours", "days", "when", "schedule"],
-    "payment": ["payment", "financing", "finance", "pay", "money", "credit", "loan"],
-    "technology": ["technology", "smart", "intelligent", "machine learning", "automation", "features"],
-    "careers": ["career", "careers", "job", "jobs", "hiring", "employment", "work", "apply", "join", "team", "recruit"]
+    "greetings": [
+      "hello",
+      "hi",
+      "hey",
+      "good morning",
+      "good afternoon",
+      "good evening"
+    ],
+    "services": [
+      "service",
+      "services",
+      "what do you do",
+      "offerings",
+      "solutions",
+      "install",
+      "installation"
+    ],
+    "pricing": [
+      "price",
+      "cost",
+      "pricing",
+      "how much",
+      "expensive",
+      "cheap",
+      "budget",
+      "quote",
+      "estimate"
+    ],
+    "camera": [
+      "camera",
+      "cameras",
+      "surveillance",
+      "cctv",
+      "security camera",
+      "video",
+      "recording",
+      "detection",
+      "smart camera"
+    ],
+    "network": [
+      "network",
+      "networking",
+      "wifi",
+      "internet",
+      "connection",
+      "router",
+      "cable",
+      "smart network"
+    ],
+    "security": [
+      "security",
+      "alarm",
+      "protection",
+      "safe",
+      "secure",
+      "monitoring",
+      "smart security"
+    ],
+    "appointment": [
+      "appointment",
+      "consultation",
+      "schedule",
+      "meet",
+      "visit",
+      "call",
+      "book"
+    ],
+    "warranty": [
+      "warranty",
+      "guarantee",
+      "support",
+      "maintenance",
+      "repair",
+      "fix"
+    ],
+    "location": [
+      "area",
+      "location",
+      "where",
+      "service area",
+      "coverage",
+      "travel"
+    ],
+    "time": [
+      "how long",
+      "duration",
+      "time",
+      "hours",
+      "days",
+      "when",
+      "schedule"
+    ],
+    "payment": [
+      "payment",
+      "financing",
+      "finance",
+      "pay",
+      "money",
+      "credit",
+      "loan"
+    ],
+    "technology": [
+      "technology",
+      "smart",
+      "intelligent",
+      "machine learning",
+      "automation",
+      "features"
+    ],
+    "careers": [
+      "career",
+      "careers",
+      "job",
+      "jobs",
+      "hiring",
+      "employment",
+      "work",
+      "apply",
+      "join",
+      "team",
+      "recruit"
+    ]
   },
   "services": {
     "camera_installation": {
@@ -83,7 +230,18 @@
         "Insurance compliance & discounts",
         "Complete operational visibility"
       ],
-      "keywords": ["camera", "cameras", "surveillance", "cctv", "security camera", "video", "recording", "smart", "intelligent", "smart detection"]
+      "keywords": [
+        "camera",
+        "cameras",
+        "surveillance",
+        "cctv",
+        "security camera",
+        "video",
+        "recording",
+        "smart",
+        "intelligent",
+        "smart detection"
+      ]
     },
     "networking_solutions": {
       "name": "Network Infrastructure",
@@ -116,7 +274,17 @@
         "Scalable bandwidth capacity",
         "Zero-downtime architecture"
       ],
-      "keywords": ["network", "networking", "wifi", "internet", "connection", "router", "cable", "smart network", "optimization"]
+      "keywords": [
+        "network",
+        "networking",
+        "wifi",
+        "internet",
+        "connection",
+        "router",
+        "cable",
+        "smart network",
+        "optimization"
+      ]
     },
     "home_security": {
       "name": "Residential Protection",
@@ -150,7 +318,15 @@
         "Remote estate management",
         "Rapid emergency dispatch"
       ],
-      "keywords": ["home security", "residential", "house", "family", "personal", "smart home", "smart security"]
+      "keywords": [
+        "home security",
+        "residential",
+        "house",
+        "family",
+        "personal",
+        "smart home",
+        "smart security"
+      ]
     },
     "business_security": {
       "name": "Enterprise Security",
@@ -184,7 +360,15 @@
         "Operational intelligence data",
         "Loss prevention optimization"
       ],
-      "keywords": ["business security", "commercial", "office", "enterprise", "company", "analytics", "smart security"]
+      "keywords": [
+        "business security",
+        "commercial",
+        "office",
+        "enterprise",
+        "company",
+        "analytics",
+        "smart security"
+      ]
     },
     "audio_video_systems": {
       "name": "Pro AV Systems",
@@ -218,29 +402,59 @@
         "Platform-agnostic integration",
         "Dedicated technical support"
       ],
-      "keywords": ["audio", "video", "sound", "speakers", "conference", "projection", "entertainment", "smart av", "smart audio"]
+      "keywords": [
+        "audio",
+        "video",
+        "sound",
+        "speakers",
+        "conference",
+        "projection",
+        "entertainment",
+        "smart av",
+        "smart audio"
+      ]
     }
   },
   "home_page_services": [
     {
       "name": "Structured Cabling & Network Design",
       "description": "Complete office network infrastructure setup including Cat6/Fiber cabling, server rack installation, and enterprise-grade WiFi configuration.",
-      "features": ["Professional structured cabling", "Server room organization", "Enterprise WiFi coverage", "Fiber optic termination"]
+      "features": [
+        "Professional structured cabling",
+        "Server room organization",
+        "Enterprise WiFi coverage",
+        "Fiber optic termination"
+      ]
     },
     {
       "name": "Commercial Surveillance Systems",
       "description": "High-definition security camera systems with remote monitoring capabilities and reliable 24/7 recording storage.",
-      "features": ["4K IP camera systems", "NVR storage solutions", "Remote mobile viewing", "License plate recognition"]
+      "features": [
+        "4K IP camera systems",
+        "NVR storage solutions",
+        "Remote mobile viewing",
+        "License plate recognition"
+      ]
     },
     {
       "name": "Cyber Security & Endpoint Management",
       "description": "Comprehensive local application security, network strengthening, and endpoint management for resilient infrastructure.",
-      "features": ["Endpoint protection", "Network hardening", "Local app security", "Threat mitigation"]
+      "features": [
+        "Endpoint protection",
+        "Network hardening",
+        "Local app security",
+        "Threat mitigation"
+      ]
     },
     {
       "name": "Corporate Conference Solutions",
       "description": "Modern conference room setups with integrated audio/video systems for seamless presentations and video calls.",
-      "features": ["Zoom/Teams room integration", "Wireless presentation systems", "Professional audio distribution", "Video wall installation"]
+      "features": [
+        "Zoom/Teams room integration",
+        "Wireless presentation systems",
+        "Professional audio distribution",
+        "Video wall installation"
+      ]
     }
   ],
   "appointments": {
@@ -296,75 +510,175 @@
     }
   ],
   "process_services_page": [
-    { "step": 1, "title": "Consultation", "description": "Comprehensive assessment of your security requirements and site architecture." },
-    { "step": 2, "title": "System Design", "description": "Custom engineering of your security ecosystem with detailed coverage mapping." },
-    { "step": 3, "title": "Deployment", "description": "Precision installation by expert engineers with rigorous testing protocols." },
-    { "step": 4, "title": "Support", "description": "Continuous system optimization and 24/7 technical assistance." }
+    {
+      "step": 1,
+      "title": "Consultation",
+      "description": "Comprehensive assessment of your security requirements and site architecture."
+    },
+    {
+      "step": 2,
+      "title": "System Design",
+      "description": "Custom engineering of your security ecosystem with detailed coverage mapping."
+    },
+    {
+      "step": 3,
+      "title": "Deployment",
+      "description": "Precision installation by expert engineers with rigorous testing protocols."
+    },
+    {
+      "step": 4,
+      "title": "Support",
+      "description": "Continuous system optimization and 24/7 technical assistance."
+    }
   ],
   "process_home": [
-    { "step": 1, "title": "Site Survey & Design", "description": "We conduct a comprehensive analysis of your facility to design a custom infrastructure plan that meets your specific operational needs." },
-    { "step": 2, "title": "Professional Installation", "description": "Our certified technicians handle the physical deployment, including structured cabling, hardware mounting, and electrical integration." },
-    { "step": 3, "title": "Network Configuration", "description": "We configure all systems for optimal performance, security, and redundancy, ensuring your network is robust and secure." },
-    { "step": 4, "title": "24/7 Support & Maintenance", "description": "Ongoing monitoring and maintenance ensure your systems remain operational, with rapid response teams available around the clock." }
+    {
+      "step": 1,
+      "title": "Site Survey & Design",
+      "description": "We conduct a comprehensive analysis of your facility to design a custom infrastructure plan that meets your specific operational needs."
+    },
+    {
+      "step": 2,
+      "title": "Professional Installation",
+      "description": "Our certified technicians handle the physical deployment, including structured cabling, hardware mounting, and electrical integration."
+    },
+    {
+      "step": 3,
+      "title": "Network Configuration",
+      "description": "We configure all systems for optimal performance, security, and redundancy, ensuring your network is robust and secure."
+    },
+    {
+      "step": 4,
+      "title": "24/7 Support & Maintenance",
+      "description": "Ongoing monitoring and maintenance ensure your systems remain operational, with rapid response teams available around the clock."
+    }
   ],
   "faq": [
     {
-      "keywords": ["how long", "installation time", "duration", "deployment timeline", "deploy"],
+      "keywords": [
+        "how long",
+        "installation time",
+        "duration",
+        "deployment timeline",
+        "deploy"
+      ],
       "question": "How long does a deployment/installation take?",
       "answer": "Standard commercial deployments are executed within 4-8 hours. Complex enterprise integration timelines are established during the initial site architecture review. Typical installation takes 3-10 hours depending on complexity and features; system training and setup are included."
     },
     {
-      "keywords": ["financing", "payment plans", "finance options", "payment"],
+      "keywords": [
+        "financing",
+        "payment plans",
+        "finance options",
+        "payment"
+      ],
       "question": "Do you offer financing for security systems?",
       "answer": "Yes, we offer flexible payment plans and financing options for all security solutions. Contact us to discuss what works best for your budget and upgrade needs."
     },
     {
-      "keywords": ["service area", "location", "where do you serve", "territory", "coverage"],
+      "keywords": [
+        "service area",
+        "location",
+        "where do you serve",
+        "territory",
+        "coverage"
+      ],
       "question": "What areas do you serve for installations?",
       "answer": "We provide comprehensive coverage for residential and commercial clients throughout the greater metropolitan region. Please contact our dispatch team for specific site eligibility."
     },
     {
-      "keywords": ["integration", "existing systems", "smart home", "legacy"],
+      "keywords": [
+        "integration",
+        "existing systems",
+        "smart home",
+        "legacy"
+      ],
       "question": "Can you integrate with existing/legacy systems?",
       "answer": "Yes. Our engineering team specializes in hybrid environments, capable of retrofitting and integrating modern intelligent sensors with existing analog or IP-based legacy systems, as well as smart home platforms and business infrastructure."
     },
     {
-      "keywords": ["licensed", "insured", "certified", "qualified", "warranty", "hardware warranty"],
+      "keywords": [
+        "licensed",
+        "insured",
+        "certified",
+        "qualified",
+        "warranty",
+        "hardware warranty"
+      ],
       "question": "Are you certified, and are hardware warranties included?",
       "answer": "Yes, we are Advanced Security Systems Certified, fully licensed security installers, insured and bonded. We provide comprehensive enterprise-grade warranties on all hardware and installation labor, typically ranging from 2-5 years based on component tier."
     },
     {
-      "keywords": ["emergency", "24/7", "after hours", "weekend", "support", "sla", "uptime"],
+      "keywords": [
+        "emergency",
+        "24/7",
+        "after hours",
+        "weekend",
+        "support",
+        "sla",
+        "uptime"
+      ],
       "question": "Do you provide after-hours support / SLAs?",
       "answer": "We offer 24/7 technical support for existing customers, with tiered support SLAs including 24/7 critical response and predictive maintenance packages to ensure 99.9% system uptime. Our monitoring systems can detect issues and provide automated responses even when technicians are offline."
     },
     {
-      "keywords": ["free estimate", "quote", "consultation cost", "free consultation"],
+      "keywords": [
+        "free estimate",
+        "quote",
+        "consultation cost",
+        "free consultation"
+      ],
       "question": "Is the security assessment free?",
       "answer": "Yes! We provide completely free security assessments and consultations. Our analysis tools help us provide accurate recommendations with no obligation or hidden fees."
     },
     {
-      "keywords": ["maintenance", "ongoing support", "service plan", "predictive"],
+      "keywords": [
+        "maintenance",
+        "ongoing support",
+        "service plan",
+        "predictive"
+      ],
       "question": "How do you maintain security systems?",
       "answer": "Our systems include predictive maintenance that alerts us to potential issues before they occur. We offer maintenance plans with automatic updates and continuous optimization."
     },
     {
-      "keywords": ["mobile app", "remote access", "phone control", "fleet management", "remote monitoring"],
+      "keywords": [
+        "mobile app",
+        "remote access",
+        "phone control",
+        "fleet management",
+        "remote monitoring"
+      ],
       "question": "Can I control/monitor the system remotely?",
       "answer": "Absolutely. All our ecosystems are engineered with secure, encrypted remote access for real-time monitoring and management via our dedicated mobile and web portals, including fleet management for multi-site deployments."
     },
     {
-      "keywords": ["upgrade", "expand", "add cameras", "more coverage", "scalable"],
+      "keywords": [
+        "upgrade",
+        "expand",
+        "add cameras",
+        "more coverage",
+        "scalable"
+      ],
       "question": "Can I expand my system later?",
       "answer": "Yes, our systems are designed to be scalable. You can easily add more smart cameras, modules, or upgrade existing components to newer features as technology advances — infrastructure grows with your business without costly overhauls."
     },
     {
-      "keywords": ["features", "technology", "capabilities", "smart"],
+      "keywords": [
+        "features",
+        "technology",
+        "capabilities",
+        "smart"
+      ],
       "question": "What advanced features do your systems include?",
       "answer": "Our systems include advanced features like facial recognition, behavioral analytics, predictive threat detection, smart motion tracking, automated responses, and adaptive learning that improves accuracy over time."
     },
     {
-      "keywords": ["false alarms", "accuracy", "smart alerts"],
+      "keywords": [
+        "false alarms",
+        "accuracy",
+        "smart alerts"
+      ],
       "question": "How do you reduce false alarms?",
       "answer": "Our smart systems learn to distinguish between real threats and harmless activities like pets, weather, or routine movements, reducing false alarms by up to 95% compared to traditional motion sensors."
     }
@@ -470,7 +784,12 @@
     "contact_form": "/contact",
     "careers_page": "/careers",
     "services_page": "/services",
-    "about_page": "/about"
+    "about_page": "/about",
+    "ez_solutions": {
+      "main": "https://ez.visiongrid.net",
+      "trial": "https://ez.visiongrid.net/trial",
+      "waitlist": "https://ez.visiongrid.net/watchlist"
+    }
   },
   "territory": {
     "coverage": "Greater metropolitan region (residential and commercial). No specific street address is published.",
@@ -478,27 +797,60 @@
     "travel_policy": "Free consultation within 25 miles; travel fees may apply for distant installations."
   },
   "responses": {
-    "greeting": "Hello! I'm VisionGrid's virtual assistant. I can help you with information about our intelligent security services, features, pricing, and consultations. What would you like to know about our solutions?",
-    "default": "I'd be happy to help you with information about VisionGrid's security services! I can assist with smart features, system details, pricing, scheduling consultations, installation process, careers, and technical questions. What specific information are you looking for?",
+    "greeting": "Hello! I'm VisionGrid's virtual assistant. I can help you with information about our enterprise network, security, and infrastructure services, as well as EZ Solutions - our suite of PDF tools for accountants and small businesses (EZ-Summary for bank statements, EZ-Extract coming soon). What would you like to know?",
+    "default": "I'd be happy to help! I can assist with VisionGrid's security and infrastructure services, EZ Solutions PDF tools (EZ-Summary and EZ-Extract), pricing, consultations, installations, careers, or general questions. What are you looking for?",
     "contact_redirect": "For detailed system quotes or to speak with our security specialists, please use our contact form (/contact) or call (862) 235-4618. We respond within 24 hours with intelligent recommendations!",
     "thank_you": "You're welcome! Is there anything else about our security services I can help you with today?"
   },
   "locations": {
-    "service_areas": ["Metropolitan area", "Surrounding suburbs", "Commercial districts"],
+    "service_areas": [
+      "Metropolitan area",
+      "Surrounding suburbs",
+      "Commercial districts"
+    ],
     "travel_policy": "Free consultation within 25 miles, travel fees may apply for distant installations",
     "response_time": "Same-day response for consultations, 24-48 hour system installation scheduling"
   },
   "certifications": {
-    "licenses": ["Advanced Security Systems Certified", "State security installer license", "Low voltage contractor license"],
+    "licenses": [
+      "Advanced Security Systems Certified",
+      "State security installer license",
+      "Low voltage contractor license"
+    ],
     "insurance": "$2M liability insurance, bonded technicians",
     "training": "Ongoing manufacturer training, advanced technology certifications"
   },
   "equipment_brands": {
-    "ai_cameras": ["Hikvision Smart Series", "Dahua WizMind", "Axis ARTPEC", "Bosch Video Analytics", "Hanwha Wisenet"],
-    "smart_networking": ["Ubiquiti UniFi", "Cisco Meraki", "Netgear Orbi Pro", "TP-Link Omada SDN"],
-    "smart_security_systems": ["Honeywell Pro-Watch", "DSC PowerSeries Neo", "Qolsys IQ Panel", "2GIG Edge"],
-    "smart_av": ["Sonos Pro", "Bose Professional", "Yamaha ADECIA", "Epson Interactive"],
-    "networking_gear_used": ["Ubiquiti", "Mikrotik", "Cisco"]
+    "ai_cameras": [
+      "Hikvision Smart Series",
+      "Dahua WizMind",
+      "Axis ARTPEC",
+      "Bosch Video Analytics",
+      "Hanwha Wisenet"
+    ],
+    "smart_networking": [
+      "Ubiquiti UniFi",
+      "Cisco Meraki",
+      "Netgear Orbi Pro",
+      "TP-Link Omada SDN"
+    ],
+    "smart_security_systems": [
+      "Honeywell Pro-Watch",
+      "DSC PowerSeries Neo",
+      "Qolsys IQ Panel",
+      "2GIG Edge"
+    ],
+    "smart_av": [
+      "Sonos Pro",
+      "Bose Professional",
+      "Yamaha ADECIA",
+      "Epson Interactive"
+    ],
+    "networking_gear_used": [
+      "Ubiquiti",
+      "Mikrotik",
+      "Cisco"
+    ]
   },
   "special_offers": {
     "current_promotions": "Ask about our system upgrade promotions and smart security package deals!",
@@ -514,24 +866,168 @@
     "Social media accounts or handles (the site has none)",
     "Delivery, shipping, or product order tracking",
     "Guaranteed installation dates or exact timelines beyond the ranges given",
-    "Any service, feature, brand, or fact not present in the knowledge base"
+    "Any service, feature, brand, or fact not present in the knowledge base",
+    "Exact EZ-Summary or EZ-Extract pricing beyond the published tiers (Starter $2.99, Advanced $5.99, Professional $9.99, Lifetime $349.99)"
   ],
   "advanced_features": {
     "computer_vision": {
       "description": "Advanced algorithms for real-time object and behavior recognition",
-      "applications": ["Person detection", "Vehicle identification", "Facial recognition", "License plate reading", "Behavioral analysis"]
+      "applications": [
+        "Person detection",
+        "Vehicle identification",
+        "Facial recognition",
+        "License plate reading",
+        "Behavioral analysis"
+      ]
     },
     "machine_learning": {
       "description": "Continuous learning systems that adapt to your environment and improve over time",
-      "applications": ["Pattern recognition", "Anomaly detection", "Predictive analytics", "False alarm reduction", "Automated responses"]
+      "applications": [
+        "Pattern recognition",
+        "Anomaly detection",
+        "Predictive analytics",
+        "False alarm reduction",
+        "Automated responses"
+      ]
     },
     "edge_computing": {
       "description": "Local processing for faster response times and enhanced privacy",
-      "applications": ["Real-time analysis", "Reduced latency", "Offline capabilities", "Bandwidth optimization", "Privacy protection"]
+      "applications": [
+        "Real-time analysis",
+        "Reduced latency",
+        "Offline capabilities",
+        "Bandwidth optimization",
+        "Privacy protection"
+      ]
     },
     "cloud_services": {
       "description": "Cloud-based services for advanced analytics and system management",
-      "applications": ["Deep learning analysis", "Multi-site correlation", "Predictive maintenance", "Remote diagnostics", "Continuous updates"]
+      "applications": [
+        "Deep learning analysis",
+        "Multi-site correlation",
+        "Predictive maintenance",
+        "Remote diagnostics",
+        "Continuous updates"
+      ]
+    }
+  },
+  "ez_solutions": {
+    "brand": {
+      "name": "EZ Solutions",
+      "parent_company": "VisionGrid",
+      "tagline": "Simple, honest PDF tools for accountants and small businesses.",
+      "audience": "Accountants, bookkeepers, and small business owners",
+      "region": "US, UK, EU",
+      "website": "https://ez.visiongrid.net",
+      "contact_email": "info@visiongrid.net",
+      "description": "EZ Solutions is VisionGrid's product line for accountants and small businesses. Built on the same engineering that powers VisionGrid's enterprise infrastructure, EZ tools focus on the time-consuming PDF work that accountants, bookkeepers, and small business owners do every day."
+    },
+    "products": {
+      "ez_summary": {
+        "name": "EZ-Summary",
+        "status": "Ready / Live",
+        "tagline": "Bank statements to Excel in one click",
+        "one_liner": "Turns bank statement PDFs into clean CSV or Excel spreadsheets, ready for reconciliation and tax prep.",
+        "long_description": "EZ-Summary reads transaction data straight out of bank-statement PDFs - native text or automatic OCR fallback - and exports a clean, structured spreadsheet. Drop in a folder of statements and get back a single Excel or CSV with dates, descriptions, amounts, and balances for every transaction. No Python, no OCR setup, no copy-paste.",
+        "url": "https://ez.visiongrid.net",
+        "trial_url": "https://ez.visiongrid.net/trial",
+        "platform": "Windows 10 and Windows 11",
+        "works_offline": true,
+        "no_code_required": true,
+        "key_features": [
+          "Native PDF text extraction with automatic OCR fallback",
+          "Multi-bank layout detection (Chase, Bank of America, Wells Fargo, HSBC, Barclays, and more)",
+          "One-click CSV and Excel export",
+          "Compatible with QuickBooks, Xero, and Wave formats",
+          "Batch folder processing - drop in hundreds of statements at once",
+          "Runs offline on Windows - no Python, no setup, no internet required"
+        ],
+        "use_cases": [
+          "Monthly bank reconciliation for small businesses",
+          "Bookkeeping for accountants and bookkeepers",
+          "Tax prep and year-end financial review",
+          "Expense audits and forensic accounting",
+          "Converting paper statements received as PDFs into spreadsheet data"
+        ],
+        "pricing_plans": [
+          {
+            "name": "Free Trial",
+            "price_usd": 0,
+            "billing": "trial",
+            "pages_per_month": 5,
+            "duration_days": 3,
+            "credit_card_required": false,
+            "url": "https://ez.visiongrid.net/trial"
+          },
+          {
+            "name": "Starter",
+            "price_usd": 2.99,
+            "billing": "monthly",
+            "pages_per_month": 60,
+            "credit_card_required": true,
+            "url": "https://ez.visiongrid.net"
+          },
+          {
+            "name": "Advanced",
+            "price_usd": 5.99,
+            "billing": "monthly",
+            "pages_per_month": 200,
+            "credit_card_required": true,
+            "best_seller": true,
+            "url": "https://ez.visiongrid.net"
+          },
+          {
+            "name": "Professional",
+            "price_usd": 9.99,
+            "billing": "monthly",
+            "pages_per_month": 500,
+            "credit_card_required": true,
+            "url": "https://ez.visiongrid.net"
+          },
+          {
+            "name": "Lifetime",
+            "price_usd": 349.99,
+            "billing": "one_time",
+            "pages_per_month": "unlimited",
+            "credit_card_required": true,
+            "best_value": true,
+            "url": "https://ez.visiongrid.net"
+          }
+        ],
+        "money_back_guarantee_days": 14
+      },
+      "ez_extract": {
+        "name": "EZ-Extract",
+        "status": "Coming soon (waitlist open)",
+        "tagline": "Universal PDF field extractor",
+        "one_liner": "Point at any value in any PDF and grab it. Build reusable extraction templates for invoices, tax forms, statements, and reports.",
+        "long_description": "EZ-Extract lets you click on any value in any PDF, choose an anchor and a direction (left, right, above, below), and extract that field into your own Excel column. Repeated fields expand automatically into numbered columns. Save the layout as a template and reuse it across hundreds of files. No scripting, no field mapping, no copy-paste.",
+        "url": "https://ez.visiongrid.net",
+        "waitlist_url": "https://ez.visiongrid.net/watchlist",
+        "platform": "Windows 10, Windows 11, and macOS (at launch)",
+        "key_features": [
+          "Visual click-to-select field definitions - no scripting required",
+          "Anchor + direction extraction model (left, right, above, below)",
+          "Repeated fields automatically expand into numbered columns",
+          "Reusable extraction templates save and load per document type",
+          "Works on invoices, tax forms, bank statements, reports, and any structured PDF"
+        ],
+        "use_cases": [
+          "Extract line items from PDF invoices into Excel",
+          "Pull data from tax forms (W-2, 1099, K-1) for filing",
+          "Convert PDF bank statements to spreadsheet rows",
+          "Pull fields from vendor reports and recurring PDFs",
+          "Build repeatable extraction workflows for client work"
+        ],
+        "waitlist_info": "Be first to know when EZ-Extract launches. One email on launch day, no spam. Sign up at https://ez.visiongrid.net/watchlist"
+      }
+    },
+    "redirects": {
+      "learn_more": "https://ez.visiongrid.net",
+      "start_trial": "https://ez.visiongrid.net/trial",
+      "join_waitlist": "https://ez.visiongrid.net/watchlist",
+      "pricing": "https://ez.visiongrid.net",
+      "contact": "https://ez.visiongrid.net (use the contact form on the site, or email info@visiongrid.net)"
     }
   }
 }

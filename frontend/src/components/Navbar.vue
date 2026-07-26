@@ -391,7 +391,7 @@ const appCards: AppCard[] = [
   .mobile-menu-toggle {
     display: flex;
   }
-  
+
   .navbar-menu {
     position: absolute;
     top: 100%;
@@ -401,26 +401,39 @@ const appCards: AppCard[] = [
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.85rem;
+    gap: 0.4rem;
     box-shadow: var(--shadow-lg);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    max-height: 80vh; /* Prevent overflow on small screens */
+    max-height: calc(100vh - 70px); /* Prevent overflow on small screens */
+    max-height: calc(100dvh - 70px); /* dynamic viewport for mobile */
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
   
   .dropdown-container {
     width: 100%;
     flex-direction: column;
     height: auto;
+    align-items: stretch;
   }
 
   .dropdown-toggle {
     width: 100%;
-    justify-content: center;
-    padding: 0.5rem 0;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    min-height: 48px;
+    font-size: 1.05rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+  }
+
+  .dropdown-toggle .dropdown-icon {
+    margin-left: auto;
   }
 
   .dropdown-menu {
@@ -431,37 +444,74 @@ const appCards: AppCard[] = [
     border: none;
     background: transparent;
     padding: 0;
-    margin-top: 0.5rem;
-    display: none; /* Hide by default on mobile */
-    opacity: 1;
-    visibility: visible;
+    margin-top: 0.6rem;
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
     max-width: none;
+    transition: grid-template-rows 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+    overflow: hidden;
+  }
+
+  .dropdown-menu > * {
+    min-height: 0;
   }
 
   .dropdown-menu.show {
-    display: flex;
-    transform: none;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
   }
 
-  /* Stack cards vertically on mobile */
+  /* Stack cards vertically on mobile with proper spacing */
   .dropdown-cards {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    padding: 0.25rem 0 0.5rem;
   }
 
   .nav-card {
     min-width: 0;
     width: 100%;
-    padding: 0.85rem 1rem;
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius-lg);
+    animation: nav-card-in 0.32s ease both;
+  }
+
+  .nav-card:nth-child(1) { animation-delay: 0.05s; }
+  .nav-card:nth-child(2) { animation-delay: 0.12s; }
+  .nav-card:nth-child(3) { animation-delay: 0.19s; }
+
+  @keyframes nav-card-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .nav-card-label {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-card-tagline {
+    font-size: 0.82rem;
   }
 
   .nav-card-link {
-    font-size: 0.9rem;
-    padding: 0.35rem 0;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.5rem;
+    min-height: 48px; /* iOS / WCAG tap target */
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+  }
+
+  .nav-card-link:first-child {
+    border-top: none;
+    padding-top: 0.55rem;
+  }
+
+  .nav-card-link-badge {
+    font-size: 0.65rem;
   }
 
   .navbar-actions {
@@ -477,9 +527,19 @@ const appCards: AppCard[] = [
   }
   
   .navbar-link {
-    padding: 0.5rem 0;
+    padding: 0.85rem 1rem;
     width: 100%;
     text-align: center;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+  }
+
+  .navbar-link:hover,
+  .navbar-link.router-link-active {
+    background: var(--bg-secondary);
   }
 
   .mobile-menu-toggle.active span:nth-child(1) {
