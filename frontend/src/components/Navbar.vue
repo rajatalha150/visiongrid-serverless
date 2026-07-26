@@ -280,8 +280,8 @@ const appCards: AppCard[] = [
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   padding: 0.5rem;
-  width: max-content;
-  max-width: 720px;
+  width: 360px;
+  max-width: calc(100vw - 2rem);
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s ease;
@@ -294,17 +294,18 @@ const appCards: AppCard[] = [
   transform: translateX(-50%) translateY(0);
 }
 
-/* CardNav-style bento panel */
+/* CardNav-style bento panel — stacked vertically */
 .dropdown-cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 0.5rem;
   align-items: stretch;
 }
 
 .nav-card {
-  flex: 1 1 0;
-  min-width: 160px;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
   border-radius: var(--radius-lg);
   padding: 1rem 1.1rem;
   display: flex;
@@ -464,10 +465,8 @@ const appCards: AppCard[] = [
     visibility: visible;
   }
 
-  /* Stack cards vertically on mobile with proper spacing */
+  /* Cards are already stacked vertically by default */
   .dropdown-cards {
-    flex-direction: column;
-    gap: 0.6rem;
     padding: 0.25rem 0 0.5rem;
   }
 
