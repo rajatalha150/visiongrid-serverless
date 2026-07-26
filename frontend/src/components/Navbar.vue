@@ -414,7 +414,16 @@ const appCards: AppCard[] = [
     overflow-y: auto;
     overscroll-behavior: contain;
   }
-  
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ============================================ */
+  /* Mobile dropdown: stays inside the drawer      */
+  /* ============================================ */
   .dropdown-container {
     width: 100%;
     flex-direction: column;
@@ -437,32 +446,33 @@ const appCards: AppCard[] = [
     margin-left: auto;
   }
 
-  .dropdown-menu {
+  /* Use a high-specificity selector to defeat any desktop overrides */
+  .navbar-menu .dropdown-menu.dropdown-menu {
     position: static;
+    top: auto;
+    left: auto;
+    right: auto;
     transform: none;
     width: 100%;
+    max-width: none;
     box-shadow: none;
     border: none;
     background: transparent;
     padding: 0;
-    margin-top: 0.6rem;
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    visibility: hidden;
-    max-width: none;
-    transition: grid-template-rows 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
-    overflow: hidden;
+    margin: 0.6rem 0 0;
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
   }
 
-  .dropdown-menu > * {
+  .navbar-menu .dropdown-menu.dropdown-menu > * {
     min-height: 0;
   }
 
-  .dropdown-menu.show {
-    grid-template-rows: 1fr;
-    opacity: 1;
-    visibility: visible;
+  .navbar-menu .dropdown-menu.dropdown-menu.show {
+    transform: none;
+    grid-template-rows: auto;
   }
 
   /* Cards are already stacked vertically by default */
@@ -518,13 +528,7 @@ const appCards: AppCard[] = [
     margin-bottom: 1rem;
     justify-content: center;
   }
-  
-  .navbar-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  
+
   .navbar-link {
     padding: 0.85rem 1rem;
     width: 100%;
