@@ -28,6 +28,7 @@
                 :style="{ backgroundColor: card.bgColor, color: card.textColor }"
               >
                 <div class="nav-card-label">{{ card.label }}</div>
+                <div class="nav-card-tagline">{{ card.tagline }}</div>
                 <div class="nav-card-links">
                   <a
                     v-for="link in card.links"
@@ -100,6 +101,7 @@ interface AppLink {
 
 interface AppCard {
   label: string
+  tagline: string
   bgColor: string
   textColor: string
   links: AppLink[]
@@ -108,6 +110,7 @@ interface AppCard {
 const appCards: AppCard[] = [
   {
     label: 'Camera Site Planner',
+    tagline: 'Plan camera layouts',
     bgColor: '#003366',
     textColor: '#ffffff',
     links: [
@@ -117,6 +120,7 @@ const appCards: AppCard[] = [
   },
   {
     label: 'Business Tools',
+    tagline: 'Invoicing & PDF tools',
     bgColor: '#004e98',
     textColor: '#ffffff',
     links: [
@@ -125,10 +129,11 @@ const appCards: AppCard[] = [
   },
   {
     label: 'EZ Solutions',
+    tagline: 'Bank statements → Excel',
     bgColor: '#f8fafc',
     textColor: '#0f172a',
     links: [
-      { label: 'EZ-Summary', href: 'https://ez.visiongrid.net', external: true, ariaLabel: 'Open EZ Solutions', badge: 'New' }
+      { label: 'EZ-Summary', href: 'https://ez.visiongrid.net', external: true, ariaLabel: 'Open EZ Solutions — bank statements to Excel in one click', badge: 'New' }
     ]
   }
 ]
@@ -325,6 +330,14 @@ const appCards: AppCard[] = [
   font-size: 0.95rem;
   letter-spacing: -0.01em;
   opacity: 0.95;
+}
+
+.nav-card-tagline {
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-normal);
+  opacity: 0.75;
+  margin-top: -0.15rem;
+  line-height: 1.3;
 }
 
 .nav-card-links {
