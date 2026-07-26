@@ -20,38 +20,34 @@
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
-            <div class="dropdown-menu" :class="{ 'show': isDropdownOpen }">
-              <div 
-                class="dropdown-item submenu-trigger" 
-                @mouseenter="isPlannerOpen = true" 
-                @mouseleave="isPlannerOpen = false" 
-                @click.stop="togglePlanner"
+            <div class="dropdown-menu dropdown-cards" :class="{ 'show': isDropdownOpen }">
+              <div
+                v-for="card in appCards"
+                :key="card.label"
+                class="nav-card"
+                :style="{ backgroundColor: card.bgColor, color: card.textColor }"
               >
-                <div class="submenu-label">
-                  <span class="item-icon">📷</span>
-                  <span>Camera Site Planner</span>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="submenu-arrow" :class="{ 'open': isPlannerOpen }">
-                  <polyline points="9 6 15 12 9 18"></polyline>
-                </svg>
-                <div class="submenu" :class="{ 'show': isPlannerOpen }">
-                  <a href="https://siteplanner.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                    Web App
-                  </a>
-                  <a href="https://downloads.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                    Download Setup
+                <div class="nav-card-label">{{ card.label }}</div>
+                <div class="nav-card-links">
+                  <a
+                    v-for="link in card.links"
+                    :key="link.label"
+                    :href="link.href"
+                    :target="link.external ? '_blank' : undefined"
+                    rel="noopener noreferrer"
+                    class="nav-card-link"
+                    :aria-label="link.ariaLabel || link.label"
+                    @click="closeMenu"
+                  >
+                    <svg class="nav-card-link-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                    <span>{{ link.label }}</span>
+                    <span v-if="link.badge" class="nav-card-link-badge">{{ link.badge }}</span>
                   </a>
                 </div>
               </div>
-              <a href="https://invoice.visiongrid.net/" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                <span class="item-icon">📄</span>
-                Invoice Generator
-              </a>
-              <a href="https://ez.visiongrid.net" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                <span class="item-icon">✨</span>
-                <span>EZ Solutions</span>
-                <span class="item-badge">New</span>
-              </a>
             </div>
           </div>
 
@@ -74,7 +70,6 @@ import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
 const isDropdownOpen = ref(false)
-const isPlannerOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -84,24 +79,59 @@ const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value
 }
 
-const togglePlanner = () => {
-  isPlannerOpen.value = !isPlannerOpen.value
-  // Ensure parent dropdown stays open when toggling submenu on mobile
-  if (!isDropdownOpen.value) {
-    isDropdownOpen.value = true
-  }
-}
-
 const closeMenu = () => {
   isMenuOpen.value = false
   isDropdownOpen.value = false
-  isPlannerOpen.value = false
 }
 
 const closeDropdowns = () => {
   isDropdownOpen.value = false
-  isPlannerOpen.value = false
 }
+
+// Bento cards for the Applications dropdown
+// Themed to match VisionGrid: deep navy + silver/blue gradient on white surface
+interface AppLink {
+  label: string
+  href: string
+  external: boolean
+  ariaLabel?: string
+  badge?: string
+}
+
+interface AppCard {
+  label: string
+  bgColor: string
+  textColor: string
+  links: AppLink[]
+}
+
+const appCards: AppCard[] = [
+  {
+    label: 'Camera Site Planner',
+    bgColor: '#003366',
+    textColor: '#ffffff',
+    links: [
+      { label: 'Web App', href: 'https://siteplanner.visiongrid.net', external: true, ariaLabel: 'Open Camera Site Planner web app' },
+      { label: 'Download Setup', href: 'https://downloads.visiongrid.net', external: true, ariaLabel: 'Download Camera Site Planner' }
+    ]
+  },
+  {
+    label: 'Business Tools',
+    bgColor: '#004e98',
+    textColor: '#ffffff',
+    links: [
+      { label: 'Invoice Generator', href: 'https://invoice.visiongrid.net/', external: true, ariaLabel: 'Open Invoice Generator' }
+    ]
+  },
+  {
+    label: 'EZ Solutions',
+    bgColor: '#f8fafc',
+    textColor: '#0f172a',
+    links: [
+      { label: 'EZ-Summary', href: 'https://ez.visiongrid.net', external: true, ariaLabel: 'Open EZ Solutions', badge: 'New' }
+    ]
+  }
+]
 </script>
 
 <style scoped>
@@ -237,18 +267,19 @@ const closeDropdowns = () => {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background-color: var(--bg-card);
+  background-color: var(--color-white);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
   padding: 0.5rem;
-  min-width: 220px;
+  width: max-content;
+  max-width: 720px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   z-index: 1001;
 }
 
@@ -258,100 +289,89 @@ const closeDropdowns = () => {
   transform: translateX(-50%) translateY(0);
 }
 
-.dropdown-item {
+/* CardNav-style bento panel */
+.dropdown-cards {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: var(--radius-md);
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.nav-card {
+  flex: 1 1 0;
+  min-width: 160px;
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  user-select: none;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.nav-card-label {
+  font-weight: var(--font-weight-semibold);
   font-size: 0.95rem;
-  font-weight: 500;
-  white-space: nowrap;
+  letter-spacing: -0.01em;
+  opacity: 0.95;
 }
 
-.dropdown-item:hover {
-  background-color: var(--bg-secondary);
-  color: var(--color-primary);
+.nav-card-links {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.item-icon {
-  font-size: 1.1rem;
+.nav-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-medium);
+  color: inherit;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.92;
 }
 
-.item-badge {
+.nav-card-link:hover {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.nav-card-link-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.nav-card-link:hover .nav-card-link-icon {
+  opacity: 1;
+}
+
+.nav-card-link-badge {
   margin-left: auto;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-white);
-  background: var(--color-primary);
-  padding: 0.15rem 0.5rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 999px;
-  line-height: 1.4;
-}
-
-.submenu-trigger {
-  position: relative;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.submenu-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.submenu-arrow {
-  transition: transform 0.2s ease;
-}
-
-.submenu-arrow.open {
-  transform: rotate(90deg);
-}
-
-.submenu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 8px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 0.5rem;
-  min-width: 180px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.2s ease;
-  z-index: 1002;
-}
-
-.submenu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.submenu-item {
-  display: block;
-  padding: 0.65rem 0.85rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  transition: var(--transition);
-  font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-.submenu-item:hover {
-  background-color: var(--bg-secondary);
-  color: var(--color-primary);
+  line-height: 1.5;
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 @media (max-width: 768px) {
@@ -402,19 +422,35 @@ const closeDropdowns = () => {
     display: none; /* Hide by default on mobile */
     opacity: 1;
     visibility: visible;
+    max-width: none;
   }
 
   .dropdown-menu.show {
     display: flex;
-    flex-direction: column;
     transform: none;
   }
 
-  .dropdown-item {
-    justify-content: center;
-    padding: 0.75rem;
+  /* Stack cards vertically on mobile */
+  .dropdown-cards {
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  
+
+  .nav-card {
+    min-width: 0;
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+
+  .nav-card-label {
+    font-size: 0.85rem;
+  }
+
+  .nav-card-link {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+  }
+
   .navbar-actions {
     order: -1;
     margin-bottom: 1rem;
@@ -432,49 +468,17 @@ const closeDropdowns = () => {
     width: 100%;
     text-align: center;
   }
-  
+
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
-  
+
   .mobile-menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
-  }
-
-  .submenu {
-    position: static;
-    margin: 0.35rem 0 0.35rem 0;
-    border: 1px solid var(--border-color);
-    box-shadow: none;
-    transform: none;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-  }
-
-  .submenu-trigger {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.35rem;
-  }
-
-  .submenu-label {
-    justify-content: center;
-  }
-
-  .submenu-arrow {
-    display: none;
-  }
-
-  .submenu.show {
-    opacity: 1;
-    visibility: visible;
-    display: block;
   }
 }
 </style>
