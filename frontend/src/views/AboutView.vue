@@ -129,6 +129,20 @@ const benefits = [
     description: 'Round-the-clock technical assistance and predictive maintenance to keep your systems online.'
   }
 ]
+
+import { useRoute } from 'vue-router'
+import { useRouteSEO } from '@/composables/useSEO'
+
+const route = useRoute()
+
+useRouteSEO(route, () => ({
+  title: 'About VisionGrid — Network, security, and infrastructure experts',
+  description: 'About VisionGrid — 5+ years building enterprise network infrastructure, security camera systems, and intelligent automation for homes and businesses. The team behind EZ Solutions.',
+  canonical: 'https://visiongrid.net/about',
+  ogImage: 'https://visiongrid.net/logo.png',
+  ogType: 'website'
+}))
+
 </script>
 
 <style scoped>

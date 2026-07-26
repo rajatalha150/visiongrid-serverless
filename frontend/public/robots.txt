@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+
+# AI crawlers - explicitly allowed so EZ content gets indexed by AI search
+# engines (Perplexity, ChatGPT browse, Claude web, Google SGE, Bing Copilot).
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://visiongrid.net/sitemap.xml

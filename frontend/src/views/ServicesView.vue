@@ -248,6 +248,20 @@ const process = [
     description: 'Continuous system optimization and 24/7 technical assistance.'
   }
 ]
+
+import { useRoute } from 'vue-router'
+import { useRouteSEO } from '@/composables/useSEO'
+
+const route = useRoute()
+
+useRouteSEO(route, () => ({
+  title: 'Services — Network, security, and AV infrastructure',
+  description: 'VisionGrid services: smart camera systems, networking solutions, home and business security, audio/video systems, and EZ Solutions PDF tools. Free consultation, professional installation, ongoing support.',
+  canonical: 'https://visiongrid.net/services',
+  ogImage: 'https://visiongrid.net/logo.png',
+  ogType: 'website'
+}))
+
 </script>
 
 <style scoped>

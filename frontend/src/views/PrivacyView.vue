@@ -138,6 +138,20 @@ const lastUpdated = computed(() => {
     day: 'numeric' 
   })
 })
+
+import { useRoute } from 'vue-router'
+import { useRouteSEO } from '@/composables/useSEO'
+
+const route = useRoute()
+
+useRouteSEO(route, () => ({
+  title: 'Privacy Policy',
+  description: 'VisionGrid privacy policy. How we collect, use, and protect your information across visiongrid.net and ez.visiongrid.net.',
+  canonical: 'https://visiongrid.net/privacy',
+  ogImage: 'https://visiongrid.net/logo.png',
+  ogType: 'website'
+}))
+
 </script>
 
 <style scoped>

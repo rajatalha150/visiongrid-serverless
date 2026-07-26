@@ -116,6 +116,20 @@ const faqs = [
     answer: 'We provide comprehensive coverage for residential and commercial clients throughout the greater metropolitan region. Please contact our dispatch team for specific site eligibility.'
   }
 ]
+
+import { useRoute } from 'vue-router'
+import { useRouteSEO } from '@/composables/useSEO'
+
+const route = useRoute()
+
+useRouteSEO(route, () => ({
+  title: 'Contact — Get a free security consultation',
+  description: 'Contact VisionGrid for a free security assessment. Phone, email, and contact form. Mon-Fri 8am-6pm EST. EZ Solutions inquiries welcome.',
+  canonical: 'https://visiongrid.net/contact',
+  ogImage: 'https://visiongrid.net/logo.png',
+  ogType: 'website'
+}))
+
 </script>
 
 <style scoped>

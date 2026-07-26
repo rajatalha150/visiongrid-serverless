@@ -142,6 +142,20 @@ const jobs = [
     ]
   }
 ]
+
+import { useRoute } from 'vue-router'
+import { useRouteSEO } from '@/composables/useSEO'
+
+const route = useRoute()
+
+useRouteSEO(route, () => ({
+  title: 'Careers — Join the VisionGrid team',
+  description: 'Open roles at VisionGrid: network technicians, security installers, and engineers. Also explore careers building EZ Solutions, our PDF tools for accountants.',
+  canonical: 'https://visiongrid.net/careers',
+  ogImage: 'https://visiongrid.net/logo.png',
+  ogType: 'website'
+}))
+
 </script>
 
 <style scoped>

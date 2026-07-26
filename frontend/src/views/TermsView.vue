@@ -186,6 +186,20 @@ const lastUpdated = computed(() => {
     day: 'numeric' 
   })
 })
+
+import { useRoute } from 'vue-router'
+import { useRouteSEO } from '@/composables/useSEO'
+
+const route = useRoute()
+
+useRouteSEO(route, () => ({
+  title: 'Terms of Service',
+  description: 'VisionGrid terms of service. Terms governing use of visiongrid.net and ez.visiongrid.net, including EZ-Summary and EZ-Extract.',
+  canonical: 'https://visiongrid.net/terms',
+  ogImage: 'https://visiongrid.net/logo.png',
+  ogType: 'website'
+}))
+
 </script>
 
 <style scoped>

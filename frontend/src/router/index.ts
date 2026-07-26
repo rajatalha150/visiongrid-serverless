@@ -43,6 +43,21 @@ const router = createRouter({
       path: '/careers',
       name: 'careers',
       component: () => import('../views/CareersView.vue')
+    },
+    {
+      path: '/ez',
+      name: 'ez',
+      component: () => import('../views/EZSolutionsView.vue')
+    },
+    {
+      path: '/ez-summary',
+      name: 'ez-summary',
+      component: () => import('../views/EZSummaryView.vue')
+    },
+    {
+      path: '/ez-extract',
+      name: 'ez-extract',
+      component: () => import('../views/EZExtractView.vue')
     }
   ],
   scrollBehavior(to, __, savedPosition) {
