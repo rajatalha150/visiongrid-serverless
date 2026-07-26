@@ -47,6 +47,11 @@
                 <span class="item-icon">📄</span>
                 Invoice Generator
               </a>
+              <a href="https://ez.visiongrid.net" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                <span class="item-icon">✨</span>
+                <span>EZ Solutions</span>
+                <span class="item-badge">New</span>
+              </a>
             </div>
           </div>
 
@@ -274,6 +279,19 @@ const closeDropdowns = () => {
 
 .item-icon {
   font-size: 1.1rem;
+}
+
+.item-badge {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: var(--color-primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  line-height: 1.4;
 }
 
 .submenu-trigger {
