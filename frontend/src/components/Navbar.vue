@@ -21,12 +21,7 @@
               </svg>
             </button>
             <div class="dropdown-menu" :class="{ 'show': isDropdownOpen }">
-              <div
-                class="dropdown-item submenu-trigger"
-                @mouseenter="isPlannerOpen = true"
-                @mouseleave="isPlannerOpen = false"
-                @click.stop="togglePlanner"
-              >
+              <a href="https://siteplanner.visiongrid.net" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
                 <span class="item-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
@@ -37,20 +32,7 @@
                   <span class="item-title">Camera Site Planner</span>
                   <span class="item-sub">Plan &amp; quote camera installations</span>
                 </span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="submenu-arrow" :class="{ 'open': isPlannerOpen }">
-                  <polyline points="9 6 15 12 9 18"></polyline>
-                </svg>
-                <div class="submenu" :class="{ 'show': isPlannerOpen }">
-                  <a href="https://siteplanner.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                    <span class="submenu-item-label">Web App</span>
-                    <span class="submenu-item-sub">siteplanner.visiongrid.net</span>
-                  </a>
-                  <a href="https://downloads.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                    <span class="submenu-item-label">Download</span>
-                    <span class="submenu-item-sub">Windows installer</span>
-                  </a>
-                </div>
-              </div>
+              </a>
               <a href="https://invoice.visiongrid.net/" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
                 <span class="item-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -99,7 +81,6 @@ import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
 const isDropdownOpen = ref(false)
-const isPlannerOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -109,23 +90,13 @@ const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value
 }
 
-const togglePlanner = () => {
-  isPlannerOpen.value = !isPlannerOpen.value
-  // Ensure parent dropdown stays open when toggling submenu on mobile
-  if (!isDropdownOpen.value) {
-    isDropdownOpen.value = true
-  }
-}
-
 const closeMenu = () => {
   isMenuOpen.value = false
   isDropdownOpen.value = false
-  isPlannerOpen.value = false
 }
 
 const closeDropdowns = () => {
   isDropdownOpen.value = false
-  isPlannerOpen.value = false
 }
 </script>
 
@@ -370,86 +341,6 @@ const closeDropdowns = () => {
   box-shadow: 0 1px 3px rgba(0, 78, 152, 0.3);
 }
 
-.submenu-trigger {
-  position: relative;
-  justify-content: flex-start;
-  cursor: pointer;
-  padding-right: 0.6rem;
-}
-
-.submenu-arrow {
-  margin-left: auto;
-  flex-shrink: 0;
-  color: var(--color-gray);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.dropdown-item:hover .submenu-arrow,
-.submenu-trigger:hover .submenu-arrow {
-  color: var(--color-primary);
-}
-
-.submenu-arrow.open {
-  transform: rotate(90deg);
-}
-
-.submenu {
-  position: absolute;
-  top: -0.35rem;
-  left: 100%;
-  margin-left: 8px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 0.4rem;
-  min-width: 220px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-  z-index: 1002;
-}
-
-.submenu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.submenu-item {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  padding: 0.55rem 0.75rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  transition: var(--transition);
-}
-
-.submenu-item:hover {
-  background-color: var(--bg-secondary);
-  color: var(--color-primary);
-}
-
-.submenu-item-label {
-  font-size: 0.9rem;
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.3;
-}
-
-.submenu-item-sub {
-  font-size: 0.72rem;
-  color: var(--color-gray);
-  line-height: 1.3;
-}
-
-.submenu-item:hover .submenu-item-sub {
-  color: var(--color-primary);
-  opacity: 0.75;
-}
-
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: flex;
@@ -554,74 +445,6 @@ const closeDropdowns = () => {
 
   .item-badge {
     font-size: 0.65rem;
-  }
-
-  .submenu-trigger {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0;
-    background: var(--color-white);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-  }
-
-  .submenu-trigger .item-icon,
-  .submenu-trigger .item-text,
-  .submenu-trigger .submenu-arrow {
-    padding: 0.85rem 1rem;
-  }
-
-  .submenu-trigger .item-text {
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
-  }
-
-  .submenu-trigger .item-icon {
-    margin-left: 0.4rem;
-  }
-
-  .submenu-trigger:hover {
-    background: var(--color-white);
-    color: var(--text-primary);
-  }
-
-  .submenu-arrow {
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-
-  .submenu {
-    position: static;
-    margin: 0;
-    border: none;
-    border-top: 1px solid var(--border-color);
-    border-radius: 0;
-    box-shadow: none;
-    transform: none;
-    width: 100%;
-    min-width: 0;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-    padding: 0.25rem;
-    background: var(--bg-secondary);
-  }
-
-  .submenu.show {
-    opacity: 1;
-    visibility: visible;
-    display: block;
-  }
-
-  .submenu-item {
-    padding: 0.7rem 0.85rem 0.7rem 2.25rem;
-    min-height: 48px;
-    border-radius: var(--radius-sm);
-  }
-
-  .submenu-item-label {
-    font-size: 0.92rem;
   }
 
   .navbar-actions {
