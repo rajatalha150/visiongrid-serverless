@@ -21,35 +21,60 @@
               </svg>
             </button>
             <div class="dropdown-menu" :class="{ 'show': isDropdownOpen }">
-              <div 
-                class="dropdown-item submenu-trigger" 
-                @mouseenter="isPlannerOpen = true" 
-                @mouseleave="isPlannerOpen = false" 
+              <div
+                class="dropdown-item submenu-trigger"
+                @mouseenter="isPlannerOpen = true"
+                @mouseleave="isPlannerOpen = false"
                 @click.stop="togglePlanner"
               >
-                <div class="submenu-label">
-                  <span class="item-icon">📷</span>
-                  <span>Camera Site Planner</span>
-                </div>
+                <span class="item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                    <circle cx="12" cy="13" r="3.5"></circle>
+                  </svg>
+                </span>
+                <span class="item-text">
+                  <span class="item-title">Camera Site Planner</span>
+                  <span class="item-sub">Plan &amp; quote camera installations</span>
+                </span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="submenu-arrow" :class="{ 'open': isPlannerOpen }">
                   <polyline points="9 6 15 12 9 18"></polyline>
                 </svg>
                 <div class="submenu" :class="{ 'show': isPlannerOpen }">
                   <a href="https://siteplanner.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                    Web App
+                    <span class="submenu-item-label">Web App</span>
+                    <span class="submenu-item-sub">siteplanner.visiongrid.net</span>
                   </a>
                   <a href="https://downloads.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                    Download Setup
+                    <span class="submenu-item-label">Download</span>
+                    <span class="submenu-item-sub">Windows installer</span>
                   </a>
                 </div>
               </div>
               <a href="https://invoice.visiongrid.net/" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                <span class="item-icon">📄</span>
-                Invoice Generator
+                <span class="item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="8" y1="13" x2="16" y2="13"></line>
+                    <line x1="8" y1="17" x2="14" y2="17"></line>
+                  </svg>
+                </span>
+                <span class="item-text">
+                  <span class="item-title">Invoice Generator</span>
+                  <span class="item-sub">Create &amp; send professional invoices</span>
+                </span>
               </a>
               <a href="https://ez.visiongrid.net" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
-                <span class="item-icon">✨</span>
-                <span>EZ Solutions</span>
+                <span class="item-icon item-icon--accent" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                  </svg>
+                </span>
+                <span class="item-text">
+                  <span class="item-title">EZ Solutions</span>
+                  <span class="item-sub">PDF tools for accountants</span>
+                </span>
                 <span class="item-badge">New</span>
               </a>
             </div>
@@ -262,14 +287,12 @@ const closeDropdowns = () => {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 0.85rem;
   color: var(--text-primary);
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: var(--transition);
-  font-size: 0.95rem;
-  font-weight: 500;
-  white-space: nowrap;
+  position: relative;
 }
 
 .dropdown-item:hover {
@@ -278,36 +301,92 @@ const closeDropdowns = () => {
 }
 
 .item-icon {
-  font-size: 1.1rem;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.dropdown-item:hover .item-icon {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 78, 152, 0.08);
+}
+
+.item-icon--accent {
+  background: linear-gradient(135deg, rgba(0, 78, 152, 0.1), rgba(0, 78, 152, 0.04));
+  color: var(--color-primary);
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.item-title {
+  font-size: 0.92rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.dropdown-item:hover .item-title {
+  color: var(--color-primary);
+}
+
+.item-sub {
+  font-size: 0.74rem;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.3;
+  color: var(--color-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
 .item-badge {
   margin-left: auto;
-  font-size: 0.65rem;
+  flex-shrink: 0;
+  font-size: 0.62rem;
   font-weight: var(--font-weight-bold);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-white);
   background: var(--color-primary);
-  padding: 0.15rem 0.5rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 999px;
   line-height: 1.4;
+  box-shadow: 0 1px 3px rgba(0, 78, 152, 0.3);
 }
 
 .submenu-trigger {
   position: relative;
-  justify-content: space-between;
+  justify-content: flex-start;
   cursor: pointer;
-}
-
-.submenu-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
+  padding-right: 0.6rem;
 }
 
 .submenu-arrow {
-  transition: transform 0.2s ease;
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--color-gray);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover .submenu-arrow,
+.submenu-trigger:hover .submenu-arrow {
+  color: var(--color-primary);
 }
 
 .submenu-arrow.open {
@@ -316,19 +395,19 @@ const closeDropdowns = () => {
 
 .submenu {
   position: absolute;
-  top: 0;
+  top: -0.35rem;
   left: 100%;
   margin-left: 8px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  padding: 0.5rem;
-  min-width: 180px;
+  padding: 0.4rem;
+  min-width: 220px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.2s ease;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   z-index: 1002;
 }
 
@@ -339,14 +418,14 @@ const closeDropdowns = () => {
 }
 
 .submenu-item {
-  display: block;
-  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0.55rem 0.75rem;
   color: var(--text-primary);
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: var(--transition);
-  font-size: 0.95rem;
-  white-space: nowrap;
 }
 
 .submenu-item:hover {
@@ -354,11 +433,28 @@ const closeDropdowns = () => {
   color: var(--color-primary);
 }
 
+.submenu-item-label {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+.submenu-item-sub {
+  font-size: 0.72rem;
+  color: var(--color-gray);
+  line-height: 1.3;
+}
+
+.submenu-item:hover .submenu-item-sub {
+  color: var(--color-primary);
+  opacity: 0.75;
+}
+
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: flex;
   }
-  
+
   .navbar-menu {
     position: absolute;
     top: 100%;
@@ -368,16 +464,23 @@ const closeDropdowns = () => {
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.85rem;
     box-shadow: var(--shadow-lg);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    max-height: 80vh; /* Prevent overflow on small screens */
+    max-height: calc(100vh - 70px);
+    max-height: calc(100dvh - 70px);
     overflow-y: auto;
   }
-  
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
   .dropdown-container {
     width: 100%;
     flex-direction: column;
@@ -387,94 +490,166 @@ const closeDropdowns = () => {
   .dropdown-toggle {
     width: 100%;
     justify-content: center;
-    padding: 0.5rem 0;
+    padding: 0.85rem 1rem;
+    min-height: 48px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
   }
 
-  .dropdown-menu {
+  /* High-specificity override so the desktop absolute positioning
+     doesn't leak onto phone */
+  .navbar-menu .dropdown-menu.dropdown-menu {
     position: static;
+    top: auto;
+    left: auto;
+    right: auto;
     transform: none;
     width: 100%;
+    min-width: 0;
     box-shadow: none;
     border: none;
     background: transparent;
     padding: 0;
     margin-top: 0.5rem;
-    display: none; /* Hide by default on mobile */
+    display: none;
     opacity: 1;
     visibility: visible;
   }
 
-  .dropdown-menu.show {
+  .navbar-menu .dropdown-menu.dropdown-menu.show {
     display: flex;
     flex-direction: column;
+    gap: 0.35rem;
     transform: none;
   }
 
   .dropdown-item {
-    justify-content: center;
-    padding: 0.75rem;
-  }
-  
-  .navbar-actions {
-    order: -1;
-    margin-bottom: 1rem;
-    justify-content: center;
-  }
-  
-  .navbar-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .navbar-link {
-    padding: 0.5rem 0;
+    justify-content: flex-start;
+    padding: 0.85rem 1rem;
+    min-height: 56px;
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     width: 100%;
-    text-align: center;
-  }
-  
-  .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-  
-  .mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
   }
 
-  .submenu {
-    position: static;
-    margin: 0.35rem 0 0.35rem 0;
-    border: 1px solid var(--border-color);
-    box-shadow: none;
-    transform: none;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
+  .dropdown-item:hover {
+    background: var(--bg-secondary);
+  }
+
+  .item-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .item-title {
+    font-size: 0.95rem;
+  }
+
+  .item-sub {
+    font-size: 0.78rem;
+    max-width: none;
+  }
+
+  .item-badge {
+    font-size: 0.65rem;
   }
 
   .submenu-trigger {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.35rem;
+    gap: 0;
+    padding: 0;
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
   }
 
-  .submenu-label {
-    justify-content: center;
+  .submenu-trigger .item-icon,
+  .submenu-trigger .item-text,
+  .submenu-trigger .submenu-arrow {
+    padding: 0.85rem 1rem;
+  }
+
+  .submenu-trigger .item-text {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .submenu-trigger .item-icon {
+    margin-left: 0.4rem;
+  }
+
+  .submenu-trigger:hover {
+    background: var(--color-white);
+    color: var(--text-primary);
   }
 
   .submenu-arrow {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .submenu {
+    position: static;
+    margin: 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    opacity: 0;
+    visibility: hidden;
     display: none;
+    padding: 0.25rem;
+    background: var(--bg-secondary);
   }
 
   .submenu.show {
     opacity: 1;
     visibility: visible;
     display: block;
+  }
+
+  .submenu-item {
+    padding: 0.7rem 0.85rem 0.7rem 2.25rem;
+    min-height: 48px;
+    border-radius: var(--radius-sm);
+  }
+
+  .submenu-item-label {
+    font-size: 0.92rem;
+  }
+
+  .navbar-actions {
+    order: -1;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+
+  .navbar-link {
+    padding: 0.85rem 1rem;
+    width: 100%;
+    text-align: center;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 }
 </style>
