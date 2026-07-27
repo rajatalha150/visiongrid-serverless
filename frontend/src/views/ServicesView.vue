@@ -3,7 +3,7 @@
     <div class="page-hero">
       <div class="container">
         <h1 class="page-title">Our Services</h1>
-        <p class="page-subtitle">Comprehensive security solutions for every need</p>
+        <p class="page-subtitle">Camera &amp; security, IT infrastructure, Pro AV, and custom app development — built and run by the team that ships EZ Solutions</p>
       </div>
     </div>
     
@@ -54,7 +54,7 @@
     <section class="section bg-light">
       <div class="container">
         <div class="process-section">
-          <h2 class="section-title">Our Installation Process</h2>
+          <h2 class="section-title">How We Work</h2>
           <div class="process-steps grid grid-4">
             <div class="step-item" v-for="step in process" :key="step.id">
               <div class="step-number">{{ step.id }}</div>
@@ -73,12 +73,12 @@
 import { RouterLink } from 'vue-router'
 import { onMounted, nextTick } from 'vue'
 
+// Service icons (Feather-style line art, 48x48 to match the .service-icon CSS box)
 const icons = {
-  camera: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>`,
-  network: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="16" y="2" width="6" height="6" rx="1" ry="1"></rect><line x1="5" y1="8" x2="5" y2="12"></line><line x1="12" y1="12" x2="12" y2="16"></line><line x1="19" y1="8" x2="19" y2="12"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
-  home: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
-  business: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`,
   audio: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>`,
+  shield: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>`,
+  server: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`,
+  code: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
   consult: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>`,
   design: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`,
   install: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>`,
@@ -116,108 +116,97 @@ onMounted(async () => {
 const services = [
   {
     id: 1,
-    slug: 'camera-installation',
-    icon: icons.camera,
-    title: 'Smart Camera Systems',
-    description: 'Next-generation surveillance infrastructure with intelligent threat detection and automated response capabilities.',
+    slug: 'camera-and-security',
+    icon: icons.shield,
+    title: 'Camera & Security',
+    imageExt: 'jpg',
+    description: 'End-to-end physical security — from a single home camera to multi-site commercial deployments. We design, install, and maintain the system; you get a single point of accountability.',
     features: [
-      'Indoor and outdoor smart sensors',
-      '4K resolution with enhanced night vision',
-      'Advanced motion tracking & analysis',
-      'Secure remote access via mobile',
-      'Redundant cloud & edge storage'
+      '4K IP camera systems with night vision and weatherproof housings',
+      'NVR / hybrid recording with redundant cloud and edge storage',
+      'Smart motion detection, license plate recognition, and behavioral analytics',
+      'Centralized multi-site dashboard for residential and commercial properties',
+      'Biometric and mobile access control, smart locks, and intercom integration',
+      '24/7 monitoring partnerships and rapid emergency dispatch links',
+      'Uninterruptible power supply and cellular failover for resilience'
     ],
     benefits: [
-      '24/7 autonomous monitoring',
-      'Proactive threat deterrence',
-      'High-fidelity evidence retention',
-      'Insurance compliance & discounts',
-      'Complete operational visibility'
+      'Single vendor for design, install, monitoring, and support',
+      'Insurance compliance and premium discounts',
+      'High-fidelity evidence retention for incidents',
+      'Deterrence that pays for itself in reduced loss',
+      'Remote visibility from anywhere on phone or desktop'
     ]
   },
   {
     id: 2,
-    slug: 'networking-solutions',
-    icon: icons.network,
-    title: 'Network Infrastructure',
-    description: 'Enterprise-grade network architecture designed for zero-latency connectivity and maximum security throughput.',
+    slug: 'it-infrastructure',
+    icon: icons.server,
+    title: 'IT Infrastructure',
+    imageExt: 'jpg',
+    description: 'The unglamorous backbone your business runs on — networks, servers, cloud, and endpoints. We build it right the first time, then keep it that way with managed support.',
     features: [
-      'Strategic topology planning',
-      'High-density Wi-Fi 6/7 deployment',
-      'Structured cabling & management',
-      'Advanced firewall & threat protection',
-      'Real-time network health monitoring'
+      'Structured cabling (Cat6 / Cat6A / fiber) with proper labeling and documentation',
+      'Enterprise Wi-Fi 6/7 design with heat-mapped coverage and seamless roaming',
+      'Server room build-out: racks, UPS, cooling, cable management, and labeling',
+      'Network architecture: VLANs, firewalls, VPNs, and zero-trust segmentation',
+      'Cloud and hybrid deployments: Microsoft 365, Google Workspace, Azure, AWS',
+      'Endpoint management, patching, and asset inventory for every device',
+      'Backup, disaster recovery, and business continuity planning'
     ],
     benefits: [
-      'Gigabit-speed reliability',
-      'Seamless mesh connectivity',
-      'Hardened security perimeter',
-      'Scalable bandwidth capacity',
-      'Zero-downtime architecture'
+      'Fewer outages and faster recovery when something does fail',
+      'Predictable monthly costs instead of surprise break-fix bills',
+      'Built-in security baseline that satisfies customer and auditor requirements',
+      'Scalable foundation that grows with the business',
+      'A single accountable partner for everything network and server'
     ]
   },
   {
     id: 3,
-    slug: 'home-security',
-    icon: icons.home,
-    title: 'Residential Protection',
-    description: 'Integrated home defense ecosystems that blend advanced security protocols with smart home automation.',
+    slug: 'audio-video-systems',
+    icon: icons.audio,
+    title: 'Pro AV Systems',
+    imageExt: 'jpg',
+    description: 'Conference rooms, training spaces, retail displays, and event venues — designed for clarity, reliability, and zero meeting-day friction.',
     features: [
-      'Smart perimeter breach detection',
-      'Automated home integration',
-      'Biometric & mobile access control',
-      'Professional monitoring links',
-      'Uninterruptible power supply'
+      'High-fidelity acoustic arrays with room-specific calibration',
+      'Zoom, Teams, and Google Meet room integration with one-touch join',
+      'Wireless presentation systems (AirPlay, Miracast, HDMI over IP)',
+      'Interactive displays, video walls, and digital signage',
+      'Unified control: one tablet or panel for lights, shades, source switching',
+      'Acoustic treatment and noise isolation for difficult rooms'
     ],
     benefits: [
-      'Comprehensive family safety',
-      'Reduced insurance premiums',
-      'Property value enhancement',
-      'Remote estate management',
-      'Rapid emergency dispatch'
+      'Meetings that start on time and stay on track',
+      'Cinema-grade audiovisuals for client-facing spaces',
+      'Platform-agnostic — works with whatever your team already uses',
+      'Dedicated technical support and remote diagnostics',
+      'Spaces that impress clients and keep staff productive'
     ]
   },
   {
     id: 4,
-    slug: 'business-security',
-    imageExt: 'png',
-    icon: icons.business,
-    title: 'Enterprise Security',
-    description: 'Commercial security solutions engineered for regulatory compliance and multi-site asset protection.',
+    slug: 'app-development',
+    icon: icons.code,
+    title: 'App Development',
+    imageExt: 'jpg',
+    description: 'Custom software built by people who have actually shipped and run production systems. From internal tools that save hours every week, to full SaaS products — including the EZ Solutions suite.',
     features: [
-      'Centralized multi-site command',
-      'Role-based access control',
-      'Predictive behavioral analytics',
-      'Legacy system integration',
-      'Automated compliance reporting'
+      'Web applications: Vue, React, Next.js, with type-safe TypeScript end to end',
+      'Cross-platform desktop apps: Electron and Tauri for Windows / macOS / Linux',
+      'Serverless backends on Vercel, Cloudflare, and AWS Lambda',
+      'Database design, migrations, and long-term schema evolution',
+      'Authentication, billing, and subscription integrations (Stripe, etc.)',
+      'AI integrations: LLM orchestration, vector search, and chat assistants',
+      'Ongoing maintenance, monitoring, and incremental feature development'
     ],
     benefits: [
-      'Asset & inventory protection',
-      'Personnel safety assurance',
-      'Regulatory audit readiness',
-      'Operational intelligence data',
-      'Loss prevention optimization'
-    ]
-  },
-  {
-    id: 5,
-    slug: 'audio-video-systems',
-    icon: icons.audio,
-    title: 'Pro AV Systems',
-    description: 'Professional audio-visual environments designed for immersive clarity and seamless communication.',
-    features: [
-      'High-fidelity acoustic arrays',
-      'Smart conference automation',
-      'Interactive display solutions',
-      'Acoustic calibration & tuning',
-      'Unified control interfaces'
-    ],
-    benefits: [
-      'Cinema-grade audiovisuals',
-      'Frictionless meeting experiences',
-      'Impactful presentation tools',
-      'Platform-agnostic integration',
-      'Dedicated technical support'
+      'A working team that ships, not a slide deck',
+      'Honest scope, honest timelines, honest pricing',
+      'Code that your team (or another vendor) can actually read later',
+      'Built-in security, observability, and the boring things that prevent fires',
+      'We have done this for ourselves: ez.visiongrid.net is our own product'
     ]
   }
 ]
@@ -226,26 +215,26 @@ const process = [
   {
     id: 1,
     icon: icons.consult,
-    title: 'Consultation',
-    description: 'Comprehensive assessment of your security requirements and site architecture.'
+    title: 'Discover',
+    description: 'We learn how you actually work — site walk, interviews, and a written scope so there are no surprises.'
   },
   {
     id: 2,
     icon: icons.design,
-    title: 'System Design',
-    description: 'Custom engineering of your security ecosystem with detailed coverage mapping.'
+    title: 'Design',
+    description: 'A clear plan with deliverables, timeline, and price. Hardware specs, drawings, or wireframes — whatever fits the job.'
   },
   {
     id: 3,
     icon: icons.install,
-    title: 'Deployment',
-    description: 'Precision installation by expert engineers with rigorous testing protocols.'
+    title: 'Build & Deploy',
+    description: 'Installation, configuration, code, or all three. Tested before we hand it back to you.'
   },
   {
     id: 4,
     icon: icons.support,
     title: 'Support',
-    description: 'Continuous system optimization and 24/7 technical assistance.'
+    description: 'Ongoing monitoring, maintenance, and a real human to call when something needs attention.'
   }
 ]
 
@@ -255,8 +244,9 @@ import { useRouteSEO } from '@/composables/useSEO'
 const route = useRoute()
 
 useRouteSEO(route, () => ({
-  title: 'Services — Network, security, and AV infrastructure',
-  description: 'VisionGrid services: smart camera systems, networking solutions, home and business security, audio/video systems, and EZ Solutions PDF tools. Free consultation, professional installation, ongoing support.',
+  title: 'Services — Camera & Security, IT Infrastructure, Pro AV, App Development',
+  description: 'VisionGrid services: camera and physical security (residential and commercial), IT infrastructure (cabling, networking, servers, cloud, endpoints), professional AV systems, and custom app development (the same team ships EZ Solutions at ez.visiongrid.net). Free consultation, professional delivery, ongoing support.',
+  keywords: 'VisionGrid, security camera installation, network infrastructure, structured cabling, server room build-out, managed IT, professional AV, conference room installation, custom app development, EZ Solutions',
   canonical: 'https://visiongrid.net/services',
   ogImage: 'https://visiongrid.net/logo.png',
   ogType: 'website'

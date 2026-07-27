@@ -54,60 +54,61 @@ const icons = {
   network: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="16" y="2" width="6" height="6" rx="1" ry="1"></rect><line x1="5" y1="8" x2="5" y2="12"></line><line x1="12" y1="12" x2="12" y2="16"></line><line x1="19" y1="8" x2="19" y2="12"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
   shield: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`,
   conference: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
-  server: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`
+  server: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`,
+  code: `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`
 }
 
 const services = [
   {
     id: 1,
-    slug: 'network-infrastructure',
-    icon: icons.network,
-    title: 'Structured Cabling & Network Design',
-    description: 'Complete office network infrastructure setup including Cat6/Fiber cabling, server rack installation, and enterprise-grade WiFi configuration.',
+    slug: 'camera-and-security',
+    icon: icons.camera,
+    title: 'Camera & Security',
+    description: 'End-to-end physical security: 4K camera systems, NVR recording, access control, and multi-site monitoring for homes and businesses.',
     features: [
-      'Professional structured cabling',
-      'Server room organization',
-      'Enterprise WiFi coverage',
-      'Fiber optic termination'
+      '4K IP camera systems',
+      'NVR with cloud and edge storage',
+      'License plate recognition',
+      'Centralized multi-site dashboard'
     ]
   },
   {
     id: 2,
-    slug: 'surveillance-systems',
-    icon: icons.camera,
-    title: 'Commercial Surveillance Systems',
-    description: 'High-definition security camera systems with remote monitoring capabilities and reliable 24/7 recording storage.',
+    slug: 'it-infrastructure',
+    icon: icons.server,
+    title: 'IT Infrastructure',
+    description: 'Structured cabling, server rooms, enterprise Wi-Fi, firewalls, cloud, and managed endpoint support — the foundation your business runs on.',
     features: [
-      '4K IP camera systems',
-      'NVR storage solutions',
-      'Remote mobile viewing',
-      'License plate recognition'
+      'Cat6 / fiber structured cabling',
+      'Enterprise Wi-Fi 6/7',
+      'Server room build-out and cloud',
+      'Endpoint management and patching'
     ]
   },
   {
     id: 3,
-    slug: 'cyber-security',
-    icon: icons.shield,
-    title: 'Cyber Security & Endpoint Management',
-    description: 'Comprehensive local application security, network strengthening, and endpoint management for resilient infrastructure.',
+    slug: 'audio-video-systems',
+    icon: icons.conference,
+    title: 'Pro AV Systems',
+    description: 'Conference rooms and event spaces with one-touch join, wireless presentation, and acoustic tuning that makes meetings actually work.',
     features: [
-      'Endpoint protection',
-      'Network hardening',
-      'Local app security',
-      'Threat mitigation'
+      'Zoom / Teams / Meet rooms',
+      'Wireless presentation systems',
+      'Acoustic calibration',
+      'Unified room control'
     ]
   },
   {
     id: 4,
-    slug: 'conference-solutions',
-    icon: icons.conference,
-    title: 'Corporate Conference Solutions',
-    description: 'Modern conference room setups with integrated audio/video systems for seamless presentations and video calls.',
+    slug: 'app-development',
+    icon: icons.code,
+    title: 'App Development',
+    description: 'Custom web, desktop, and cloud apps — from internal tools to full SaaS. The same team that ships EZ Solutions at ez.visiongrid.net.',
     features: [
-      'Zoom/Teams room integration',
-      'Wireless presentation systems',
-      'Professional audio distribution',
-      'Video wall installation'
+      'Vue, React, Next.js web apps',
+      'Cross-platform desktop apps',
+      'Serverless backends and AI',
+      'Ongoing maintenance and support'
     ]
   }
 ]
