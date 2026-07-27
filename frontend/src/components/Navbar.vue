@@ -20,35 +20,38 @@
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
-            <div class="dropdown-menu dropdown-cards" :class="{ 'show': isDropdownOpen }">
-              <div
-                v-for="card in appCards"
-                :key="card.label"
-                class="nav-card"
-                :style="{ backgroundColor: card.bgColor, color: card.textColor }"
+            <div class="dropdown-menu" :class="{ 'show': isDropdownOpen }">
+              <div 
+                class="dropdown-item submenu-trigger" 
+                @mouseenter="isPlannerOpen = true" 
+                @mouseleave="isPlannerOpen = false" 
+                @click.stop="togglePlanner"
               >
-                <div class="nav-card-label">{{ card.label }}</div>
-                <div class="nav-card-tagline">{{ card.tagline }}</div>
-                <div class="nav-card-links">
-                  <a
-                    v-for="link in card.links"
-                    :key="link.label"
-                    :href="link.href"
-                    :target="link.external ? '_blank' : undefined"
-                    rel="noopener noreferrer"
-                    class="nav-card-link"
-                    :aria-label="link.ariaLabel || link.label"
-                    @click="closeMenu"
-                  >
-                    <svg class="nav-card-link-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                    <span>{{ link.label }}</span>
-                    <span v-if="link.badge" class="nav-card-link-badge">{{ link.badge }}</span>
+                <div class="submenu-label">
+                  <span class="item-icon">📷</span>
+                  <span>Camera Site Planner</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="submenu-arrow" :class="{ 'open': isPlannerOpen }">
+                  <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+                <div class="submenu" :class="{ 'show': isPlannerOpen }">
+                  <a href="https://siteplanner.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                    Web App
+                  </a>
+                  <a href="https://downloads.visiongrid.net" class="submenu-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                    Download Setup
                   </a>
                 </div>
               </div>
+              <a href="https://invoice.visiongrid.net/" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                <span class="item-icon">📄</span>
+                Invoice Generator
+              </a>
+              <a href="https://ez.visiongrid.net" class="dropdown-item" target="_blank" rel="noopener noreferrer" @click="closeMenu">
+                <span class="item-icon">✨</span>
+                <span>EZ Solutions</span>
+                <span class="item-badge">New</span>
+              </a>
             </div>
           </div>
 
@@ -71,6 +74,7 @@ import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
 const isDropdownOpen = ref(false)
+const isPlannerOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -80,63 +84,24 @@ const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value
 }
 
+const togglePlanner = () => {
+  isPlannerOpen.value = !isPlannerOpen.value
+  // Ensure parent dropdown stays open when toggling submenu on mobile
+  if (!isDropdownOpen.value) {
+    isDropdownOpen.value = true
+  }
+}
+
 const closeMenu = () => {
   isMenuOpen.value = false
   isDropdownOpen.value = false
+  isPlannerOpen.value = false
 }
 
 const closeDropdowns = () => {
   isDropdownOpen.value = false
+  isPlannerOpen.value = false
 }
-
-// Bento cards for the Applications dropdown
-// Themed to match VisionGrid: deep navy + silver/blue gradient on white surface
-interface AppLink {
-  label: string
-  href: string
-  external: boolean
-  ariaLabel?: string
-  badge?: string
-}
-
-interface AppCard {
-  label: string
-  tagline: string
-  bgColor: string
-  textColor: string
-  links: AppLink[]
-}
-
-const appCards: AppCard[] = [
-  {
-    label: 'Camera Site Planner',
-    tagline: 'Plan camera layouts',
-    bgColor: '#003366',
-    textColor: '#ffffff',
-    links: [
-      { label: 'Web App', href: 'https://siteplanner.visiongrid.net', external: true, ariaLabel: 'Open Camera Site Planner web app' },
-      { label: 'Download Setup', href: 'https://downloads.visiongrid.net', external: true, ariaLabel: 'Download Camera Site Planner' }
-    ]
-  },
-  {
-    label: 'Business Tools',
-    tagline: 'Invoicing & PDF tools',
-    bgColor: '#004e98',
-    textColor: '#ffffff',
-    links: [
-      { label: 'Invoice Generator', href: 'https://invoice.visiongrid.net/', external: true, ariaLabel: 'Open Invoice Generator' }
-    ]
-  },
-  {
-    label: 'EZ Solutions',
-    tagline: 'Bank statements → Excel',
-    bgColor: '#f8fafc',
-    textColor: '#0f172a',
-    links: [
-      { label: 'EZ-Summary', href: 'https://ez.visiongrid.net', external: true, ariaLabel: 'Open EZ Solutions — bank statements to Excel in one click', badge: 'New' }
-    ]
-  }
-]
 </script>
 
 <style scoped>
@@ -272,19 +237,18 @@ const appCards: AppCard[] = [
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background-color: var(--color-white);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   padding: 0.5rem;
-  width: 360px;
-  max-width: calc(100vw - 2rem);
+  min-width: 220px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   z-index: 1001;
 }
 
@@ -294,105 +258,107 @@ const appCards: AppCard[] = [
   transform: translateX(-50%) translateY(0);
 }
 
-/* CardNav-style bento panel — stacked vertically */
-.dropdown-cards {
+.dropdown-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: stretch;
-}
-
-.nav-card {
-  flex: 1 1 auto;
-  min-width: 0;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  padding: 1rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  user-select: none;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
-.nav-card-label {
-  font-weight: var(--font-weight-semibold);
-  font-size: 0.95rem;
-  letter-spacing: -0.01em;
-  opacity: 0.95;
-}
-
-.nav-card-tagline {
-  font-size: 0.78rem;
-  font-weight: var(--font-weight-normal);
-  opacity: 0.75;
-  margin-top: -0.15rem;
-  line-height: 1.3;
-}
-
-.nav-card-links {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.nav-card-link {
-  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: var(--font-weight-medium);
-  color: inherit;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
   text-decoration: none;
-  padding: 0.3rem 0;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  opacity: 0.92;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-.nav-card-link:hover {
-  opacity: 1;
-  transform: translateX(2px);
+.dropdown-item:hover {
+  background-color: var(--bg-secondary);
+  color: var(--color-primary);
 }
 
-.nav-card-link-icon {
-  flex-shrink: 0;
-  opacity: 0.7;
+.item-icon {
+  font-size: 1.1rem;
 }
 
-.nav-card-link:hover .nav-card-link-icon {
-  opacity: 1;
-}
-
-.nav-card-link-badge {
+.item-badge {
   margin-left: auto;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.1rem 0.45rem;
-  border-radius: 999px;
-  line-height: 1.5;
-  background: var(--color-primary);
   color: var(--color-white);
+  background: var(--color-primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+.submenu-trigger {
+  position: relative;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.submenu-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.submenu-arrow {
+  transition: transform 0.2s ease;
+}
+
+.submenu-arrow.open {
+  transform: rotate(90deg);
+}
+
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 8px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 1002;
+}
+
+.submenu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu-item {
+  display: block;
+  padding: 0.65rem 0.85rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.submenu-item:hover {
+  background-color: var(--bg-secondary);
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: flex;
   }
-
+  
   .navbar-menu {
     position: absolute;
     top: 100%;
@@ -402,159 +368,113 @@ const appCards: AppCard[] = [
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     flex-direction: column;
-    padding: 0.85rem;
-    gap: 0.4rem;
+    padding: 1rem;
     box-shadow: var(--shadow-lg);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    max-height: calc(100vh - 70px); /* Prevent overflow on small screens */
-    max-height: calc(100dvh - 70px); /* dynamic viewport for mobile */
+    max-height: 80vh; /* Prevent overflow on small screens */
     overflow-y: auto;
-    overscroll-behavior: contain;
   }
-
-  .navbar-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* ============================================ */
-  /* Mobile dropdown: stays inside the drawer      */
-  /* ============================================ */
+  
   .dropdown-container {
     width: 100%;
     flex-direction: column;
     height: auto;
-    align-items: stretch;
   }
 
   .dropdown-toggle {
     width: 100%;
-    justify-content: space-between;
-    padding: 0.85rem 1rem;
-    min-height: 48px;
-    font-size: 1.05rem;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    justify-content: center;
+    padding: 0.5rem 0;
   }
 
-  .dropdown-toggle .dropdown-icon {
-    margin-left: auto;
-  }
-
-  /* Use a high-specificity selector to defeat any desktop overrides */
-  .navbar-menu .dropdown-menu.dropdown-menu {
+  .dropdown-menu {
     position: static;
-    top: auto;
-    left: auto;
-    right: auto;
     transform: none;
     width: 100%;
-    max-width: none;
     box-shadow: none;
     border: none;
     background: transparent;
     padding: 0;
-    margin: 0.6rem 0 0;
-    display: block;
+    margin-top: 0.5rem;
+    display: none; /* Hide by default on mobile */
     opacity: 1;
     visibility: visible;
-    overflow: visible;
   }
 
-  .navbar-menu .dropdown-menu.dropdown-menu > * {
-    min-height: 0;
-  }
-
-  .navbar-menu .dropdown-menu.dropdown-menu.show {
+  .dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
     transform: none;
-    grid-template-rows: auto;
   }
 
-  /* Cards are already stacked vertically by default */
-  .dropdown-cards {
-    padding: 0.25rem 0 0.5rem;
+  .dropdown-item {
+    justify-content: center;
+    padding: 0.75rem;
   }
-
-  .nav-card {
-    min-width: 0;
-    width: 100%;
-    padding: 1rem 1.1rem;
-    border-radius: var(--radius-lg);
-    animation: nav-card-in 0.32s ease both;
-  }
-
-  .nav-card:nth-child(1) { animation-delay: 0.05s; }
-  .nav-card:nth-child(2) { animation-delay: 0.12s; }
-  .nav-card:nth-child(3) { animation-delay: 0.19s; }
-
-  @keyframes nav-card-in {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .nav-card-label {
-    font-size: 0.95rem;
-  }
-
-  .nav-card-tagline {
-    font-size: 0.82rem;
-  }
-
-  .nav-card-link {
-    font-size: 0.95rem;
-    padding: 0.7rem 0.5rem;
-    min-height: 48px; /* iOS / WCAG tap target */
-    align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0;
-  }
-
-  .nav-card-link:first-child {
-    border-top: none;
-    padding-top: 0.55rem;
-  }
-
-  .nav-card-link-badge {
-    font-size: 0.65rem;
-  }
-
+  
   .navbar-actions {
     order: -1;
     margin-bottom: 1rem;
     justify-content: center;
   }
-
+  
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
   .navbar-link {
-    padding: 0.85rem 1rem;
+    padding: 0.5rem 0;
     width: 100%;
     text-align: center;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-md);
   }
-
-  .navbar-link:hover,
-  .navbar-link.router-link-active {
-    background: var(--bg-secondary);
-  }
-
+  
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
-
+  
   .mobile-menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-
+  
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .submenu {
+    position: static;
+    margin: 0.35rem 0 0.35rem 0;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    transform: none;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  .submenu-trigger {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+
+  .submenu-label {
+    justify-content: center;
+  }
+
+  .submenu-arrow {
+    display: none;
+  }
+
+  .submenu.show {
+    opacity: 1;
+    visibility: visible;
+    display: block;
   }
 }
 </style>
